@@ -1,0 +1,30 @@
+ #fondo{
+       background: #fff url("imagenes/FondoLogin.png")no-repeat fixed center ;
+}
+#boton{
+	width:100%;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+#formulario{
+	border-radius:10px;
+	margin-top:5%;
+	background-color: #eceff1;
+}
+
+
+/*cristian*/
+#fondo{
+       background: #fff url("imagenes/FondoLogin.png")no-repeat fixed center;
+}
+#centro{
+	margin-top: 150px;
+	border-radius: 10px;
+	background-color:#eceff1;
+	padding-bottom: 20px;
+}
+#btnreg{
+	margin-bottom: 20px;
+}
+/*Crsitian*/

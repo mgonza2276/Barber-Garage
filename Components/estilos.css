@@ -1,0 +1,53 @@
+.card-panel{
+	margin-bottom: 300px;
+	float: left;
+	margin-top: 50px;
+
+}
+
+body{
+	background: gray;
+}
+
+.contenedor{
+	
+	margin: auto;
+	width: 960px;
+}
+
+
+.tarjeta_derecha{
+	float: left;
+}
+
+.waves-effect{
+	height: 30px;
+
+}
+
+#btnregistrar{
+
+	margin-top: 50px;
+	margin-right: 20px;
+
+}
+
+#menu{
+	height: 100px;
+}
+
+#btnIniciar{
+	margin-right: -143px;
+	width: 143px;
+}
+
+
+footer p{
+	text-align: center;
+}
+
+.iconos{
+	display: inline-block;
+	clear: both;
+}
+
