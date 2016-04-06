@@ -19,14 +19,23 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
+      <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+
+      <script type="text/javascript">//consulta del perfil
+
+	 		$(document).ready(function(){
+	    	$('#select_perfil').material_select();//se repite esta linea cada que se haga un nueva consulta
+
+	  		});
+      
+    	</script>
+
 	</head>
 
 	<body>
-
-		<!--Import jQuery before materialize.js-->
-      	<script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
-      	<script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
-
       	<div class="container">
 
       		<div class="row">
@@ -51,8 +60,21 @@
 							<input type="text" placeholder="Celular..." name="celular" id="icon_telephone"/>
 							<i class="material-icons prefix">email</i>
 							<input type="text" placeholder="Correo..." name="correo" />
-							<input type="text" placeholder="Id_rol..." name="id_rol" value="1" hidden />
-							<button id="boton" class="waves-effect  btn-large green" name="acc" value="c" >Registrar</button>
+							<i class="material-icons prefix"hidden>assignment_ind</i> 
+							<div class="col l11 offset-l1" hidden>
+								<select id="select_perfil" name="perfil">
+									<?php //consulta de rol
+										require_once("../Model/conexion.php");
+										require_once("../Model/usuarios.class.php");
+
+										$perfiles = Gestion_Usuarios::ReadALL();
+
+										foreach ($perfiles as $row) {
+											echo "<option value='".$row["Id_usuario"]."'> ".$row["Perfil"]."</option>";
+											}
+									?>
+								</select>
+							</div>							<button id="boton" class="waves-effect  btn-large green" name="acc" value="c" >Registrar</button>
 							<button id="boton" class="waves-effect  btn-large red"  >Cancelar</button>
 							<?php echo @$_REQUEST["msn"]; ?>
 						</div>

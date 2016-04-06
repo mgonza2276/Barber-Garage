@@ -23,14 +23,16 @@
 		<!--Import jQuery before materialize.js-->
       	<script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
       	<script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+
       	<script type="text/javascript">//consiulta de rol
 
 	 		$(document).ready(function(){
-	    	$('#select_rol').material_select();//se repite esta linea cada que se haga un nueva consulta
+	    	$('#select_perfil').material_select();//se repite esta linea cada que se haga un nueva consulta
 
 	  		});
       
     	</script>
+
 	</head>
 
 	<body id="fondo">
@@ -61,18 +63,20 @@
 							<i class="material-icons prefix">email</i>
 							<input type="text" placeholder="Correo..." name="correo" />
 							<i class="material-icons prefix">assignment_ind</i> 
-							<select id="select_rol" name="id_rol">
-								<?php //consulta de rol
-									require_once("../Model/conexion.php");
-									require_once("../Model/rol.class.php");
+							<div class="col l11 offset-l1">
+								<select id="select_perfil" name="perfil">
+									<?php //consulta de rol
+										require_once("../Model/conexion.php");
+										require_once("../Model/usuarios.class.php");
 
-									$roles = Gestionar_rol::ReadALL();
+										$perfiles = Gestion_Usuarios::ReadALL();
 
-									foreach ($roles as $row) {
-										echo "<option value='".$row["Id_rol"]."'> ".$row["Nombre_rol"]."</option>";
-										}
-								?>
-							</select>
+										foreach ($perfiles as $row) {
+											echo "<option value='".$row["Id_usuario"]."'> ".$row["Perfil"]."</option>";
+											}
+									?>
+								</select>
+							</div>
 							<button id="boton" class="waves-effect  btn-large green" type="submit" name="acc" value="c">Registrar</button>	
 							<button id="boton" class="waves-effect  btn-large red" type="submit"   >Cancelar</button>
 							<?php echo @$_REQUEST["msn"]; ?>

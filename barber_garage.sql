@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-03-2016 a las 17:49:08
--- Versión del servidor: 10.1.10-MariaDB
--- Versión de PHP: 5.6.19
+-- Tiempo de generación: 06-04-2016 a las 23:15:12
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -55,51 +55,6 @@ CREATE TABLE `citas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `permiso`
---
-
-DROP TABLE IF EXISTS `permiso`;
-CREATE TABLE `permiso` (
-  `Id_permiso` int(11) NOT NULL,
-  `Nombre_permiso` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `permiso_rol`
---
-
-DROP TABLE IF EXISTS `permiso_rol`;
-CREATE TABLE `permiso_rol` (
-  `Id_permiso` int(11) NOT NULL,
-  `Id_rol` int(11) NOT NULL,
-  `Estado` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `rol`
---
-
-DROP TABLE IF EXISTS `rol`;
-CREATE TABLE `rol` (
-  `Id_rol` int(11) NOT NULL,
-  `Nombre_rol` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `rol`
---
-
-INSERT INTO `rol` (`Id_rol`, `Nombre_rol`) VALUES
-(99, 'Administrador'),
-(123, 'Barbero');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `servicio`
 --
 
@@ -123,24 +78,23 @@ DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `Id_usuario` varchar(50) NOT NULL,
   `Clave` varchar(50) NOT NULL,
-  `Cedula` int(20) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
+  `Cedula` varchar(20) NOT NULL,
+  `Nombre` varchar(30) NOT NULL,
   `Direccion` varchar(50) NOT NULL,
-  `Telefono` varchar(50) DEFAULT NULL,
-  `Celular` int(50) DEFAULT NULL,
-  `Correo` varchar(50) DEFAULT NULL,
-  `Id_rol` int(50) NOT NULL
+  `Telefono` varchar(20) NOT NULL,
+  `Celular` varchar(20) NOT NULL,
+  `Correo` varchar(50) NOT NULL,
+  `Perfil` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`Id_usuario`, `Clave`, `Cedula`, `Nombre`, `Direccion`, `Telefono`, `Celular`, `Correo`, `Id_rol`) VALUES
-('alfonso', '447584', 6546131, 'sfsdfds', 'dsfdsfdsf', '1113221', 54564654, 'dsfdsfsfdsfds@hotmail.com', 123),
-('dfdsfsd', '5454', 2147483647, 'dfdsf', 'sdfdsfs', '456546', 5465464, 'gdfgdf@gmail.com', 99),
-('MGONZA12', '447584', 6546131, 'sfsdfds', 'dsfdsfdsf', '1113221', 54564654, 'dsfdsfsfdsfds@hotmail.com', 123),
-('mgonza2276', '1152684915', 1152684915, 'Michael', 'Crra 55#61-25', '2811731', 2147483647, 'mygonzalez519@misena.edu.co', 99);
+INSERT INTO `usuario` (`Id_usuario`, `Clave`, `Cedula`, `Nombre`, `Direccion`, `Telefono`, `Celular`, `Correo`, `Perfil`) VALUES
+('carlos', '121313131', '11', 'dfs', '321321', '2313232', 'sdfsdfsd', 'dfsdfsd', 'mgonza12'),
+('mgonza12', '1152684915', '1152684915', 'Michael', 'crra 55#61-25', '2811731', '3226612809', 'mygonzalez519@misena.edu.co', 'Administrador'),
+('mgonzalez', '21231231', '11', 'dfs', '321321', '2313232', 'sdfsdfsd', 'dfsdfsd', 'Barbero');
 
 --
 -- Índices para tablas volcadas
@@ -161,26 +115,6 @@ ALTER TABLE `citas`
   ADD KEY `Cedula` (`Id_usuario`);
 
 --
--- Indices de la tabla `permiso`
---
-ALTER TABLE `permiso`
-  ADD PRIMARY KEY (`Id_permiso`);
-
---
--- Indices de la tabla `permiso_rol`
---
-ALTER TABLE `permiso_rol`
-  ADD PRIMARY KEY (`Id_permiso`,`Id_rol`),
-  ADD KEY `Id_permiso` (`Id_permiso`),
-  ADD KEY `Id_rol` (`Id_rol`);
-
---
--- Indices de la tabla `rol`
---
-ALTER TABLE `rol`
-  ADD PRIMARY KEY (`Id_rol`);
-
---
 -- Indices de la tabla `servicio`
 --
 ALTER TABLE `servicio`
@@ -192,8 +126,7 @@ ALTER TABLE `servicio`
 -- Indices de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`Id_usuario`),
-  ADD KEY `Id_rol` (`Id_rol`);
+  ADD PRIMARY KEY (`Id_usuario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -216,24 +149,11 @@ ALTER TABLE `citas`
   ADD CONSTRAINT `citas_ibfk_2` FOREIGN KEY (`Id_usuario`) REFERENCES `usuario` (`Id_usuario`);
 
 --
--- Filtros para la tabla `permiso_rol`
---
-ALTER TABLE `permiso_rol`
-  ADD CONSTRAINT `permiso_rol_ibfk_1` FOREIGN KEY (`Id_permiso`) REFERENCES `permiso` (`Id_permiso`),
-  ADD CONSTRAINT `permiso_rol_ibfk_2` FOREIGN KEY (`Id_rol`) REFERENCES `rol` (`Id_rol`);
-
---
 -- Filtros para la tabla `servicio`
 --
 ALTER TABLE `servicio`
   ADD CONSTRAINT `servicio_ibfk_1` FOREIGN KEY (`Cod_barberia`) REFERENCES `barberia` (`Cod_barberia`),
   ADD CONSTRAINT `servicio_ibfk_2` FOREIGN KEY (`Id_usuario`) REFERENCES `usuario` (`Id_usuario`) ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`Id_rol`) REFERENCES `rol` (`Id_rol`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
