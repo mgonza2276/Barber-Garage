@@ -1,4 +1,4 @@
- #fondo{
+ .fondo{
        background: #fff url("imagenes/FondoLogin.png")no-repeat fixed center ;
 }
 #boton{
@@ -27,5 +27,31 @@
 }
 #btnreg{
 	margin-bottom: 20px;
+
 }
-/*Crsitian*/
+/*------------Estilos del index--------------*/
+.card{
+	width: 400px;
+	height: 400px;
+	/*margin-bottom: 60px;*/
+	margin: auto;
+	margin-top: 30px;
+}
+
+.card-content p{
+	text-align: center;
+	font-size: 25px;
+	padding: 50px;
+	
+	
+}
+
+.card-content h1{
+	text-align:center;
+	font-size: 25px;
+	padding: 30px;
+}
+
+.waves-effect{
+	margin-left: 80px;
+}

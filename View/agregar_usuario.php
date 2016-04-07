@@ -16,7 +16,7 @@
 
 		<!--Import jQuery before materialize.js-->
       	<script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
-      	<script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+    	<script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
       	<script type="text/javascript">//consiulta de rol
 
