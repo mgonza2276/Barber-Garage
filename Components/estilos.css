@@ -1,29 +1,53 @@
-/*estilos del index*/
+.card-panel{
+	margin-bottom: 300px;
+	float: left;
+	margin-top: 50px;
 
-.card{
-	width: 400px;
-	height: 400px;
-	/*margin-bottom: 60px;*/
-	margin: auto;
 }
 
-.card-content p{
-	text-align: center;
-	font-size: 25px;
-	padding: 50px;
+body{
+	background: gray;
+}
+
+.contenedor{
 	
+	margin: auto;
+	width: 960px;
 }
 
-.card-content h1{
-	text-align:center;
-	font-size: 25px;
-	padding: 30px;
+
+.tarjeta_derecha{
+	float: left;
 }
 
 .waves-effect{
-	margin-left: 80px;
+	height: 30px;
+
 }
 
-/*.contenedor{
-	width: 960px
-}*/
+#btnregistrar{
+
+	margin-top: 50px;
+	margin-right: 20px;
+
+}
+
+#menu{
+	height: 100px;
+}
+
+#btnIniciar{
+	margin-right: -143px;
+	width: 143px;
+}
+
+
+footer p{
+	text-align: center;
+}
+
+.iconos{
+	display: inline-block;
+	clear: both;
+}
+
