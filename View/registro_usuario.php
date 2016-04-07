@@ -25,16 +25,15 @@
 	  <link  rel="stylesheet" type="text/css" href="estilos.css">      
 	</head>
 
-	<body id="fondo">
+	<body>
       	<div class="container">
 
       		<div class="row">
 
-      			<div id="formulario" class="col l8 offset-l2">
-					<form action="../Controller/usuarios.controller.php" method="POST" >
-						<h3>Registro Usuario</h3>
-						<div class="col l6  input-field"  >
-							<input type="hidden" name="pag" value="registro_usuario">
+      			<div id="formulario" class="col l6 offset-l3">
+					<form action="../Controller/usuarios.controller.php" method="POST">
+						<div class="col l12  input-field"  >
+							<h3>Registro Usuario</h3>
 							<i class="material-icons prefix">account_circle</i>
 							<input type="text" placeholder="Id_usuario..." name="id_usuario" required />
 							<i class="material-icons prefix">vpn_key</i>
@@ -43,9 +42,6 @@
 							<input type="number" placeholder="Cedula..." name="cedula"/>
 							<i class="material-icons prefix">person</i>
 							<input type="text" placeholder="Nombre..." name="nombre" />
-							<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" >Registrar</button>
-						</div>
-						<div class="col l6  input-field"  >
 							<i class="material-icons prefix">store</i>
 							<input type="text" placeholder="Dirección..." name="direccion" />
 							<i class="material-icons prefix">phone</i>
@@ -54,13 +50,12 @@
 							<input type="number" placeholder="Celular..." name="celular" id="icon_telephone"/>
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" required />
-							<a id="boton" href="../Components/footer.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
-						</div>
 							<i class="material-icons prefix"hidden>assignment_ind</i> 
 							<input type="hidden" value="Usuario" name="perfil"/>					
-							
-							
+							<button id="boton" class="waves-effect  btn-large green" name="acc" value="c" >Registrar</button>
+							<button id="boton" class="waves-effect  btn-large red"  >Cancelar</button>
 							<?php echo @$_REQUEST["msn"]; ?>
+						</div>
 					</form>			
 				</div>
 			</div>
