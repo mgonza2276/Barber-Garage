@@ -3,19 +3,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 	<head>
-	  <!--Aqui llamaremos los estilos necesarios-->
-	  <link  rel="stylesheet" type="text/css" href="estilos.css">
-	  
 	  <!--Aqui llamaremos los iconos que necesitaremos-->
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-
-	  <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
 
-      <link rel="stylesheet" href="mis-estilos.css">
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -33,6 +27,9 @@
       
     	</script>
 
+    	<!--Aqui llamaremos los estilos necesarios-->
+	  	<link  rel="stylesheet" type="text/css" href="estilos.css">
+
 	</head>
 
 	<body id="fondo">
@@ -47,36 +44,28 @@
 						<div class="col l12  input-field"  >
 							<center><h4>Registrar Usuario</h4></center>
 							<i class="material-icons prefix">account_circle</i>
-							<input type="text" placeholder="Id_usuario..." name="id_usuario"/>
+							<input type="text" placeholder="Id_usuario..." name="id_usuario" required="" />
 							<i class="material-icons prefix">vpn_key</i>
-							<input type="password" placeholder="Clave..." name="clave" />
+							<input type="password" placeholder="Clave..." name="clave" required/>
 							<i class="material-icons prefix">person_pin</i>
-							<input type="text" placeholder="Cedula..." name="cedula"/>
+							<input type="number" placeholder="Cedula..." name="cedula" required/>
 							<i class="material-icons prefix">person</i>
 							<input type="text" placeholder="Nombre..." name="nombre" />
 							<i class="material-icons prefix">store</i>
 							<input type="text" placeholder="Dirección..." name="direccion" />
 							<i class="material-icons prefix">phone</i>
-							<input type="text" placeholder="Telefono..." name="telefono" id="icon_telephone" />
+							<input type="number" placeholder="Telefono..." name="telefono" id="icon_telephone" />
 							<i class="material-icons prefix">stay_current_portrait</i>
-							<input type="text" placeholder="Celular..." name="celular" id="icon_telephone"/>
+							<input type="number" placeholder="Celular..." name="celular" id="icon_telephone"/>
 							<i class="material-icons prefix">email</i>
-							<input type="text" placeholder="Correo..." name="correo" />
+							<input type="email" placeholder="Correo..." name="correo" required/>
 							<i class="material-icons prefix">assignment_ind</i> 
 							<div class="col l11 offset-l1">
 								<select id="select_perfil" name="perfil">
-									<?php //consulta de rol
-										require_once("../Model/conexion.php");
-										require_once("../Model/usuarios.class.php");
-
-										$perfiles = Gestion_Usuarios::ReadALL();
-
-										foreach ($perfiles as $row) {
-											echo "<option value='".$row["Id_usuario"]."'> ".$row["Perfil"]."</option>";
-											}
-									?>
+									<option value="Administrador"> Administrador</option>
+									<option value="Empleado"> Empleado</option> 
 								</select>
-							</div>
+							</div>	
 							<button id="boton" class="waves-effect  btn-large green" type="submit" name="acc" value="c">Registrar</button>	
 							<button id="boton" class="waves-effect  btn-large red" type="submit"   >Cancelar</button>
 							<?php echo @$_REQUEST["msn"]; ?>
