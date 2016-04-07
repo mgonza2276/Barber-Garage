@@ -6,6 +6,7 @@
 	//Llamamos las clases que necesitamos
 	require_once("../Model/usuarios.class.php");
 
+	$origen_pagina = $_REQUEST["pag"];
 	// la variable accion nos indica que parte del crud crearemos
 	$accion=$_REQUEST["acc"];
 	switch ($accion) {
@@ -30,9 +31,11 @@
 				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			}
 		
-		 header("location: ../View/registro_usuario.php?msn=".$mensaje);
-		 header("location: ../View/agregar_usuario.php?msn=".$mensaje);
-
+		if ($origen_pagina == "registro_usuario") {
+			header("location: ../View/registro_usuario.php?msn=".$mensaje);
+		}elseif ($origen_pagina == "agregar_usuario") {
+			header("location: ../View/agregar_usuario.php?msn=".$mensaje);
+		}
 		break;
 			 
 		}
