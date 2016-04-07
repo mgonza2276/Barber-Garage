@@ -63,13 +63,13 @@
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" required />
 						</div>
-						
-						<div class="row">
-							<div class="col l6">
-									<select id="select_perfil" name="perfil">
-										<option value="Administrador"> Administrador</option>
-										<option value="Empleado"> Empleado</option> 
-									</select>
+						<div class="col l12 input-field">
+								<i class="material-icons prefix">email</i>
+							<div class="col l5 offset-l1" >
+								<select id="select_perfil" name="perfil">
+									<option value="Administrador"> Administrador</option>
+									<option value="Empleado"> Empleado</option> 
+								</select>
 							</div>
 						</div>
 						<div class="col l6  input-field">
