@@ -17,7 +17,10 @@
 
     <link  rel="stylesheet" type="text/css" href="estilos.css">
 </head>
-<body id="fondo">
+<body class="fondo">
+    <?php 
+    include_once("../Components/menu.php")
+   ?>
 	<div class="container">
       	<div class="row">
       		<div id="centro"  class="col l4 offset-l4 input-field" >
@@ -29,14 +32,22 @@
 						<i class="material-icons prefix">vpn_key</i>
 						<input type="password" placeholder="Contraseña..." name="clave" required/>
 
-						<button id="boton" class="waves-effect  btn-large green" type="submit" name="" value="">Ingresar</button>
-
-						<a href="">Recuperar Contraseña</a>	
+						<button id="boton" class="waves-effect btn-large green" type="submit" name="" value="" href="#">Ingresar</button>
+                        <div class="col l5 s12">
+                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                        <label for="filled-in-box">Recordar</label>              
+                        </div>   
+                        <div class="col l7 s12" id="lgn-rec">
+                        <a  href="">Recuperar Contraseña</a>
+                        </div>							
 							
       			</form>
       		</div>
     	</div>
     </div>
+    <?php 
+    include_once("../Components/footer.php")
+   ?>
 
 </body>
 </html>
