@@ -23,7 +23,7 @@
    ?>
 	<div class="container">
       	<div class="row">
-      		<div id="centro"  class="col l4 offset-l4 input-field" >
+      		<div id="centro"  class="col l4 s12 offset-s0 offset-l4 input-field" >
       			<form>
       				<center><h4>Login</h4></center>
 						<i class="material-icons prefix">account_circle</i>
