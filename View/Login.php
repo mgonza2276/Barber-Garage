@@ -33,11 +33,11 @@
 						<input type="password" placeholder="Contraseña..." name="clave" required/>
 
 						<button id="boton" class="waves-effect btn-large green" type="submit" name="" value="" href="#">Ingresar</button>
-                        <div class="col l5 s12">
-                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                        <div class="col l4 s12">
+                        <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
                         <label for="filled-in-box">Recordar</label>              
                         </div>   
-                        <div class="col l7 s12" id="lgn-rec">
+                        <div class="col l8 offset-l5 s12 " id="lgn-rec">
                         <a  href="">Recuperar Contraseña</a>
                         </div>							
 							
