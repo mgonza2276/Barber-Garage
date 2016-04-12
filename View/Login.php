@@ -44,9 +44,11 @@
                             <div class="modal-content">
                               <h4>Recuperar contraseña</h4>
                               <p>Ingrese el correo </p>
+                              <input type="text" placeholder="Correo electrónico" name="Correo"/>
+                              <p>En breves segundos te enviaremos un enlace al correo ingresado</p>
                             </div>
                             <div class="modal-footer">
-                              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
                             </div>
                         </div>
                         </div>							

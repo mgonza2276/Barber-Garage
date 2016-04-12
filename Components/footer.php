@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="estilos_componentes.css">
 </head>
-<body >
+<body class="footer">
    
 	 <footer class="page-footer red accent-4">
           <div class="container">
@@ -37,7 +37,7 @@
           </div>
           <div class="footer-copyright">
             <div class="container">
-            <spam>© 2014 barber garage 2016</spam>
+            <spam>©Barber Garage 2016</spam>
             
             </div>
           </div>
