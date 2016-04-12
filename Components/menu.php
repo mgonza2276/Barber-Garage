@@ -25,11 +25,11 @@
       <a href="#!" class="brand-logo">B-G</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="inicio" href="index2.php">Inicio</a></li>
+        <li><a class="inicio" href="#">Inicio</a></li>
         <li><a class="acerca" href="badges.html">Acerca de...</a></li>
         <li><a class="contacto" href="collapsible.html">Contacto</a></li>
-        <li><a class="waves-effect waves-light btn ">Iniciar Sesion</a></li>
-        <li><a class="waves-effect waves-light btn ">Registrarme</a></li>
+        <li><a class="waves-effect waves-light btn " href="Login.php">Iniciar Sesion</a></li>
+        <li><a class="waves-effect waves-light btn " href="registro_usuario.php">Registrarme</a></li>
       </ul>
       
       <ul class="side-nav" id="mobile-demo">
