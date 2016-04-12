@@ -16,6 +16,7 @@
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
     <link  rel="stylesheet" type="text/css" href="estilos.css">
+
 </head>
 <body class="fondo">
     <?php 
@@ -38,7 +39,16 @@
                         <label for="filled-in-box">Recordar</label>              
                         </div>   
                         <div class="col l8 offset-l5 s12 " id="lgn-rec">
-                        <a  href="">Recuperar Contraseña</a>
+                        <a class="waves-effect waves-light modal-trigger" href="#modal1">Recuperar Contraseña</a>
+                          <div id="modal1" class="modal">
+                            <div class="modal-content">
+                              <h4>Recuperar contraseña</h4>
+                              <p>Ingrese el correo </p>
+                            </div>
+                            <div class="modal-footer">
+                              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                            </div>
+                        </div>
                         </div>							
 							
       			</form>
@@ -48,6 +58,11 @@
     <?php 
     include_once("../Components/footer.php")
    ?>
-
+   <script type="text/javascript">
+      $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $('.modal-trigger').leanModal();
+  });
+    </script>
 </body>
 </html>
