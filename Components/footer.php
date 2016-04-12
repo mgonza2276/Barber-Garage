@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="estilos_componentes.css">
 </head>
-<body class="footer">
+
    
 	 <footer class="page-footer red accent-4">
           <div class="container">
@@ -41,12 +41,12 @@
             
             </div>
           </div>
-        </footer>
-
-            
-
-	<!--Import jQuery before materialize.js-->
+          <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>
-</body>
+        
+        </footer>        
+
+	
+
 </html>

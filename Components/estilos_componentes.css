@@ -1,4 +1,14 @@
 /*estilos de los componentes*/
+body{
+	display: flex;
+  	min-height: 100vh;
+  	flex-direction: column;
+}
+
+main{
+  flex: 1 0 auto;
+
+}
 #menu {
 	height: 100px;
 	margin-bottom: 50px;
