@@ -1,0 +1,60 @@
+/*estilos de los componentes*/
+body{
+	display: flex;
+  	min-height: 100vh;
+  	flex-direction: column;
+}
+
+main{
+  flex: 1 0 auto;
+
+}
+#menu {
+	height: 100px;
+	margin-bottom: 50px;
+
+}
+
+
+#menu a{
+	margin-top: 30px;
+	
+}
+
+/*.acerca{
+	line-height: 30px;
+}*/
+
+.inicio{
+	margin-right: 150px;
+}
+
+.acerca{
+	margin-right: 100px;
+}
+
+.contacto{
+	margin-right: 50px;
+}
+
+p,a{
+	font-size: 20px;
+}
+
+.fuente{
+	font-size: 20px;
+}
+
+.btn-buscar{
+	background-color: #01579b;
+}
+
+/*.page-footer{
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+
+}*/
+.browser-default{
+	margin-top: 30px;
+}
