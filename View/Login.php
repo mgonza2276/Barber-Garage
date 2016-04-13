@@ -40,17 +40,20 @@
                         </div>   
                         <div class="col l8 offset-l5 s12 " id="lgn-rec">
                         <a class="waves-effect waves-light modal-trigger" href="#modal1">Recuperar Contraseña</a>
-                          <div id="modal1" class="modal">
-                            <div class="modal-content">
-                              <h4>Recuperar contraseña</h4>
-                              <p>Ingrese el correo </p>
-                              <input type="text" placeholder="Correo electrónico" name="Correo"/>
-                              <p>En breves segundos te enviaremos un enlace al correo ingresado</p>
-                            </div>
-                            <div class="modal-footer">
-                              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
-                            </div>
-                        </div>
+                        	<form action="" method="POST">
+                        	<div id="modal1" class="modal">
+                            	<div class="modal-content">
+                              		<h4>Recuperar contraseña</h4>
+                              		<p>Ingrese el correo </p>
+                              		<input type="email" placeholder="Correo electrónico" name="Correo"/>
+                              		<p>En breves segundos te enviaremos un enlace al correo ingresado</p>
+                            	</div>
+                            	<div class="modal-footer">
+                              		<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
+                              		<a id="btncrc" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                            	</div>
+                        	</div>
+                        	</form>
                         </div>							
 							
       			</form>
