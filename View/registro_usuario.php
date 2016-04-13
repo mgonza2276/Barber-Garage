@@ -55,7 +55,7 @@
 							<input type="number" placeholder="Celular..." name="celular" id="icon_telephone"/>
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" required />
-							<a id="boton" href="../Components/footer.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
+							<a id="boton" href="index.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
 						</div>
 							<i class="material-icons prefix"hidden>assignment_ind</i> 
 							<input type="hidden" value="Usuario" name="perfil"/>					
