@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  .fondo{
+=======
+.fondo{
+>>>>>>> origin/master
        background: #fff url("imagenes/FondoLogin.png")no-repeat fixed center ;
 }
 #boton{
@@ -15,7 +19,10 @@
 
 
 /*cristian*/
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 
 #centro{
 	margin-top: 50px;
@@ -24,22 +31,43 @@
 	padding-bottom: 20px;
 }
 #btnreg{
+<<<<<<< HEAD
 	margin-bottom: 20px;
 
 }
 
 #lgn-rec{
 	margin-top:13px;
+=======
+	margin-bottom: 15px;
 }
+
+#lgn-rec{
+	margin-top:10px;
+}
+.footer{
+	margin-bottom: 0px;
+>>>>>>> origin/master
+}
+
+
 /*Crsitian*/
 
+<<<<<<< HEAD
 /*------------Estilos del index--------------*/
+=======
+/*estilos del index*/
+
+>>>>>>> origin/master
 .card{
 	width: 400px;
 	height: 400px;
 	/*margin-bottom: 60px;*/
 	margin: auto;
+<<<<<<< HEAD
 	margin-top: 30px;
+=======
+>>>>>>> origin/master
 }
 
 .card-content p{
@@ -47,7 +75,10 @@
 	font-size: 25px;
 	padding: 50px;
 	
+<<<<<<< HEAD
 	
+=======
+>>>>>>> origin/master
 }
 
 .card-content h1{
@@ -56,9 +87,22 @@
 	padding: 30px;
 }
 
+<<<<<<< HEAD
 .btnbuscar{
 	margin-left: 80px;
 }
 
 
 
+=======
+.btn-buscar{
+	margin-left: 80px;
+}
+
+#btncrc{
+	margin-right: 10px;
+}
+/*.contenedor{
+	width: 960px
+}*/
+>>>>>>> origin/master

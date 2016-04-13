@@ -15,7 +15,11 @@
 
     <link rel="stylesheet" href="estilos_componentes.css">
 </head>
+<<<<<<< HEAD
 <body >
+=======
+
+>>>>>>> origin/master
    
 	 <footer class="page-footer red accent-4">
           <div class="container">
@@ -37,6 +41,7 @@
           </div>
           <div class="footer-copyright">
             <div class="container">
+<<<<<<< HEAD
             <spam>© 2014 barber garage 2016</spam>
             
             </div>
@@ -49,4 +54,18 @@
         <script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>
 </body>
+=======
+            <spam>©Barber Garage 2016</spam>
+            
+            </div>
+          </div>
+          <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>
+        <script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>
+        
+        </footer>        
+
+	
+
+>>>>>>> origin/master
 </html>

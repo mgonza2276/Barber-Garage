@@ -25,7 +25,8 @@
 	  <link  rel="stylesheet" type="text/css" href="estilos.css">      
 	</head>
 
-	<body id="fondo">
+	<body id="fondo" class="fondo">
+	<?php include_once("../Components/menu.php") ?>
       	<div class="container">
 
       		<div class="row">
@@ -65,5 +66,6 @@
 				</div>
 			</div>
 		</div>
+		<?php include_once("../Components/footer.php") ?>
 	</body>
 </html>

@@ -16,7 +16,7 @@
 
 	 
 
-	<?php include_once("../Components/menu.php") ?> 
+	<?php include_once("../Components/menu_sesion_iniciada.php") ?> 
   <div class="container ">
   
 
@@ -34,11 +34,7 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <h1>Encuentra tu <br>Barberia Favorita</h1>
-<<<<<<< HEAD
-              <a class="waves-effect waves-light btn btnbuscar">Buscar Barberia</a>
-=======
               <a class="waves-effect waves-light btn">Buscar Barberia</a>
->>>>>>> origin/master
             </div>
           </div>
         </div>
