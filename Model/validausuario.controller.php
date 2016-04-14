@@ -2,6 +2,7 @@
   session_start();
   require_once("../Model/conexion.php");
   require_once("usuarios.class.php");
+  
 
   $Id_usuario = $_POST["Id_usuario"];
   $Clave      = $_POST["Clave"];

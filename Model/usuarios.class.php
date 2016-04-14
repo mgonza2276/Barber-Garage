@@ -40,7 +40,7 @@
 		}
 
 		  function ValidaUsuario($Id_usuario, $Clave){
-		      $pdo = BarberGarage_BD::Connect();
+		      $pdo=BarberGarage_BD::Connect();
 		      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		      $sql = "SELECT * FROM usuario WHERE Id_usuario = ? AND Clave = ?";
