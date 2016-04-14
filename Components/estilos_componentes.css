@@ -1,14 +1,4 @@
-/*estilos de los componentes*/
-body{
-	display: flex;
-  	min-height: 100vh;
-  	flex-direction: column;
-}
-
-main{
-  flex: 1 0 auto;
-
-}
+/*estilos de los componentes de la pagina inicial*/
 #menu {
 	height: 100px;
 	margin-bottom: 50px;
@@ -21,9 +11,9 @@ main{
 	
 }
 
-/*.acerca{
+.acerca{
 	line-height: 30px;
-}*/
+}
 
 .inicio{
 	margin-right: 150px;
@@ -45,16 +35,75 @@ p,a{
 	font-size: 20px;
 }
 
-.btn-buscar{
+/*.btn-buscar{
 	background-color: #01579b;
-}
+}*/
 
-/*.page-footer{
+.page-footer{
 	position: fixed;
 	width: 100%;
 	bottom: 0px;
 
-}*/
-.browser-default{
-	margin-top: 30px;
+}
+
+/*Estilos del menu de sesion_iniciada*/
+
+#dropdown1{
+	margin-top: 80px;
+}
+
+/*Estilos del menu de las barberias*/
+
+.inicio_barberias{
+	margin-right: 200px;
+}
+
+.cortes{
+	margin-right: 150px;
+}
+
+.servicios{
+	margin-right: 100px;
+}
+
+.citas{
+	margin-right: 50px;
+	width: 120px;
+}
+
+#dropdown2{
+	margin-top: 80px;
+}
+
+/*Estilos  Menu del administrador*/
+
+.inicio_administrador{
+	margin-right: 140px;
+}
+
+.gestionar_usuarios{
+	margin-right: 100px;
+	width: 200px;
+}
+
+.consultar_citas{
+	margin-right: 60px;
+}
+
+.gestionar_barberia{
+	margin-right: 20px;
+	width: 200px;
+
+}
+
+#sub_menu_gest_usuario{
+	margin-top: 80px;
+}
+
+#sub_menu_gest_barberia{
+	margin-top: 80px;
+}
+
+#submenu_sesion_admin{
+	margin-top: 80px;
 }
