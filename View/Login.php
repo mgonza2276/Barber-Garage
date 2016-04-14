@@ -46,7 +46,7 @@
                             <div class="modal-content">
                               <h4>Recuperar contraseña</h4>
                               <p>Ingrese el correo </p>
-                              <input type="text" placeholder="Correo electrónico" name="Correo" required/>
+                              <!-- <input type="text" placeholder="Correo electrónico" name="Correo" required/> -->
                               <p>En breves segundos te enviaremos un enlace al correo ingresado</p>
                             </div>
                             <div class="modal-footer">
