@@ -3,6 +3,8 @@
 <head>
 	<title>Login Barber-Garage</title>
 	<meta charset="utf-8"/>
+	<script src="dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
 
 	<!--Aqui llamaremos los iconos que necesitaremos-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
