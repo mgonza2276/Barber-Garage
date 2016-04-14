@@ -36,7 +36,7 @@
       <a href="#!" class="brand-logo">B-G</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="inicio" href="index2.php">Inicio</a></li>
+        <li><a class="inicio" href="index.php">Inicio</a></li>
         <li><a class="acerca" href="badges.html">Acerca de...</a></li>
         <li><a class="contacto" href="collapsible.html">Contacto</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>

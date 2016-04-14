@@ -16,7 +16,8 @@
       	<script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
       	<script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
-      	<script type="text/javascript">//consiulta de rol
+      	<script type="text/javascript">
+            //consiulta de rol
 
 	 		$(document).ready(function(){
 	    	$('#select_perfil').material_select();//se repite esta linea cada que se haga un nueva consulta
@@ -51,7 +52,7 @@
 							<i class="material-icons prefix">person</i>
 							<input type="text" placeholder="Nombre..." name="nombre" />
 
-						</div>
+				</div>
 
 						<div class="col l6  input-field"  >
 							<i class="material-icons prefix">store</i>
@@ -78,10 +79,10 @@
 						<div class="col l6  input-field">
 							<a id="boton" href="../Components/footer.php" class="waves-effect  btn-large  blue-grey darken-1">Cancelar</a>
 						</div>
-
-							
-							<?php echo @$_REQUEST["msn"]; ?>
-						</div>
+                        <?
+                            php echo @$_REQUEST["msn"]; 
+                        ?>
+						
 
 					</form>			
 				</div>

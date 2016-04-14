@@ -34,7 +34,7 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <h1>Encuentra tu <br>Barberia Favorita</h1>
-              <a class="waves-effect waves-light btn">Buscar Barberia</a>
+              <a class="waves-effect waves-light btn btn-buscar">Buscar Barberia</a>
             </div>
           </div>
         </div>

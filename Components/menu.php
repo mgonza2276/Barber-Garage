@@ -33,7 +33,7 @@
       </ul>
       
       <ul class="side-nav" id="mobile-demo">
-        <li><a class="inicio" href="index2.php">Inicio</a></li>
+        <li><a class="inicio" href="index.php">Inicio</a></li>
         <li><a class="acerca" href="badges.html">Acerca de...</a></li>
         <li><a class="contacto" href="collapsible.html">Contacto</a></li>        
         <li><a class="waves-effect waves-light btn ">Iniciar Sesion</a></li>

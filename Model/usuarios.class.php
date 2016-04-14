@@ -32,10 +32,30 @@
 			$query->execute();
 
 			$results = $query->fetchALL(PDO::FETCH_BOTH);
+			BarberGarage_BD::Disconect();
 
 			return $results;
 
-			BarberGarage_BD::Disconect();
-		}	
+			
+		}
+
+		class Gestion_Usuarios{
+		  function ValidaUsuario($Id_usuario, $Clave){
+		      $pdo = Basedatos::Connect();
+		      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		      $sql = "SELECT * FROM usuario WHERE Id_usuario = ? AND clave = ?";
+
+		      $query = $pdo->prepare($sql);
+
+		      $query->execute(array($correo, $clave));
+		      // fetch cuando voy a mostrar un solo registro
+		      // fetchALL cuando voy a mostrar mas de un registro
+
+		      $results = $query->fetch(PDO::FETCH_BOTH);
+		      BarberGarage_BD::Disconnect();
+
+		      return $results;
+    	}	
 	}
 ?>
