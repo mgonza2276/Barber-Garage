@@ -39,16 +39,15 @@
 			
 		}
 
-		class Gestion_Usuarios{
 		  function ValidaUsuario($Id_usuario, $Clave){
-		      $pdo = Basedatos::Connect();
+		      $pdo = BarberGarage_BD::Connect();
 		      $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		      $sql = "SELECT * FROM usuario WHERE Id_usuario = ? AND clave = ?";
+		      $sql = "SELECT * FROM usuario WHERE Id_usuario = ? AND Clave = ?";
 
 		      $query = $pdo->prepare($sql);
 
-		      $query->execute(array($correo, $clave));
+		      $query->execute(array($Id_usuario, $Clave));
 		      // fetch cuando voy a mostrar un solo registro
 		      // fetchALL cuando voy a mostrar mas de un registro
 

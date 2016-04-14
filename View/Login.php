@@ -25,15 +25,15 @@
 	<div class="container">
       	<div class="row">
       		<div id="centro"  class="col l4 s12 offset-s0 offset-l4 input-field" >
-      			<form>
+      			<form action="../Model/validausuario.controller.php" method="post">
       				<center><h4>Login</h4></center>
 						<i class="material-icons prefix">account_circle</i>
-						<input type="text" placeholder="Id_usuario..." name="id_usuario" required />
+						<input type="text" placeholder="Id_usuario..." name="Id_usuario" required />
 
 						<i class="material-icons prefix">vpn_key</i>
-						<input type="password" placeholder="Contraseña..." name="clave" required/>
+						<input type="password" placeholder="Contraseña..." name="Clave" required/>
 
-						<button id="boton" class="waves-effect btn-large green" type="submit" name="" value="" href="#">Ingresar</button>
+						<button id="boton" class="waves-effect btn-large green">Ingresar</button>
                         <div class="col l4 s12">
                         <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
                         <label for="filled-in-box">Recordar</label>              
@@ -54,6 +54,14 @@
                         </div>							
 							
       			</form>
+            <?php
+      if( base64_decode(@$_GET["tm"]) == "advertencia"){
+        $estilos = "orange";
+      }else{
+        $estilos = "red";
+      }
+
+    echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";?>
       		</div>
     	</div>
     </div>
