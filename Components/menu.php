@@ -10,27 +10,27 @@
       <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <link rel="stylesheet" href="estilos_componentes.css">
+    <link rel="stylesheet" href="../View/estilos_componentes.css">
 
-    <script>$( document ).ready(function(){
-     $(".button-collapse").sideNav();
-     });</script>
+    
     
 
 </head>
 <body>
-	 
+	 <script>$( document ).ready(function(){
+     $(".button-collapse").sideNav();
+     });</script>
 
 	<nav id="menu">
     <div class="nav-wrapper red accent-4">
       <a href="#!" class="brand-logo">B-G</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="inicio" href="index2.php">Inicio</a></li>
+        <li><a class="inicio" href="../View/index.php">Inicio</a></li>
         <li><a class="acerca" href="badges.html">Acerca de <br> Barber Garage</a></li>
         <li><a class="contacto" href="collapsible.html">Contacto</a></li>
-        <li><a class="waves-effect waves-light btn ">Iniciar Sesion</a></li>
-        <li><a class="waves-effect waves-light btn ">Registrarme</a></li>
+        <li><a class="waves-effect waves-light btn " href="../View/login.php">Iniciar Sesion</a></li>
+        <li><a class="waves-effect waves-light btn  " href="../View/registro_usuario.php">Registrarme</a></li>
       </ul>
       
       <ul class="side-nav" id="mobile-demo">
