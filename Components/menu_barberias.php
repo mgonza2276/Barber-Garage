@@ -18,13 +18,10 @@
     
 
 </head>
+
 <body>
-   
-
-
-
-
-   <!-- Dropdown Structure -->
+  
+<!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="#!">Mi Perfil</a></li>
   <!-- <li class="divider"></li> -->
@@ -33,30 +30,45 @@
   <li><a class="indigo-text text-darken-4" href="#!">Cerrar Sesion</a></li>
 </ul>
 
+<!-- submenu de Citas -->
+<ul id="dropdown2" class="dropdown-content red darken-1">
+  <li><a class="indigo-text text-darken-4" href="#!">Reservar <br> Cita</a></li>
+  <!-- <li class="divider"></li> -->
+  <li><a class="indigo-text text-darken-4" href="#!">Modificar <br> Cita</a ></li>
+</ul>
+
+
+
 <nav id="menu">
     <div class="nav-wrapper red accent-4">
       <a href="#!" class="brand-logo">B-G</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="inicio" href="index2.php">Inicio</a></li>
-        <li><a class="acerca" href="badges.html">Acerca de <br> Barber Garage</a></li>
-        <li><a class="contacto" href="collapsible.html">Contacto</a></li>
+        <li><a class="inicio_barberias" href="index2.php">Inicio</a></li>
+        <li><a class="cortes" href="badges.html">Ver Cortes</a></li>
+        <li><a class="servicios" href="collapsible.html">Solicitar Servicios</a></li>
+        <li><a class="dropdown-button citas" href="#!" data-activates="dropdown2">Citas</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li>
+        
+
       </ul>
       
       <ul class="side-nav" id="mobile-demo">
-        <li><a class="inicio" href="index2.php">Inicio</a></li>
-        <li><a class="acerca" href="badges.html">Acerca de...</a></li>
-        <li><a class="contacto" href="collapsible.html">Contacto</a></li>        
+        <li><a class="inicio_barberias" href="index2.php">Inicio</a></li>
+        <li><a class="cortes" href="badges.html">Ver Cortes</a></li>
+        <li><a class="servicios" href="collapsible.html">Solicitar <br> Servicios</a></li>
+        <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Citas</a></li> -->
         <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li> -->
       </ul>
     </div>
   </nav>
   
-  
+
+
+
+
   <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>
-
 </body>
 </html>
