@@ -23,7 +23,7 @@
 	    	$('#select_perfil').material_select();//se repite esta linea cada que se haga un nueva consulta
 
 	  		});
-      
+
     	</script>
 
     	<!--Aqui llamaremos los estilos necesarios-->
@@ -40,7 +40,7 @@
 
       			<div id="formulario" class="col l8 offset-l2">
 					<form action="../Controller/usuarios.controller.php" method="POST" >
-						<h3>Agregar Usuario</h3>
+						<center><h3>Agregar Usuario</h3></center>
 						<div class="col l6  input-field"  >
 							<input type="hidden" name="pag" value="registro_usuario">
 							<i class="material-icons prefix">account_circle</i>
@@ -69,7 +69,7 @@
 							<div class="col l5 offset-l1" >
 								<select id="select_perfil" name="perfil">
 									<option value="Administrador"> Administrador</option>
-									<option value="Empleado"> Empleado</option> 
+									<option value="Empleado"> Empleado</option>
 								</select>
 							</div>
 						</div>
@@ -80,11 +80,11 @@
 							<a id="boton" href="../Components/footer.php" class="waves-effect  btn-large  blue-grey darken-1">Cancelar</a>
 						</div>
                         <?
-                            php echo @$_REQUEST["msn"]; 
+                            php echo @$_REQUEST["msn"];
                         ?>
-						
 
-					</form>			
+
+					</form>
 				</div>
 			</div>
 		</div>

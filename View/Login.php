@@ -3,7 +3,7 @@
 <head>
 	<title>Login Barber-Garage</title>
 	<meta charset="utf-8"/>
-	  
+
 	<!--Aqui llamaremos los iconos que necesitaremos-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -12,14 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
-    
+
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
     <link  rel="stylesheet" type="text/css" href="estilos.css">
 
 </head>
 <body class="fondo">
-    <?php 
+    <?php
     include_once("../Components/menu.php")
    ?>
 	<div class="container">
@@ -33,11 +33,11 @@
 						<i class="material-icons prefix">vpn_key</i>
 						<input type="password" placeholder="Contraseña..." name="Clave" required/>
 
-						<button id="boton" class="waves-effect btn-large green">Ingresar</button>
+						<button id="boton" class="waves-effect btn-large teal darken-2">Ingresar</button>
                         <div class="col l4 s12">
                         <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
-                        <label for="filled-in-box">Recordar</label>              
-                        </div>   
+                        <label for="filled-in-box">Recordar</label>
+                        </div>
                         <div class="col l8 offset-l5 s12 " id="lgn-rec">
                         <a class="waves-effect waves-light modal-trigger" href="#modal1">Recuperar Contraseña</a>
                           <div id="modal1" class="modal">
@@ -51,8 +51,8 @@
                               <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
                             </div>
                         </div>
-                        </div>							
-							
+                        </div>
+
       			</form>
             <?php
       if( base64_decode(@$_GET["tm"]) == "advertencia"){
@@ -65,7 +65,7 @@
       		</div>
     	</div>
     </div>
-    <?php 
+    <?php
     include_once("../Components/footer.php")
    ?>
    <script type="text/javascript">
