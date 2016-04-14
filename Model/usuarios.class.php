@@ -1,6 +1,6 @@
 <?php
 	class Gestion_Usuarios{
-			
+
 			function Create($Id_usuario,$Clave,$Cedula,$Nombre,$Direccion,$Telefono,$Celular,$Correo,$Perfil){
 			//Instanciamos y nos conectamos a la bd
 			$conexion=BarberGarage_BD::Connect();
@@ -14,7 +14,7 @@
 			$query->execute(array($Id_usuario,$Clave,$Cedula,$Nombre,$Direccion,$Telefono,$Celular,$Correo,$Perfil));
 
 			BarberGarage_BD::Disconect();
-		}	
+		}
 
 
 
@@ -36,7 +36,7 @@
 
 			return $results;
 
-			
+
 		}
 
 		  function ValidaUsuario($Id_usuario, $Clave){
@@ -52,9 +52,9 @@
 		      // fetchALL cuando voy a mostrar mas de un registro
 
 		      $results = $query->fetch(PDO::FETCH_BOTH);
-		      BarberGarage_BD::Disconnect();
+		      BarberGarage_BD::Disconect();
 
 		      return $results;
-    	}	
+    	}
 	}
 ?>
