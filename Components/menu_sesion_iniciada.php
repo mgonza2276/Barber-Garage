@@ -15,11 +15,11 @@
     <script>$( document ).ready(function(){
      $(".button-collapse").sideNav();
      });</script>
-    
+
 
 </head>
 <body>
-   
+
 
 
 
@@ -30,7 +30,7 @@
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="#!">Cerrar Sesion</a></li>
+  <li><a class="indigo-text text-darken-4" href="../Controller/cerrarsesion.php">Cerrar Sesion</a></li>
 </ul>
 
 <nav id="menu">
@@ -43,17 +43,17 @@
         <li><a class="contacto" href="collapsible.html">Contacto</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
-      
+
       <ul class="side-nav" id="mobile-demo">
         <li><a class="inicio" href="index2.php">Inicio</a></li>
         <li><a class="acerca" href="badges.html">Acerca de...</a></li>
-        <li><a class="contacto" href="collapsible.html">Contacto</a></li>        
+        <li><a class="contacto" href="collapsible.html">Contacto</a></li>
         <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li> -->
       </ul>
     </div>
   </nav>
-  
-  
+
+
   <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>
         <script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>
