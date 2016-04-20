@@ -33,7 +33,7 @@
       $_SESSION["Correo"]         = $usuario[7];
       $_SESSION["Perfil"]         = $usuario[8];
 
-     header("Location:../View/agregar_usuario.php");
+     header("Location:../View/sesion_iniciada.php");
 
     }
   } catch (Exception $e) {

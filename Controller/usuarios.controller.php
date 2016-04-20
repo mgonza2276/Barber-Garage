@@ -27,6 +27,7 @@
 		try {
 			Gestion_Usuarios::Create($Id_usuario,$Clave,$Cedula,$Nombre,$Direccion,$Telefono,$Celular,$Correo,$Perfil);
 			$mensaje= "Registro exitoso!";
+			
 			} catch (Exception $e) {
 				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			}
