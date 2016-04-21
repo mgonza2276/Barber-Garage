@@ -40,15 +40,5 @@
 		break;
 			 
 		}
-	case 'd':
-        try {
-          $usuario = Gestion_Usuarios::Delete(base64_decode($_REQUEST["ui"]));
-          $msn = "se elimino correctamente";
-        } catch (Exception $e) {
-          $msn = "error";
-        }
-      break;
-
-		header("Location: gestion_usuarios.php?msn=".$msn);
 
 ?>

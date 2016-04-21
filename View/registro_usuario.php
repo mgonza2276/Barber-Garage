@@ -60,9 +60,9 @@
 							<i class="material-icons prefix"hidden>assignment_ind</i> 
 							<input type="hidden" value="Usuario" name="perfil"/>					
 							
-							<!-- <?php //swal //@$_GET["msn"];  ?> -->
-							<!-- swal(<?php //@$_GET["msn"];  ?>) -->
-							<!-- <?php //echo //@$_REQUEST["msn"]; ?> -->
+							<!-- <?php swal @$_GET["msn"];  ?> -->
+							<!-- swal(<?php @$_GET["msn"];  ?>) -->
+							<!-- <?php echo @$_REQUEST["msn"]; ?> -->
 					</form>			
 				</div>
 			</div>
