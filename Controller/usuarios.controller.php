@@ -6,7 +6,7 @@
 	//Llamamos las clases que necesitamos
 	require_once("../Model/usuarios.class.php");
 
-	$origen_pagina = $_REQUEST["pag"];
+	
 	// la variable accion nos indica que parte del crud crearemos
 	$accion=$_REQUEST["acc"];
 	switch ($accion) {
@@ -23,7 +23,7 @@
 		$Celular     =$_POST["celular"];
 		$Correo      =$_POST["correo"];
 		$Perfil      =$_POST["perfil"];
-
+		@$origen_pagina = $_REQUEST["pag"];
 
 		try {
 			Gestion_Usuarios::Create($Id_usuario,$Clave,$Cedula,$Nombre,$Direccion,$Telefono,$Celular,$Correo,$Perfil);
@@ -41,23 +41,24 @@
 		break;
         
         case 'u':
-			$Id_usuario 		= $_POST["cod_rol"];	
-			$Clave			    =$_POST["clave"];
+			$Id_usuario 		= $_POST["id_usuario"];	
+			$Clave              =$_POST["clave"];
 			$Cedula		        =$_POST["cedula"];
 			$Nombre             =$_POST["nombre"];	
 			$Direccion	    	=$_POST["direccion"];
 			$Telefono           =$_POST["telefono"];
 			$Celular            =$_POST["celular"];	
 			$Correo			    =$_POST["correo"];
-            $Perfil             =$_POST["perfil"];
+			$Perfil             =$_POST["perfil"];
+            
 
 			try{
-				Gestion_Usuarios::Update($Id_usuario,$Clave,$Cedula,$Nombre,$Direccion,$Telefono,$Celular,$Correo,$Perfil);
+				Gestion_Usuarios::Update($Id_usuario,$Cedula,$Nombre,$Direccion,$Telefono,$Celular,$Correo,$Perfil);
 				$mensaje = "Se actualizo correctamente";
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
 			}
-			header("Location: ../View/editar.usuario.php?m= ".$mensaje);
+			header("Location: ../View/gestion_usuarios.php?m= ".$mensaje."&ui=".$Id_usuario );
 			break;
 			 
 		
@@ -68,10 +69,10 @@
         } catch (Exception $e) {
           $msn = "error";
         }
-      break;
+     
 
 		header("Location: gestion_usuarios.php?msn=".$msn);
-
+ 		break;
 
     }
 ?>

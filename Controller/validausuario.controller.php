@@ -1,7 +1,8 @@
 <?php
   session_start();
   require_once("../Model/conexion.php");
-  require_once("usuarios.class.php");
+  require_once("../Model/usuarios.class.php");
+  
 
   $Id_usuario = $_POST["Id_usuario"];
   $Clave      = $_POST["Clave"];
@@ -12,14 +13,14 @@
     // El metodo count nos sirve para contar el numero de registros que retorno de la consulta
     $usuario_existe = count($usuario[0]);
 
-    if($usuario_exite == 0){
+    if($usuario_existe == 0){
     // Header("Location: destino.php") redireccionar en php
     // Encriptacion a traves de base64_encode, base64_decode
 
        $msn = base64_encode("Usuario no existe");
        $tipo_msn = base64_encode("advertencia");
 
-       header("Location: index.php?m=".$msn."&tm=".$tipo_msn);
+       header("Location:../View/index.php?m=".$msn."&tm=".$tipo_msn);
     }else{
 
       // Creamos variables de SESSION

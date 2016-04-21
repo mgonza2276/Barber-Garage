@@ -68,7 +68,8 @@
                 <td>
 
                   <a href='editar.usuario.php?ui=".base64_encode($row["Id_usuario"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='controller.usuario.php?ui=".base64_encode($row["Id_usuario"])."&acc=d'><i class='fa fa-trash'></i></a>
+
+                  <a href='../Controller/usuarios.controller.php?ui=".base64_encode($row["Id_usuario"])."&acc=d'><i class='fa fa-trash'></i></a>
 
 
                 </td>

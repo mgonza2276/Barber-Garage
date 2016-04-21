@@ -27,7 +27,7 @@
 	<div class="container">
       	<div class="row">
       		<div id="centro"  class="col l4 s12 offset-s0 offset-l4 input-field" >
-      			<form action="../Model/validausuario.controller.php" method="post">
+      			<form action="../Controller/validausuario.controller.php" method="post">
       				<center><h4>Login</h4></center>
 						<i class="material-icons prefix">account_circle</i>
 						<input type="text" placeholder="Nombre de usuario" name="Id_usuario" required />
