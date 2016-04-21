@@ -42,7 +42,6 @@
         
         case 'u':
 			$Id_usuario 		= $_POST["id_usuario"];	
-			$Clave              =$_POST["clave"];
 			$Cedula		        =$_POST["cedula"];
 			$Nombre             =$_POST["nombre"];	
 			$Direccion	    	=$_POST["direccion"];
