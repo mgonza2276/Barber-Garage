@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>footer</title>
+
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../View/Materialize/materialize/css/materialize.css"  media="screen,projection"/>
@@ -14,7 +10,7 @@
     <link rel="stylesheet" href="../View/iconos/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="estilos_componentes.css">
-</head>
+
 
    
 	 <footer class="page-footer red accent-4">
@@ -22,7 +18,7 @@
             <div class="row">
               <div class="col l6 s12">
                 <h5 class="white-text">Barber Garage</h5>
-                <p class="grey-text text-lighten-4">siguenos en nuestras redes sociales</p>
+                <p class="grey-text text-lighten-4">Siguenos en nuestras redes sociales</p>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Redes Sociales</h5>
@@ -42,11 +38,11 @@
             </div>
           </div>
           <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>
-        <script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>
+         <!--<script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>-->
+        
+      <!-- <script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>-->
         
         </footer>        
 
 	
 
-</html>

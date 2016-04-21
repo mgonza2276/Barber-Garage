@@ -1,6 +1,7 @@
 .fondo{
        background: #fff url("imagenes/FondoLogin.png")no-repeat fixed center ;
 }
+
 #boton{
 	width:100%;
 	margin-top: 5px;
@@ -69,3 +70,20 @@
 /*.contenedor{
 	width: 960px
 }*/
+
+/*estilos del dashboard para el cliente y el Dboard del admin*/
+.fondo_barberia{
+	background: #fff url("imagenes/fondo_barberias.png")no-repeat fixed center ;
+}
+
+.espaciado{
+	width: 200px;
+	height: 500px;
+	margin-bottom: 25px;
+}
+
+.fondo_admin{
+	background: #fff url("imagenes/fondo_admin.png")no-repeat fixed center ;
+}
+
+/**---------------/
