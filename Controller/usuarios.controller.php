@@ -69,9 +69,7 @@
         } catch (Exception $e) {
           $msn = "error";
         }
-     
-
-		header("Location: gestion_usuarios.php?msn=".$msn);
+		header("Location: ../View/gestion_usuarios.php?msn=".$msn);
  		break;
 
     }

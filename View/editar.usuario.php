@@ -58,7 +58,8 @@
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" required  value="<?php echo $usuario[7]?>"/>
 							<i class="material-icons prefix">assignment_ind</i> 
-							<input type="text" value="Usuario" name="perfil" readonly />	
+							<input type="text"  name="perfil" value="<?php echo $usuario[8]?>" />
+								
 							<a id="boton" href="gestion_usuarios.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
 						</div>
 											
