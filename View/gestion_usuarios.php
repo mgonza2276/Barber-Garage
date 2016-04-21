@@ -32,19 +32,8 @@
   <body>
     <h1>GESTIONAR USUARIOS</h1>
 
-    <a href="nuevo_usuario.php">Nuevo Usuario</a>
-<!--
-    <select name="campox">
-      <option value="">Seleccione un usuario</option>
-      <?php
-      // $usuarios = Gestion_Usuarios::ReadAll();
-      //
-      // foreach ($usuarios as $row) {
-      //    echo "<option value='".$row[0]."'>".$row[4]."</option>";
-      // }
+    <a href="agregar_usuario.php">Nuevo Usuario</a>
 
-      ?>
-    </select> -->
 
 
     <table id="datatable" class="display">
@@ -78,7 +67,7 @@
                 <td>".$row["Perfil"]."</td>
                 <td>
 
-                  <a href='edita_usuario.php?ui=".base64_encode($row["Id_usuario"])."'><i class='fa fa-pencil'></i></a>
+                  <a href='editar.usuario.php?ui=".base64_encode($row["Id_usuario"])."'><i class='fa fa-pencil'></i></a>
                   <a href='controller.usuario.php?ui=".base64_encode($row["Id_usuario"])."&acc=d'><i class='fa fa-trash'></i></a>
 
 

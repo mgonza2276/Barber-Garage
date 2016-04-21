@@ -10,7 +10,8 @@
 	// la variable accion nos indica que parte del crud crearemos
 	$accion=$_REQUEST["acc"];
 	switch ($accion) {
-	case 'c':
+	
+        case 'c':
 		# crear
 		#iniciamos las variables   que se envian desde el  formulario  y las  que necesito  para  almacenar la tabla.
 	    $Id_usuario  =$_POST["id_usuario"];
@@ -38,8 +39,28 @@
 			header("location: ../View/agregar_usuario.php?msn=".$mensaje);
 		}
 		break;
+        
+        case 'u':
+			$Id_usuario 		= $_POST["cod_rol"];	
+			$Clave			    =$_POST["clave"];
+			$Cedula		        =$_POST["cedula"];
+			$Nombre             =$_POST["nombre"];	
+			$Direccion	    	=$_POST["direccion"];
+			$Telefono           =$_POST["telefono"];
+			$Celular            =$_POST["celular"];	
+			$Correo			    =$_POST["correo"];
+            $Perfil             =$_POST["perfil"];
+
+			try{
+				Gestion_Usuarios::Update($Id_usuario,$Clave,$Cedula,$Nombre,$Direccion,$Telefono,$Celular,$Correo,$Perfil);
+				$mensaje = "Se actualizo correctamente";
+			}catch(Exception $e){
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+			}
+			header("Location: ../View/editar.usuario.php?m= ".$mensaje);
+			break;
 			 
-		}
+		
 	case 'd':
         try {
           $usuario = Gestion_Usuarios::Delete(base64_decode($_REQUEST["ui"]));
@@ -51,4 +72,6 @@
 
 		header("Location: gestion_usuarios.php?msn=".$msn);
 
+
+    }
 ?>
