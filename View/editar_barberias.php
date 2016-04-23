@@ -1,8 +1,23 @@
+<?php
+ session_start();
+  require_once("../Model/conexion.php");
+  require_once("../Model/barberias.class.php");
+
+   if(!isset($_SESSION["Id_usuario"])){
+    $msn = base64_encode("Debe iniciar sesion primero!");
+    $tipo_msn = base64_encode("advertencia");
+
+    header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
+  }
+
+  $barberias =  Gestion_barberias::ReadbyID(base64_decode($_REQUEST["ui"]));
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>Registrar_Barberia</title>
+	<title>Actualizar_barberias</title>
 	<link  rel="stylesheet" type="text/css" href="estilos.css">
 	  <!--Aqui llamaremos los iconos que necesitaremos-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -33,20 +48,19 @@
       			<div id="formulario" class="col l6 offset-l3">
 					<form action="../Controller/barberias.controller.php" method="POST">
 						<div class="col l12  input-field"  >
-							<center><h4>Registrar Barberia</h4></center>
+							<center><h4>Actualizar Barberia</h4></center>
 							<i class="fa fa-hashtag prefix"></i>
-							<input type="text" placeholder="NIT" name="nit"/>
+							<input type="text" placeholder="NIT" name="nit" value="<?php echo $barberias[0]?>" readonly/>
 							<i class="material-icons prefix">store</i>
-							<input type="text" placeholder="Nombre" name="nombre" />
+							<input type="text" placeholder="Nombre" name="nombre" value="<?php echo $barberias[1]?>"  />
 							<i class="material-icons prefix">location_on</i>
-							<input type="text" placeholder="Direccion" name="direccion"/>
+							<input type="text" placeholder="Direccion" name="direccion" value="<?php echo $barberias[2]?>" />
 							<i class="material-icons prefix">phone</i>
-							<input type="number" placeholder="Telefono" name="telefono" />
+							<input type="number" placeholder="Telefono" name="telefono"value="<?php echo $barberias[3]?>"  />
 							<i class="material-icons prefix">business</i>
-							<input type="text" placeholder="Ciudad" name="ciudad" />							
-							
-							<button id="boton" name="acc" value="c" class="waves-effect  btn-large green" >Registrar</button>
-							<a id="boton" class="waves-effect  btn-large red"  >Cancelar</a>
+							<input type="text" placeholder="Ciudad" name="ciudad" value="<?php echo $barberias[4]?>"  />							
+							<button id="boton" name="acc" value="u" class="waves-effect  btn-large green" >Actualizar</button>
+							<a id="boton" href="gestion_barberias.php"class="waves-effect  btn-large red"  >Cancelar</a>
 							
 						</div>
 					</form>			
