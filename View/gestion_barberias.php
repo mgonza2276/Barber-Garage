@@ -34,7 +34,7 @@
 	<body>	
 		<h1>GESTIONAR BARBERIAS</h1>
 		<a href="Registrar_barberia.php">Nueva Barberia</a>
-		<table id="datatable" class="display">
+		<table id="datatable" class="display highlight centered responsive-table bordered">
       		<thead>
         		<tr>
           			<th>Cod_barberia</th>

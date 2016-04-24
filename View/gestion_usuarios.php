@@ -36,7 +36,7 @@
 
 
 
-    <table id="datatable" class="display">
+    <table id="datatable" class="display highlight centered responsive-table bordered">
       <thead>
         <tr>
           <th>Id_usuario</th>

@@ -31,10 +31,10 @@
 
       		<div class="row">
 
-      			<div id="formulario" class="col l8 offset-l2">
+      			<div id="formulario" class="col l8 s12 offset-l2">
 					<form action="../Controller/usuarios.controller.php" method="POST" >
-						<h3>Registro Usuario</h3>
-						<div class="col l6  input-field"  >
+						<center><h3>Registro Usuario</h3></center>
+						<div class="col l6  s12 input-field"  >
 							<input type="hidden" name="pag" value="registro_usuario">
 							<i class="material-icons prefix">account_circle</i>
 							<input type="text" placeholder="Nombre de Usuario..." name="id_usuario" required />
@@ -44,9 +44,9 @@
 							<input type="number" placeholder="Cedula..." name="cedula"/>
 							<i class="material-icons prefix">person</i>
 							<input type="text" placeholder="Nombre y Apellido..." name="nombre" />
-							<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" >Registrar</button>
+                            <!--<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" >Registrar</button>-->
 						</div>
-						<div class="col l6  input-field"  >
+						<div class="col l6  s12 input-field"  >
 							<i class="material-icons prefix">store</i>
 							<input type="text" placeholder="Dirección..." name="direccion" />
 							<i class="material-icons prefix">phone</i>
@@ -55,7 +55,7 @@
 							<input type="number" placeholder="Celular..." name="celular" id="icon_telephone"/>
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" required />
-							<a id="boton" href="index.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
+							<!--<a id="boton" href="index.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>-->
 						</div>
 							<i class="material-icons prefix"hidden>assignment_ind</i> 
 							<input type="hidden" value="Usuario" name="perfil"/>					
@@ -63,8 +63,17 @@
 							<!-- <?php //swal //@$_GET["msn"];  ?> -->
 							<!-- swal(<?php //@$_GET["msn"];  ?>) -->
 							<!-- <?php //echo //@$_REQUEST["msn"]; ?> -->
+                        <div class="col l6 s12">
+                            <button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" >Registrar</button>
+                                              
+                        </div>
+                        <div class="col l6 s12">
+                            <a id="boton" href="index.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
+                        </div>
 					</form>			
 				</div>
+                    
+                
 			</div>
 		</div>
 		<?php include_once("../Components/footer.php") ?>

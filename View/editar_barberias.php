@@ -58,11 +58,14 @@
 							<i class="material-icons prefix">phone</i>
 							<input type="number" placeholder="Telefono" name="telefono"value="<?php echo $barberias[3]?>"  />
 							<i class="material-icons prefix">business</i>
-							<input type="text" placeholder="Ciudad" name="ciudad" value="<?php echo $barberias[4]?>"  />							
-							<button id="boton" name="acc" value="u" class="waves-effect  btn-large green" >Actualizar</button>
-							<a id="boton" href="gestion_barberias.php"class="waves-effect  btn-large red"  >Cancelar</a>
-							
+							<input type="text" placeholder="Ciudad" name="ciudad" value="<?php echo $barberias[4]?>"  />				
 						</div>
+                        <div class="col l6 s12">
+                            <button id="boton" name="acc" value="u" class="waves-effect  btn-large green" >Actualizar</button>
+                        </div>
+                        <div class="col l6 s12">
+                            <a id="boton" href="gestion_barberias.php"class="waves-effect  btn-large red"  >Cancelar</a>
+                        </div>
 					</form>			
 				</div>
 			</div>

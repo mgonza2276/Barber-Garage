@@ -47,8 +47,7 @@
 							<i class="material-icons prefix">person</i>
 							<input type="text" placeholder="Nombre y Apellido..." name="nombre" value="<?php echo $usuario[3]?>"/>
 							<i class="material-icons prefix">store</i>
-							<input type="text" placeholder="Dirección..." name="direccion" value="<?php echo $usuario[4]?>" />
-							<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="u" >Actualizar</button>
+							<input type="text" placeholder="Dirección..." name="direccion" value="<?php echo $usuario[4]?>" />			
 						</div>
 						<div class="col l6  input-field"  >
 							<i class="material-icons prefix">phone</i>
@@ -58,10 +57,14 @@
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" required  value="<?php echo $usuario[7]?>"/>
 							<i class="material-icons prefix">assignment_ind</i> 
-							<input type="text"  name="perfil" value="<?php echo $usuario[8]?>" />
-								
-							<a id="boton" href="gestion_usuarios.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
+							<input type="text"  name="perfil" value="<?php echo $usuario[8]?>" />							
 						</div>
+                        <div class="col l6 s12">
+                            <button id="boton" class="waves-effect  btn-large cyan" name="acc" value="u" >Actualizar</button>
+                        </div>
+                        <div class="col l6 s12">
+                            <a id="boton" href="gestion_usuarios.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
+                        </div>
 											
 							
 							<!-- <?php //swal //@$_GET["msn"];  ?> -->
