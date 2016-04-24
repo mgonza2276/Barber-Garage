@@ -30,7 +30,10 @@
 
   </head>
   <body>
-    <h1>GESTIONAR USUARIOS</h1>
+    <?php 
+      include_once("../Components/menu_sesion_iniciada.php") 
+    ?> 
+    <center><h1>GESTIONAR USUARIOS</h1></center>
 
     <a href="agregar_usuario.php">Nuevo Usuario</a>
 
@@ -77,7 +80,11 @@
       }
 
       ?>
+          
       </tbody>
     </table>
+      <?php 
+      include_once("../Components/footer.php") 
+    ?> 
   </body>
 </html>
