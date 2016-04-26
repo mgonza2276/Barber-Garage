@@ -41,7 +41,7 @@
 
 .card{
 	width: 400px;
-	height: 400px;
+	height: 500px;
 	/*margin-bottom: 60px;*/
 	margin: auto;
 }
@@ -59,6 +59,18 @@
 	padding: 30px;
 }
 
+.btn_buscar_barberia{
+	margin-left: 55px;
+	margin-bottom: 20px;
+
+}
+
+#barber_relac>a{
+	margin-left: 120px;
+}
+
+
+
 .btn-buscar{
 	margin-left: 80px;
 }
@@ -72,18 +84,74 @@
 }*/
 
 /*estilos del dashboard para el cliente y el Dboard del admin*/
-.fondo_barberia{
-	background: #fff url("imagenes/fondo_barberias.png")no-repeat fixed center ;
+.header{
+	height: 300px;
+	margin-top: -50px;
+	background:  url("imagenes/fondo_bberia.png")no-repeat center ;
 }
 
-.espaciado{
-	width: 200px;
-	height: 500px;
-	margin-bottom: 25px;
+.iconos {
+	height: 330px;
 }
 
-.fondo_admin{
-	background: #fff url("imagenes/fondo_admin.png")no-repeat fixed center ;
+.fa{
+	color: #fff;
 }
+.fa-calendar-o{
+	font-size: 100px;
+	margin-left: 100px;
+
+}
+
+.fa-picture-o{
+	font-size: 100px;
+	margin-left: 100px;
+}
+
+.fa-user{
+	font-size: 100px;
+	margin-left: 100px;
+}
+
+.fa-scissors{
+	font-size: 100px;
+	margin-left: 100px;
+}
+
+.fa-users{
+	font-size: 100px;
+	margin-left: 125px;
+}
+
+.fa-university{
+	font-size: 100px;
+	margin-left: 125px;
+}
+
+.links{
+	color:#fff;
+	font-size: 20px;
+}
+
+.iconos>h3{
+	color: #fff;
+	margin-left:90px; 
+}
+
+.iconos>h4{
+	color: #fff;
+	margin-left:90px; 
+}
+
+.iconos>a{
+	margin-left: 90px;
+}
+
+.header_admin{
+	height: 250px;
+	margin-top: -50px;
+	background:url("imagenes/fondo_admin.png")no-repeat  center ;
+}
+
 
 /**---------------/

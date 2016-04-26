@@ -33,8 +33,8 @@
 				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			}
 		
-		if ($origen_pagina == "registro_usuario") {
-			header("location: ../View/registro_usuario.php?msn=".$mensaje);
+		if ($origen_pagina =="index") {
+			header("location: ../View/index.php?msn=".$mensaje);
 		}elseif ($origen_pagina == "agregar_usuario") {
 			header("location: ../View/agregar_usuario.php?msn=".$mensaje);
 		}

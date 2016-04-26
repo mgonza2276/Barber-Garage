@@ -21,16 +21,14 @@
         <li><a class="inicio" href="../View/index.php">Inicio</a></li>
         <li><a class="acerca" href="#">Acerca de <br> Barber Garage</a></li>
         <li><a class="contacto" href="#">Contacto</a></li>
-        <li><a class="waves-effect waves-light btn " href="../View/login.php">Iniciar Sesion</a></li>
-        <li><a class="waves-effect waves-light btn  " href="../View/registro_usuario.php">Registrarme</a></li>
+        
       </ul>
       
       <ul class="side-nav" id="mobile-demo">
         <li><a class="inicio" href="../View/index.php">Inicio</a></li>
         <li><a class="acerca" href="#">Acerca de...</a></li>
         <li><a class="contacto" href="#">Contacto</a></li>        
-        <li><a class="waves-effect waves-light btn ">Iniciar Sesion</a></li>
-        <li><a class="waves-effect waves-light btn ">Registrarme</a></li>
+        
       </ul>
     </div>
   </nav>
