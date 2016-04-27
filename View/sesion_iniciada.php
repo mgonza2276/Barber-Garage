@@ -14,6 +14,10 @@
       <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="estilos.css">
+
+  <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+
 </head>
 <body Class="fondo">
 
@@ -40,7 +44,7 @@
               <input id="txtnom_barberia"type="text" placeholder="Escriba el Nombre de la Barberia"/>
               <a class="waves-effect waves-light btn btn_buscar_barberia">Buscar Barberia</a>
               <div id="barber_relac">
-                <a href="#">barberia #1</a><br>
+                <a href="Dashboard_Cliente.php">barberia #1</a><br>
                 <a href="#">barberia #2</a><br>
                 <a href="#">barberia #3</a><br>
                 <a href="#">barberia #4</a>
@@ -60,7 +64,6 @@
   
   
   <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+    
 </body>
 </html>

@@ -38,7 +38,7 @@
 
       			<div id="formulario" class="col l8 offset-l2">
 					<form action="../Controller/usuarios.controller.php" method="POST" >
-						<h3>Registro Usuario</h3>
+						<center><h4>Registro Usuario</h4></center>
 						<div class="col l6  input-field"  >
 							<input type="hidden" name="pag" value="index">
 							<i class="material-icons prefix">account_circle</i>
@@ -68,25 +68,31 @@
 							<!-- <?php //swal //@$_GET["msn"];  ?> -->
 							<!-- swal(<?php //@$_GET["msn"];  ?>) -->
 							<!-- <?php //echo //@$_REQUEST["msn"]; ?> -->
-					</form>
+					</form >
+					<hr>
 
 					<!-- inicio login -->
 					
-					<form action="../Controller/validausuario.controller.php" method="post">
+					<form class="form_login" action="../Controller/validausuario.controller.php" method="post">
       				<center><h4>Login</h4></center>
+						
+					<div class="col l6  input-field offset-l3"  >	
 						<i class="material-icons prefix">account_circle</i>
 						<input type="text" placeholder="Nombre de usuario" name="Id_usuario" required />
 
 						<i class="material-icons prefix">vpn_key</i>
 						<input type="password" placeholder="Contraseña..." name="Clave" required/>
 
-						<button id="boton" class="waves-effect btn-large teal darken-2">Ingresar</button>
+						<button href="comp_menu.php" id="boton" class="waves-effect btn-large teal darken-2">Ingresar</button>
               <div class="col l4 s12">
                 <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
                   <label for="filled-in-box">Recordar</label>
               </div>
               <div class="col l8 offset-l5 s12 " id="lgn-rec">
                 <a class="waves-effect waves-light modal-trigger" href="#modal1">Recuperar Contraseña</a>
+                  
+					</div><!--cierre de form login-->
+
                   <div id="modal1" class="modal">
                     <div class="modal-content">
                       <h4>Recuperar contraseña</h4>
@@ -134,7 +140,7 @@
 		<?php include_once("../Components/footer.php") ?>
 
       <!--  -->
-		<script type="text/javascript">
+		 <script type="text/javascript">
       $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();

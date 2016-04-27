@@ -1,17 +1,19 @@
 .fondo{
-       background: #fff url("imagenes/FondoLogin.png")no-repeat fixed center ;
+       background: #d50000 url("imagenes/FondoLogin.png")no-repeat fixed center ;
 }
 
 #boton{
 	width:100%;
 	margin-top: 5px;
 	margin-bottom: 20px;
+	height: 45px;
 }
 
 #formulario{
 	border-radius:10px;
 	margin-top:5%;
 	background-color: #eceff1;
+	
 }
 
 

@@ -34,7 +34,7 @@
       $_SESSION["Correo"]         = $usuario[7];
       $_SESSION["Perfil"]         = $usuario[8];
 
-     header("Location:../View/sesion_iniciada.php");
+     header("Location:../View/comp_menu.php");
 
     }
   } catch (Exception $e) {

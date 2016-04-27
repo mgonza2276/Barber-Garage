@@ -21,7 +21,7 @@
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="#!">Cerrar Sesion</a></li>
+  <li><a class="indigo-text text-darken-4" href="../View/index.php">Cerrar Sesion</a></li>
 </ul>
 
 <!-- submenu de gestionar usuarios -->
