@@ -156,4 +156,23 @@
 }
 
 
-/**---------------/
+/*-------estilos del index collapsible--------*/
+
+.coll_login{
+	width: 560px;
+	margin-left: -15px;
+}
+
+.collapsible-header > i{
+	margin-left: 150px;
+}
+
+.collapsible-header>h5{
+	padding-top: 10px;	
+}
+
+#margen{
+	background-color: #00897b;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Barber Garage</title>
 
-	<head>
-	  <!--Aqui llamaremos los iconos que necesitaremos-->
+	<!--Aqui llamaremos los iconos que necesitaremos-->
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
       <!--Import materialize.css-->
@@ -25,20 +26,25 @@
 		
 	  <!--Aqui llamaremos los estilos necesarios-->
 	  <link  rel="stylesheet" type="text/css" href="estilos.css">      
-	</head>
-
-	<body id="fondo" class="fondo">
+</head>
+<body class="fondo">
 	<?php include_once("../Components/menu.php") ?>
-      	<div class="container">
+
+	<div class="container">
 
 			
-      		<div class="row">
+      	<div class="row">
 
+      	<div id="formulario" class="col l8 offset-l2">
 
-
-      			<div id="formulario" class="col l8 offset-l2">
-					<form action="../Controller/usuarios.controller.php" method="POST" >
-						<center><h4>Registro Usuario</h4></center>
+	<!-- <ul class="collapsible" data-collapsible="accordion"> -->
+	<ul class="collapsible popout" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active"><i class="material-icons ">person</i><h5>Registro Usuario<h5></div>
+      <div class="collapsible-body">
+		<!-- inicio del formulario registro -->
+		<form action="../Controller/usuarios.controller.php" method="POST" >
+						<!-- <center><h5>Registro Usuario</h5></center> -->
 						<div class="col l6  input-field"  >
 							<input type="hidden" name="pag" value="index">
 							<i class="material-icons prefix">account_circle</i>
@@ -69,12 +75,22 @@
 							<!-- swal(<?php //@$_GET["msn"];  ?>) -->
 							<!-- <?php //echo //@$_REQUEST["msn"]; ?> -->
 					</form >
-					<hr>
 
-					<!-- inicio login -->
-					
-					<form class="form_login" action="../Controller/validausuario.controller.php" method="post">
-      				<center><h4>Login</h4></center>
+		<!-- fin formulario de registro -->
+
+
+
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header coll_login "><hr><i class="material-icons">lock_outline</i><h5 id="margen">Iniciar Sesion</h5></div>
+
+
+      <div class="collapsible-body">
+      	<!-- inicio formulario login -->
+
+      	<form class="form_login" action="../Controller/validausuario.controller.php" method="post">
+      				<!-- <center><h5>Login</h5></center> -->
 						
 					<div class="col l6  input-field offset-l3"  >	
 						<i class="material-icons prefix">account_circle</i>
@@ -103,49 +119,39 @@
                       <div class="modal-footer">
                         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
                         <a id="btnCancelar" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                      
+                      	<hr>
+
                       </div>
                   </div>
               </div>
 
       			</form>
 
-      			<!--  -->
-      			<?php
-      if( base64_decode(@$_GET["tm"]) == "advertencia"){
-        $estilos = "orange";
-      }else{
-        $estilos = "red";
-      }
 
-    echo "<div style='background-color:".$estilos."'>".base64_decode(@$_GET["m"])."</div>";?>
-      		</div>
-    	</div>
-    </div>
 
+
+		<!-- fin formulario login -->
+
+      </div>
+    </li>
     
+  </ul>
 
-      			<!--  -->
+</div>
+</div>
+</div>
+
+	<?php include_once("../Components/footer.php") ?>
 
 
-					<!-- fin login -->
-
-
-				</div>
-			
-
-			</div>
-		</div>
-
-		
-		<?php include_once("../Components/footer.php") ?>
-
-      <!--  -->
+	<!--  -->
 		 <script type="text/javascript">
       $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $('.modal-trigger').leanModal();
   });
     </script>
-    <!--  -->
-	</body>
+    <!--  -->	
+</body>
 </html>
