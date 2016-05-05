@@ -68,7 +68,7 @@
 
 .btn_buscar_barberia{
 	margin-left: 55px;
-	margin-bottom: 20px;
+	margin-bottom: 70px;
 
 }
 
@@ -181,3 +181,30 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
+/*Estilos de la parte de buscar barberia en el archivo seccion_iniciada*/
+
+.icono_barber{
+
+	width: 60px;
+	height: 60px;
+	background-color: #fff;
+
+}
+
+.barberia_encontrada{
+	height: 45px;
+	width: 280px;
+	background-color: #FA5858;
+	float: right;
+	margin-top: -50px;
+}
+
+.btn_entrar_bar{
+
+	/*float: right;*/
+	margin-top: -15px;
+	height: 20px;
+
+}
+

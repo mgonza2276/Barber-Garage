@@ -44,10 +44,10 @@
               <input id="txtnom_barberia"type="text" placeholder="Escriba el Nombre de la Barberia"/>
               <a class="waves-effect waves-light btn btn_buscar_barberia">Buscar Barberia</a>
               <div id="barber_relac">
-                <a href="Dashboard_Cliente.php">barberia #1</a><br>
-                <a href="#">barberia #2</a><br>
-                <a href="#">barberia #3</a><br>
-                <a href="#">barberia #4</a>
+                <div class="icono_barber"></div>
+                <div class="barberia_encontrada"><a href="Dashboard_Cliente.php">barberia #1</a></div><br>
+                <a class="waves-effect waves-light btn btn_entrar_bar">Entrar</a>
+                
               </div>
 
             </div>
@@ -59,7 +59,7 @@
   </div>    
   <?php include_once("../Components/footer.php") ?>
 
-      
+
    
   
   
