@@ -52,14 +52,14 @@
 							<i class="material-icons prefix">vpn_key</i>
 							<input type="password" placeholder="Contraseña..." name="clave" required/>
 							<i class="material-icons prefix">person_pin</i>
-							<input type="number" placeholder="Cedula..." name="cedula"/>
+							<input type="number" placeholder="Cedula..." name="cedula" required/>
 							<i class="material-icons prefix">person</i>
-							<input type="text" placeholder="Nombre y Apellido..." name="nombre" />
+							<input type="text" placeholder="Nombre y Apellido..." name="nombre" required/>
 							<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" >Registrar</button>
 						</div>
 						<div class="col l6  input-field"  >
 							<i class="material-icons prefix">store</i>
-							<input type="text" placeholder="Dirección..." name="direccion" />
+							<input type="text" placeholder="Dirección..." name="direccion" required/>
 							<i class="material-icons prefix">phone</i>
 							<input type="number" placeholder="Telefono..." name="telefono" id="icon_telephone" />
 							<i class="material-icons prefix">stay_current_portrait</i>
