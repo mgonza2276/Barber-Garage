@@ -38,6 +38,65 @@
 
 
 		}
+        
+        function ReadbyID($Id_usuario){
+
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = BarberGarage_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "SELECT * FROM usuario WHERE Id_usuario=?";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($Id_usuario));
+
+		//Devolvemos el resultado en un arreglo
+		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+
+		$resultado = $query->fetch(PDO::FETCH_BOTH);
+		
+		BarberGarage_BD::Disconect();
+		return $resultado;
+
+        
+        }
+	
+        
+        function Update($Id_usuario,$Cedula,$Nombre,$Direccion, $Telefono, $Celular, $Correo, $Perfil){
+	//Instanciamos y nos conectamos a la bd
+		$Conexion = BarberGarage_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "UPDATE usuario SET Cedula=?, Nombre=?, Direccion=?, Telefono=?, Celular=?, Correo=?, Perfil=? WHERE Id_usuario = ?" ;
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array( $Cedula, $Nombre, $Direccion, $Telefono, $Celular, $Correo, $Perfil, $Id_usuario));		
+
+		BarberGarage_BD::Disconect();
+	
+	}
+        function Delete($Id_usuario){
+	//Instanciamos y nos conectamos a la bd
+		$Conexion = BarberGarage_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "DELETE FROM usuario WHERE Id_usuario = ?" ;
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($Id_usuario));		
+
+		BarberGarage_BD::Disconect();
+	}
 
 		  function ValidaUsuario($Id_usuario, $Clave){
 		      $pdo=BarberGarage_BD::Connect();

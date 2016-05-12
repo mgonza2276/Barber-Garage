@@ -30,24 +30,16 @@
 
   </head>
   <body>
-    <h1>GESTIONAR USUARIOS</h1>
+    <?php 
+      include_once("../Components/menu_sesion_iniciada.php") 
+    ?> 
+    <center><h1>GESTIONAR USUARIOS</h1></center>
 
-    <a href="nuevo_usuario.php">Nuevo Usuario</a>
-<!--
-    <select name="campox">
-      <option value="">Seleccione un usuario</option>
-      <?php
-      // $usuarios = Gestion_Usuarios::ReadAll();
-      //
-      // foreach ($usuarios as $row) {
-      //    echo "<option value='".$row[0]."'>".$row[4]."</option>";
-      // }
-
-      ?>
-    </select> -->
+    <a href="agregar_usuario.php">Nuevo Usuario</a>
 
 
-    <table id="datatable" class="display">
+
+    <table id="datatable" class="display highlight centered responsive-table bordered">
       <thead>
         <tr>
           <th>Id_usuario</th>
@@ -78,8 +70,9 @@
                 <td>".$row["Perfil"]."</td>
                 <td>
 
-                  <a href='edita_usuario.php?ui=".base64_encode($row["Id_usuario"])."'><i class='fa fa-pencil'></i></a>
-                  <a href='controller.usuario.php?ui=".base64_encode($row["Id_usuario"])."&acc=d'><i class='fa fa-trash'></i></a>
+                  <a href='editar.usuario.php?ui=".base64_encode($row["Id_usuario"])."'><i class='fa fa-pencil'></i></a>
+
+                  <a href='../Controller/usuarios.controller.php?ui=".base64_encode($row["Id_usuario"])."&acc=d'><i class='fa fa-trash'></i></a>
 
 
                 </td>
@@ -87,7 +80,11 @@
       }
 
       ?>
+          
       </tbody>
     </table>
+      <?php 
+      include_once("../Components/footer.php") 
+    ?> 
   </body>
 </html>

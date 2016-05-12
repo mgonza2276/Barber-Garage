@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>menu de navegacion</title>
+
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../View/Materialize/materialize/css/materialize.css"  media="screen,projection"/>
@@ -17,11 +13,6 @@
      });</script>
 
 
-</head>
-<body>
-
-
-
 
 
    <!-- Dropdown Structure -->
@@ -30,7 +21,9 @@
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="../Controller/cerrarsesion.php">Cerrar Sesion</a></li>
+  <li><a class="indigo-text text-darken-4" href="../View/gestion_barberias.php">Gestion de Barberias</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/gestion_usuarios.php">Gestion de Usuarios</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/cerrarsesion.php">Cerrar Sesion</a></li>
 </ul>
 
 <nav id="menu">
@@ -38,16 +31,16 @@
       <a href="#!" class="brand-logo">B-G</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="inicio" href="index2.php">Inicio</a></li>
-        <li><a class="acerca" href="badges.html">Acerca de <br> Barber Garage</a></li>
-        <li><a class="contacto" href="collapsible.html">Contacto</a></li>
+        <li><a class="inicio" href="sesion_iniciada.php">Inicio</a></li>
+        <li><a class="acerca" href="#">Acerca de <br> Barber Garage</a></li>
+        <li><a class="contacto" href="#">Contacto</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
 
       <ul class="side-nav" id="mobile-demo">
-        <li><a class="inicio" href="index2.php">Inicio</a></li>
-        <li><a class="acerca" href="badges.html">Acerca de...</a></li>
-        <li><a class="contacto" href="collapsible.html">Contacto</a></li>
+        <li><a class="inicio" href="sesion_iniciada.php">Inicio</a></li>
+        <li><a class="acerca" href="#">Acerca de...</a></li>
+        <li><a class="contacto" href="#">Contacto</a></li>
         <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li> -->
       </ul>
     </div>
@@ -55,8 +48,6 @@
 
 
   <!--Import jQuery before materialize.js-->
-        <script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>
-        <script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>
+        <!--<script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>-->
+        <!--<script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>-->
 
-</body>
-</html>
