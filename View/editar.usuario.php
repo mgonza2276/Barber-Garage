@@ -10,7 +10,7 @@
     header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
   }
 
-  $usuario =  Gestion_Usuarios::ReadbyID(base64_decode($_SESSION["Id_usuario"]));
+  $usuario =  Gestion_Usuarios::ReadbyID(base64_decode($_REQUEST["ui"]));
 ?>
 <!DOCTYPE html>
 <html>
