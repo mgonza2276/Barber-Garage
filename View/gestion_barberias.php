@@ -23,6 +23,19 @@
 
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
     	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+      
+      <!--  -->
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
+
+      <!-- iconos -->
+      <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
+      
+      <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+      <!--  -->
+
 
     	<script>
     		$(document).ready( function () {
@@ -32,6 +45,8 @@
 	</head>
 	
 	<body>	
+
+    <?php include_once("../Components/menu_admin.php") ?>
 		<h1>GESTIONAR BARBERIAS</h1>
 		<a href="Registrar_barberia.php">Nueva Barberia</a>
 		<table id="datatable" class="display highlight centered responsive-table bordered">
@@ -68,5 +83,7 @@
       		 ?>
       	</tbody>	
       	</table>
+
+        <?php include_once("../Components/footer.php") ?> 
 	</body>
 </html>

@@ -7,7 +7,9 @@
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
-
+	
+		<!-- iconos -->
+      <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,7 +19,7 @@
       	<script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
       	<script type="text/javascript">
-            //consiulta de rol
+            //consulta de rol
 
 	 		$(document).ready(function(){
 	    	$('#select_perfil').material_select();//se repite esta linea cada que se haga un nueva consulta
@@ -32,6 +34,8 @@
 	</head>
 
 	<body id="fondo">
+
+		<?php include_once("../Components/menu_admin.php") ?>
 
 
       	<div class="container">
@@ -74,19 +78,22 @@
 							</div>
 						</div>
 						<div class="col l6  input-field">
-							<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" >Registrar</button>
+						
+						<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" >Registrar</button>
+						
 						</div>
 						<div class="col l6  input-field">
-							<a id="boton" href="../Components/footer.php" class="waves-effect  btn-large  blue-grey darken-1">Cancelar</a>
+							<a id="boton" href="agregar_usuario.php" class="waves-effect  btn-large  blue-grey darken-1">Cancelar</a>
 						</div>
-                        <?
-                            php echo @$_REQUEST["msn"];
-                        ?>
+                         <?php /*echo @$_REQUEST["msn"]; 
+                        */?>
 
 
 					</form>
 				</div>
 			</div>
 		</div>
+
+		<?php include_once("../Components/footer.php") ?> 
 	</body>
 </html>

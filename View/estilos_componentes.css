@@ -107,3 +107,30 @@ p,a{
 #submenu_sesion_admin{
 	margin-top: 80px;
 }
+
+/*Estilos  Menu del Barbero*/
+
+#submenu_sesion_barbero{
+	margin-top: 80px;
+}
+
+#citas_barbero{
+	margin-top: 80px;
+}
+
+.inicio_barbero{
+	margin-right: 130px;
+}
+
+.gest_citas{
+	margin-right: 30px;
+	width: 200px;
+}
+
+.Cortes_barbero{
+	margin-right: 100px;
+}
+
+.Con_usuarios{
+	margin-right: 50px;
+}
