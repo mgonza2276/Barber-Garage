@@ -44,13 +44,16 @@
           alert("Your browser does not support geolocation");
         },
         always: function(){
-          alert("Done!");
+          alert("Hola, Humano!");
         }
       });
     });
   </script>
 </head>
 <body id="fondo">
+<?php  
+  include("../Components/menu_admin.php");
+?>
 	
 	<div class="container">
 
@@ -90,6 +93,10 @@
         	</div>
 		</div>
 	</div>
+  <?php  
+  include("../Components/footer.php");
+?>
+
 		
 </body>
 </html>

@@ -39,7 +39,11 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
+<?php  
+	include("menu_sesion_iniciada.php");
+?>
 <body id="fondo">
+
 	
 	<div class="container">
 
