@@ -22,12 +22,14 @@
 		try {
 			Gestion_barberias::Create($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad);
 			$mensaje= "Registro barberia exitoso!";
+			$tipomensaje = "success";
+			header("Location: ../View/gestion_barberias.php?m= ".$mensaje."&tm=".$tipomensaje);
+			
 			} catch (Exception $e) {
 				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
+				$tipomensaje = "error";
+				header("Location: ../View/Registrar_barberia.php?m= ".$mensaje."&tm=".$tipomensaje);
 			}
-
-		echo "Registro barberia exitoso";
-		header("location: ../View/Registrar_barberia.php?msn=".$mensaje);
 
 		break;
 	case 'u':
@@ -42,10 +44,14 @@
 			try{
 				Gestion_barberias::Update($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad);
 				$mensaje = "Se actualizo correctamente";
+				$tipomensaje = "success";
+				header("Location: ../View/gestion_barberias.php?m= ".$mensaje."&tm=".$tipomensaje);
 			}catch(Exception $e){
-				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();			 
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
+				$tipomensaje = "error";
+				header("Location: ../View/editar_barberias.php?m= ".$mensaje."&tm=".$tipomensaje);		 
 			}
-			header("Location: ../View/gestion_barberias.php?m= ".$mensaje."&ui=".$Cod_barberia );
+			
 			break;
 
 	case 'd':

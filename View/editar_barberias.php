@@ -36,19 +36,22 @@
     <link rel="stylesheet" type="text/css" href="sweet/dist/sweetalert.css">
     <script src="sweet/dist/sweetalert.min.js"></script> 
     
+  <?php 
+      if(isset($_GET["m"])){
+        if($_GET["m"] !=""){
+          echo "<script>alert('".$_GET["m"]."')</script>";
+        }
+      }
+     ?>  
+
     
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<?php  
-	include("menu_sesion_iniciada.php");
-?>
+
 <body id="fondo">
 
-<<<<<<< HEAD
-=======
 	<?php include_once("../Components/menu_admin.php") ?>
->>>>>>> origin/master
 	
 	<div class="container">
 

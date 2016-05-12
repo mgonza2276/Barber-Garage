@@ -23,7 +23,7 @@
 
 	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
     	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
-      
+     
       <!--  -->
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
@@ -35,7 +35,30 @@
     <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
       <!--  -->
+       <script src="sweetalert-master/dist/sweetalert.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
+<?php
 
+       if(isset($_GET["m"]) and isset($_GET["tm"])){
+         if($_GET["m"] != ""){
+           echo "<script>
+                   $(document).ready(function(){
+                      sweetAlert({
+                           title: '...',   
+                           text: '".$_GET["m"]."',   
+                           type: '".$_GET["tm"]."',   
+                           showCancelButton: false,
+                           confirmButtonColor: '#4db6ac',   
+                           confirmButtonText: 'Aceptar',   
+                          cancelButtonText: 'No, cancel plx!',   
+                           closeOnConfirm: false,   
+                           closeOnCancel: false
+                       });
+                   });
+                </script>";
+           }
+         }
+?>
 
     	<script>
     		$(document).ready( function () {

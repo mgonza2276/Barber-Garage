@@ -28,6 +28,13 @@
     <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
+  <?php 
+      if(isset($_GET["m"])){
+        if($_GET["m"] !=""){
+          echo "<script>alert('".$_GET["m"]."')</script>";
+        }
+      }
+     ?>  
 
 
   	<script type="text/javascript">
