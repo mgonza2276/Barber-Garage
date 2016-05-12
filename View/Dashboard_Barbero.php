@@ -3,7 +3,7 @@
 <head>
 
 	<meta charset="UTF-8">
-	<title>Dashboard Cliente</title>
+	<title>Dashboard Barbero</title>
 
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -24,7 +24,7 @@
 <body>
 
 
-	<?php include_once("../Components/menu_barberias.php"); ?>
+	<?php include_once("../Components/menu_barbero.php"); ?>
 	
 	
 	<div class="row ">
@@ -38,20 +38,24 @@
 <div class="row">
     <div class="col s12 m6 l6 iconos  red darken-4"><h3>Citas</h3><a href="#"><i class="fa fa-calendar-o "></i></a><br>
 	<a class="links" href="#">Reservar Cita</a><br>
-	<a class="links" href="#">Modificar Cita</a>
+	<a class="links" href="#">Modificar Cita</a><br>
+	<a class="links" href="#">Consultar Cita</a><br>
+	<a class="links" href="#">Mis Citas Asignadas</a>
 
     </div>
     <div class="col s12 m6 l6  iconos  red darken-3"><h3>Cortes</h3><a href="#"><i class="fa fa-picture-o"></i></a><br>
 	<a class="links" href="#">Ver Cortes</a><br>
 	<a class="links" href="#">Ver Estilos de Barba</a>
     </div>
-    <div class="col s12 m6 l6  iconos  red darken-3"><h3>Perfil</h3><a href="#"><i class="fa fa-user"></i></a><br>
-	<a class="links" href="#">Mi Perfil</a><br>
-	<a class="links" href="#">Cambiar Contraseña</a>
 
+
+    <div class="col s12 m6 l6  iconos  red darken-3"><h3>Consultar usuarios</h3><a href="#"><i class="fa fa-users"></i></a><br>
+	<a class="links" href="#">Consultar Usuarios</a>
     </div>
-    <div class="col s12 m6 l6  iconos  red darken-4"><h3>Servicios</h3><a href="#"><i class="fa fa-scissors"></i></a><br>
-	<a class="links" href="#">Solicitar Servicio</a>
+
+    <div class="col s12 m6 l6  iconos  red darken-4"><h3>Configuracion</h3><a href="#"><i class="fa fa-cog"></i></a><br>
+	<a class="links" href="#">Mi perfil</a><br>
+	<a class="links" href="#">Cambiar mi Contraseña</a>
 
     </div>
   </div>

@@ -21,10 +21,16 @@
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
 
+  
+
 </head>
 <body>
 
- <?php include_once("../Components/menu_admin.php"); ?>
+  <?php include_once("../Components/menu_admin.php"); ?>
+
+ 
+
+ 
 
   <div class="row ">
       <div class="col  s12 m12 l12  header_admin" ></div>
@@ -35,19 +41,19 @@
 
 <div class="container">
 <div class="row">
-    <div class="col s12 m6 l6 iconos  red darken-4"><h4>Gestionar Usuarios</h4><i class="fa fa-users"></i><br>
+    <div class="col s12 m6 l6 iconos  red darken-4"><h4>Gestionar Usuarios</h4><a href="#"><i class="fa fa-users"></i></a><br>
   <a class="links" href="#">Ingresar Usuarios</a><br>
   <a class="links" href="#">Consultar Usuarios</a><br>
   <a class="links" href="#">Modificar Usuarios</a>
     </div>
 
-    <div class="col s12 m6 l6  iconos red darken-3"><h4>Citas</h4><i class="fa fa-calendar-o "></i><br>
+    <div class="col s12 m6 l6  iconos red darken-3"><h4>Citas</h4><a href="#"><i class="fa fa-calendar-o "></i></a><br>
   <a class="links" href="#">Consultar citas</a><br>
     </div>
 
     
 
-    <div class="col s12 m6 l6  iconos  red darken-3"><h4>Gestionar Barberia</h4><i class="fa fa-university"></i><br>
+    <div class="col s12 m6 l6  iconos  red darken-3"><h4>Gestionar Barberia</h4><a href="Registrar_barberia.php"><i class="fa fa-university"></i></a><br>
   <a class="links" href="#">Registrar Barberia</a><br>
   <a class="links" href="#">Agregar servicios</a><br>
   <a class="links" href="#">Modificar Servicios</a><br>
@@ -56,7 +62,7 @@
 
     </div>
 
-    <div class="col s12 m6 l6  iconos red darken-4"><h4>Perfil</h4><i class="fa fa-user"></i><br>
+    <div class="col s12 m6 l6  iconos red darken-4"><h4>Perfil</h4><a href="#"><i class="fa fa-user"></i></a><br>
   <a class="links" href="#">Mi Perfil</a><br>
   <a class="links" href="#">Cambiar Contraseña</a>
     </div>

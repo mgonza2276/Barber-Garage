@@ -6,16 +6,14 @@
 	<link  rel="stylesheet" type="text/css" href="estilos.css">
 	  <!--Aqui llamaremos los iconos que necesitaremos-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	  <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  
       <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
     
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
-
+    
+    
+    <!-- iconos -->
+      <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 
     <link rel="stylesheet" type="text/css" href="sweet/dist/sweetalert.css">
     <script src="sweet/dist/sweetalert.min.js"></script> 
@@ -25,6 +23,13 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
   	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
   	
+    <!--links de materialize-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+
+
+
   	<script type="text/javascript">
     var map;
     $(document).ready(function(){
@@ -51,6 +56,8 @@
   </script>
 </head>
 <body id="fondo">
+
+  <?php include_once("../Components/menu_admin.php") ?>
 	
 	<div class="container">
 
@@ -90,6 +97,6 @@
         	</div>
 		</div>
 	</div>
-		
+		<?php include_once("../Components/footer.php") ?> 
 </body>
 </html>

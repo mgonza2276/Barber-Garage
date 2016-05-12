@@ -22,14 +22,18 @@
       <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
 	  <link  rel="stylesheet" type="text/css" href="estilos.css">      
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>      
-      
-
+      <!-- iconos -->
+  	  <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
+	  
+	  <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
+      <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 		
-	  <!--Aqui llamaremos los estilos necesarios-->
-	  <link  rel="stylesheet" type="text/css" href="estilos.css">      
+	        
 	</head>
 
 	<body id="fondo" class="fondo">
+
+		<?php include_once("../Components/menu_admin.php") ?>
 	
       	<div class="container">
 
@@ -75,7 +79,6 @@
 			</div>
 		</div>
 		<?php include_once("../Components/footer.php") ?>
-		<script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
-      	<script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+		
 	</body>
 </html>

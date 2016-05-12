@@ -106,33 +106,39 @@
 }
 .fa-calendar-o{
 	font-size: 100px;
-	margin-left: 100px;
+	
 
 }
 
 .fa-picture-o{
 	font-size: 100px;
-	margin-left: 100px;
+	
 }
 
 .fa-user{
 	font-size: 100px;
-	margin-left: 100px;
+	
 }
 
 .fa-scissors{
 	font-size: 100px;
-	margin-left: 100px;
+	
 }
 
 .fa-users{
 	font-size: 100px;
-	margin-left: 125px;
+	
 }
+
+
 
 .fa-university{
 	font-size: 100px;
-	margin-left: 125px;
+	
+}
+
+.fa-cog{
+	font-size: 100px;
 }
 
 .links{
@@ -150,9 +156,11 @@
 	margin-left:90px; 
 }
 
-.iconos>a{
+.iconos a{
 	margin-left: 90px;
 }
+
+
 
 .header_admin{
 	height: 250px;

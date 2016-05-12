@@ -1,3 +1,5 @@
+   <?php /*include_once("../Controller/validausuario.controller.php")*/ ?>
+  
 
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -34,7 +36,7 @@
         <li><a class="inicio" href="sesion_iniciada.php">Inicio</a></li>
         <li><a class="acerca" href="#">Acerca de <br> Barber Garage</a></li>
         <li><a class="contacto" href="#">Contacto</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
 
       <ul class="side-nav" id="mobile-demo">

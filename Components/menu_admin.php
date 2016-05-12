@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../View/estilos_componentes.css">
 
+    <!-- aqui  el script para movil -->
     <script>$( document ).ready(function(){
      $(".button-collapse").sideNav();
      });</script>
@@ -26,16 +27,16 @@
 
 <!-- submenu de gestionar usuarios -->
 <ul id="sub_menu_gest_usuario" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#!">Ingresar Usuarios</a></li>
+  <li><a class="indigo-text text-darken-4" href="#">Ingresar Usuarios</a></li>
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Consultar Usuarios</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="#!">Modificar Usuarios</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/gestion_usuarios.php">Modificar Usuarios</a ></li>
 </ul>
 
 <!-- submenu de gestionar barberia -->
 <ul id="sub_menu_gest_barberia" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#!">Registar Barberia</a></li>
+  <li><a class="indigo-text text-darken-4" href="../View/Registrar_barberia.php">Registar Barberia</a></li>
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Agregar Servicios</a ></li>
   <!-- <li class="divider"></li> -->
@@ -43,7 +44,7 @@
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Consultar Servicios</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="#!">Editar Barberia</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/gestion_barberias.php">Editar Barberia</a ></li>
 </ul>
 
 
@@ -71,11 +72,11 @@
 
         <li><a class="consultar_citas" href="#">Consultar<br>Citas</a></li>
         
-        <!-- <li><a class="dropdown-button gestionar_barberia" href="#!" data-activates="sub_menu_gest_barberia">Gestionar<br>Barberia</a></li>
+        <!-- <li><a class="dropdown-button gestionar_barberia" href="#!" data-activates="sub_menu_gest_barberia">Gestionar<br>Barberia</a></li> -->
         
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li> -->
+        <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li> -->
       </ul>
-      </ul>
+      
     </div>
   </nav>
   

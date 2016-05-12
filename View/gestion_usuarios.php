@@ -16,11 +16,30 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+
+    <!--  -->
+    <!--Aqui llamaremos los iconos que necesitaremos-->
+    
+
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
+
+      <!-- iconos -->
+      <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
+
+   
+    <!--  -->
+
+
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
     <script>
     $(document).ready( function () {
@@ -31,7 +50,7 @@
   </head>
   <body>
     <?php 
-      include_once("../Components/menu_sesion_iniciada.php") 
+      include_once("../Components/menu_admin.php") 
     ?> 
     <center><h1>GESTIONAR USUARIOS</h1></center>
 
