@@ -63,14 +63,14 @@
   </script>
 </head>
 <body id="fondo">
-<<<<<<< HEAD
+
 <?php  
   include("../Components/menu_admin.php");
 ?>
-=======
+
 
   <?php include_once("../Components/menu_admin.php") ?>
->>>>>>> origin/master
+
 	
 	<div class="container">
 
@@ -110,14 +110,14 @@
         	</div>
 		</div>
 	</div>
-<<<<<<< HEAD
+
   <?php  
   include("../Components/footer.php");
 ?>
 
 		
-=======
+
 		<?php include_once("../Components/footer.php") ?> 
->>>>>>> origin/master
+
 </body>
 </html>

@@ -23,8 +23,6 @@
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="../View/gestion_barberias.php">Gestion de Barberias</a ></li>
-  <li><a class="indigo-text text-darken-4" href="../View/gestion_usuarios.php">Gestion de Usuarios</a ></li>
   <li><a class="indigo-text text-darken-4" href="../View/cerrarsesion.php">Cerrar Sesion</a></li>
 </ul>
 

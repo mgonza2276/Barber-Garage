@@ -46,7 +46,7 @@
 					<form action="../Controller/usuarios.controller.php" method="POST" >
 						<center><h3>Agregar Usuario</h3></center>
 						<div class="col l6  input-field"  >
-							<input type="hidden" name="pag" value="registro_usuario">
+							<input type="hidden" name="pag" value="agregar_usuario">
 							<i class="material-icons prefix">account_circle</i>
 							<input type="text" placeholder="Id_usuario..." name="id_usuario" required />
 							<i class="material-icons prefix">vpn_key</i>

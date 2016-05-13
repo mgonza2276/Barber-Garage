@@ -27,7 +27,7 @@
 
 <!-- submenu de gestionar usuarios -->
 <ul id="sub_menu_gest_usuario" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#">Ingresar Usuarios</a></li>
+  <li><a class="indigo-text text-darken-4" href="../View/agregar_usuario.php">Ingresar Usuarios</a></li>
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Consultar Usuarios</a ></li>
   <!-- <li class="divider"></li> -->
