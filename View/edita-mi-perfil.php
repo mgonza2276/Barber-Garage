@@ -37,7 +37,7 @@
 </head>
   <body id="fondo" class="fondo">
   <?php 
-      include_once("sesion_iniciada.php") 
+      include_once("../Components/menu_sesion_iniciada.php") 
     ?>
   
         <div class="container">
