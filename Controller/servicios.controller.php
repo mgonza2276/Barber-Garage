@@ -1,19 +1,18 @@
 <?php
-	//Llamamos la conexion a la base de datos
+	
 	require_once("../Model/conexion.php");
 	BarberGarage_BD::Connect();
 	
-	//Llamamos las clases que necesitamos
+	
 	require_once("../Model/servicio.class.php");
 
-	// la variable accion nos indica que parte del crud crearemos
+
 	$accion=$_REQUEST["acc"];
 	switch ($accion) {
 	case 'c':
-		# crear
-		#iniciamos las variables   que se envian desde el  formulario  y las  que necesito  para  almacenar la tabla.
-	    $Id_servicio  	=$_POST["Id_servicio"];
-		$Descripcion =$_POST["Descripcion"];  
+		
+	    $Id_servicio=$_POST["Id_servicio"];
+		$Nombre =$_POST["Nombre"];  
 		$Precio =$_POST["Precio"];
 		$Duracion =$_POST["Duracion"];
 		
@@ -21,17 +20,64 @@
 		
 
 		try {
-			Gestionar_servicio::Create($Id_servicio,$Descripcion,$Precio,$Duracion);
-			$mensaje= "Registro de servico exitoso!";
+			Gestionar_servicio::Create($Id_servicio,$Nombre,$Precio,$Duracion);
+			$mensaje= "Registro de servicio exitoso!";
+			$tipomensaje = "success";
+			 header("Location: ../View/gestion_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);
+			
 			} catch (Exception $e) {
 				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
+				$tipomensaje = "error";
+				header("Location: ../View/agregar_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);	
 			}
 		
-		echo "Registro de rol exitoso";
-		header("location: ../View/agregar_servicio.php?msn=".$mensaje);
-
 		break;
-			 
+		
+		
+
+		case 'u':
+
+		$Id_servicio=$_POST["Id_servicio"];
+		$Nombre =$_POST["Nombre"];  
+		$Precio =$_POST["Precio"];
+		$Duracion =$_POST["Duracion"];
+		
+		
+		
+
+		try {
+			Gestionar_servicio::Update($Id_servicio,$Nombre,$Precio,$Duracion);
+			$mensaje= " el Registro se actualizo exitosamente!";
+			$tipomensaje = "success";
+			 header("Location: ../View/gestion_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);
+			
+			} catch (Exception $e) {
+				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
+				$tipomensaje = "error";
+				header("Location: ../View/editar_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);	
+			}
+		
+		break;
+		
+		case 'd':
+
+		try{
+			Gestionar_servicio::Delete(base64_decode($_REQUEST["ui"]));
+			$mensaje= " el Registro se elimino exitosamente!";
+			$tipomensaje = "success";
+			 header("Location: ../View/gestion_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);
+			
+			
 		}
+		catch(Exception $e){
+			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
+				$tipomensaje = "error";
+				header("Location: ../View/editar_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);
+			}
+			
+			
+ 			break;
+		}
+
 
 ?>

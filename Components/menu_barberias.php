@@ -40,7 +40,7 @@
         <li><a class="cortes" href="#">Ver Cortes</a></li>
         <li><a class="servicios" href="#">Solicitar Servicios</a></li>
         <li><a class="dropdown-button citas" href="#!" data-activates="dropdown2">Citas</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
         
 
       </ul>

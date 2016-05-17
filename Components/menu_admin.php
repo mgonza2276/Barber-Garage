@@ -38,9 +38,9 @@
 <ul id="sub_menu_gest_barberia" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="../View/Registrar_barberia.php">Registar Barberia</a></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="#!">Agregar Servicios</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/agregar_servicio.php">Agregar Servicios</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="#!">Modificar Servicios</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/gestion_servicio.php">Modificar Servicios</a ></li>
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Consultar Servicios</a ></li>
   <!-- <li class="divider"></li> -->
@@ -61,7 +61,7 @@
         
         <li><a class="dropdown-button gestionar_barberia" href="#!" data-activates="sub_menu_gest_barberia">Gestionar Barberia</a></li>
         
-        <li><a class="dropdown-button" href="#!" data-activates="submenu_sesion_admin">Nombre del administrador<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="submenu_sesion_admin"><?php echo $_SESSION["Nombre"] ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
       
 

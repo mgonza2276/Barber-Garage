@@ -1,3 +1,7 @@
+<?php 
+session_start();
+ ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,10 +20,33 @@
     <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
     
-    <script type="text/javascript"></script>
+    <!-- iconos -->
+      <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="sweet/dist/sweetalert.css">
+    <script src="sweet/dist/sweetalert.min.js"></script> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+
+    <!-- mapas -->
+    <script type="text/javascript" src="gmaps/gmaps.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script> 
+    
+    <?php 
+      if(isset($_GET["m"])){
+        if($_GET["m"] !=""){
+          echo "<script>alert('".$_GET["m"]."')</script>";
+        }
+      }
+     ?>
+    
+
+
             
 </head>
 <body>
+    <?php include_once("../Components/menu_admin.php") ?>
     <div class="container">
         <div class="row">
             <div id="centro" class="col l4 offset-l4">
@@ -29,7 +56,7 @@
                             
                             <input type="text" name="Id_servicio" placeholder="Número de servicio" />
                                                         
-                            <input type="text" name="Descripcion"placeholder="Nombre del servicio"/>
+                            <input type="text" name="Nombre" placeholder="Nombre del servicio"/>
                                                      
                             <input type="text" name="Precio" placeholder="Precio"/>
 
@@ -44,9 +71,7 @@
             </div>
         </div>
     </div>
-    <?
-        php echo @$_REQUEST["msn"]; 
-    ?>			
+    <?php include_once("../Components/footer.php") ?> 		
 	
 </body>
 </html>

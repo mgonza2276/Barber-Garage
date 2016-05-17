@@ -47,7 +47,7 @@
 
         <li><a class="Con_usuarios" href="#">Consultar Usuarios</a></li>
         
-        <li><a class="dropdown-button" href="#!" data-activates="submenu_sesion_barbero">Nombre del barbero<i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="submenu_sesion_barbero"><?php echo $_SESSION["Nombre"] ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
 
 

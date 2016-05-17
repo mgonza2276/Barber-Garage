@@ -7,7 +7,7 @@
     $msn = base64_encode("Debe iniciar sesion primero!");
     $tipo_msn = base64_encode("advertencia");
 
-    header("Location: Login.php?m=".$msn."&tm=".$tipo_msn);
+    header("Location: index.php?m=".$msn."&tm=".$tipo_msn);
   }
 ?>
 
@@ -28,4 +28,11 @@ elseif($_SESSION["Perfil"] =="Usuario"){
 
 include_once("sesion_iniciada.php");
 }
+
+elseif($_SESSION["Perfil"] =="Empleado"){
+
+
+include_once("Dashboard_Barbero.php");
+}
+
 ?>

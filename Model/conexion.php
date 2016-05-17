@@ -2,7 +2,7 @@
 	
 	class BarberGarage_BD{
 		private static $db_host="localhost";
-		private static $db_name="barber_garage";
+		private static $db_name="barberia";
 		private static $db_user ="root";
 		private static $db_pass ="";
 		private static $conexion= null;
