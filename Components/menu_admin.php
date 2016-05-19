@@ -1,4 +1,7 @@
+<!-- <?php 
+//session_start();
 
+ ?> -->
  
       <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../View/Materialize/materialize/css/materialize.css"  media="screen,projection"/>
@@ -18,20 +21,20 @@
   
 <!-- Dropdown Structure -->
 <ul id="submenu_sesion_admin" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#!">Mi Perfil</a></li>
+  <li><a class="indigo-text text-darken-4" href="../View/edita-mi-perfil-admin.php">Mi Perfil</a></li>
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="../View/index.php">Cerrar Sesion</a></li>
+  <li><a class="indigo-text text-darken-4" href="../View/cerrarsesion.php">Cerrar Sesion</a></li>
 </ul>
 
 <!-- submenu de gestionar usuarios -->
 <ul id="sub_menu_gest_usuario" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="../View/agregar_usuario.php">Ingresar Usuarios</a></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="#!">Consultar Usuarios</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/gestion_usuarios.php">Consultar Usuarios</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="../View/gestion_usuarios.php">Modificar Usuarios</a ></li>
+  <!-- <li><a class="indigo-text text-darken-4" href="">Modificar Usuarios</a ></li> -->
 </ul>
 
 <!-- submenu de gestionar barberia -->
@@ -40,11 +43,11 @@
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="../View/agregar_servicio.php">Agregar Servicios</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="../View/gestion_servicio.php">Modificar Servicios</a ></li>
+  <!-- <li><a class="indigo-text text-darken-4" href="">Modificar Servicios</a ></li> -->
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="#!">Consultar Servicios</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/gestion_servicio.php">Consultar Servicios</a ></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="../View/gestion_barberias.php">Editar Barberia</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/gestion_barberias.php">Consultar Barberias </a ></li>
 </ul>
 
 
@@ -53,7 +56,7 @@
       <a href="#!" class="brand-logo">B-G</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="inicio_administrador" href="Dashboard_Admin.php">Inicio</a></li>
+        <li><a class="inicio_administrador" href="../View/Dashboard_Admin.php">Inicio</a></li>
         
         <li><a class="dropdown-button gestionar_usuarios" href="#!" data-activates="sub_menu_gest_usuario">Gestionar  Usuarios</a></li>
 

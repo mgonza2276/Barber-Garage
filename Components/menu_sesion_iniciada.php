@@ -1,4 +1,6 @@
-   <?php /*include_once("../Controller/validausuario.controller.php")*/ ?>
+   <?php /*include_once("../Controller/validausuario.controller.php")*/ 
+      @session_start();
+   ?>
   
 
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,7 +21,7 @@
 
    <!-- Dropdown Structure -->
 <ul id="dropdown1" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#!">Mi Perfil</a></li>
+  <li><a class="indigo-text text-darken-4" href="edita-mi-perfil.php">Mi Perfil</a></li>
   <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
   <!-- <li class="divider"></li> -->

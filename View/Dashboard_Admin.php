@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<?php 
+	@session_start();
+
+ ?> 
+>>>>>>> origin/master
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +71,7 @@
     </div>
 
     <div class="col s12 m6 l6  iconos red darken-4"><h4>Perfil</h4><a href="#"><i class="fa fa-user"></i></a><br>
-  <a class="links" href="#">Mi Perfil</a><br>
+  <a class="links" href="edita-mi-perfil-admin.php">Mi Perfil</a><br>
   <a class="links" href="#">Cambiar Contraseña</a>
     </div>
     
