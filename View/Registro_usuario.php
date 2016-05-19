@@ -66,22 +66,22 @@
 						<div class="col l6  input-field"  >
 							<input type="hidden" name="pag" value="registro_usuario">
 							<i class="material-icons prefix">account_circle</i>
-							<input type="text" placeholder="Nombre de Usuario..." name="id_usuario" required />
+							<input type="text" placeholder="Nombre de Usuario..." name="id_usuario" id="nickname" required />
 							<i class="material-icons prefix">vpn_key</i>
 							<input type="password" placeholder="Contraseña..." name="clave" id="clave" required/>
 							<i class="material-icons prefix">person_pin</i>
-							<input type="number" placeholder="Cedula..." name="cedula" required/>
+							<input type="number" placeholder="Cedula..." name="cedula" id="cedula" required/>
 							<i class="material-icons prefix">person</i>
 							<input type="text" placeholder="Nombre y Apellido..." name="nombre" id="nombre" required/>
 							<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" onclick="return validar()" >Registrar</button>
 						</div>
 						<div class="col l6  input-field"  >
 							<i class="material-icons prefix">store</i>
-							<input type="text" placeholder="Dirección..." name="direccion" required/>
+							<input type="text" placeholder="Dirección..." name="direccion" id="direccion" required/>
 							<i class="material-icons prefix">phone</i>
-							<input type="number" placeholder="Telefono..." name="telefono" id="icon_telephone" />
+							<input type="number" placeholder="Telefono..." name="telefono" id="telefono" />
 							<i class="material-icons prefix">stay_current_portrait</i>
-							<input type="number" placeholder="Celular..." name="celular" id="icon_telephone"/>
+							<input type="number" placeholder="Celular..." name="celular" id="celular"/>
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" id="email"required />
 							<a id="boton" href="Registro_usuario.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
