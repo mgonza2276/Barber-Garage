@@ -66,13 +66,17 @@
 						<div class="col l6  input-field"  >
 							<input type="hidden" name="pag" value="registro_usuario">
 							<i class="material-icons prefix">account_circle</i>
+<<<<<<< HEAD
 							<input type="text" placeholder="Nombre de Usuario..." name="id_usuario" id="nickname" required />
+=======
+							<input type="text" placeholder="Nombre de Usuario.." name="id_usuario" required />
+>>>>>>> origin/master
 							<i class="material-icons prefix">vpn_key</i>
 							<input type="password" placeholder="Contraseña..." name="clave" id="clave" required/>
 							<i class="material-icons prefix">person_pin</i>
 							<input type="number" placeholder="Cedula..." name="cedula" id="cedula" required/>
 							<i class="material-icons prefix">person</i>
-							<input type="text" placeholder="Nombre y Apellido..." name="nombre" id="nombre" required/>
+							<input type="text" placeholder="Nombre Completo..." name="nombre" id="nombre" required/>
 							<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" onclick="return validar()" >Registrar</button>
 						</div>
 						<div class="col l6  input-field"  >
@@ -84,7 +88,7 @@
 							<input type="number" placeholder="Celular..." name="celular" id="celular"/>
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" id="email"required />
-							<a id="boton" href="Registro_usuario.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
+							<a id="boton" href="index.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
 						</div>
 							<i class="material-icons prefix"hidden>assignment_ind</i> 
 							<input type="hidden" value="Usuario" name="perfil"/>					
