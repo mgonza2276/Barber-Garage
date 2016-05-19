@@ -31,77 +31,48 @@
 	<?php include_once("../Components/menu.php") ?>
 
 	<div class="container ">
+    
+    <div class="row">
 
-			
-      	<div class="row">
-
-      	<div id="centro"  class="col l4 s12 offset-s0 offset-l4 input-field" >
+      <div id="centro"  class="col l4 s12 offset-s0 offset-l4 input-field" >
       	
+        <form id="formulario" action="../Controller/validausuario.controller.php" method="post">				
 
-      	<form class="form_login" action="../Controller/validausuario.controller.php" method="post">
-					
-					<a href="Registro_usuario.php">Registrarse</a>
+      				    <center><h3 id="bajar_titulo">Login</h3></center>
 
-      				<center><h3 id="bajar_titulo">Login</h3></center>
-						
-						
-						<i class="material-icons prefix">account_circle</i>
-						<input type="text" placeholder="Nombre de usuario" name="Id_usuario" required />
-
-						<i class="material-icons prefix">vpn_key</i>
-						<input type="password" placeholder="Contraseña..." name="Clave" required/>
-
-						<button href="comp_menu.php" id="boton" class="waves-effect btn-large teal darken-2">Ingresar</button>
-              <div class="col l4 s12">
-                <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
-                  <label for="filled-in-box">Recordar</label>
+						        <i class="material-icons prefix">account_circle</i>
+						        <input type="text" placeholder="Nombre de usuario" name="Id_usuario" required />
+						        
+                    <i class="material-icons prefix">vpn_key</i>
+						        <input type="password" placeholder="Contraseña..." name="Clave" required/>
+						        
+                    <button href="comp_menu.php" id="boton" class="waves-effect waves-light btn cyan">Ingresar</button>
+              
+              <div class="col l12 s12">
+                    <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
+                      <label for="filled-in-box">Recordar</label>
+                      <br>
+                      <br>
+                      <hr>
               </div>
-              <div class="col l8 offset-l5 s12 " id="lgn-rec">
-                <a class="waves-effect waves-light modal-trigger" href="#modal1">Recuperar Contraseña</a>
+              <div class="col l12 s12">
                   
-					</div>
-
-                  <div id="modal1" class="modal">
-                    <div class="modal-content">
-                      <h4>Recuperar contraseña</h4>
-                        <p>Ingrese el correo </p>
-                          <!-- <input type="text" placeholder="Correo electrónico" name="RecCorreo" required/> -->
-                        <p>En breves segundos te enviaremos un enlace al correo ingresado</p>
-                    </div>
-                      <div class="modal-footer">
-                        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Aceptar</a>
-                        <a id="btnCancelar" href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cancelar</a>
-                      
-                      	<hr>
-
-                      </div>
-                  </div>
-              </div>
-
-      			</form>
-
-
-
-
-		<!-- fin formulario login -->
-
-      </div>
-   
-
+                  <button id="boton" class="waves-effect waves-light btn blue-grey darken-1" href="Registro_usuario.php">Regístrate</button>
+              </div> 
+        </form>
+      </div>		
+                  <!-- fin formulario login -->
+    </div>
+  </div>
 </div>
-</div>
-
-
 	<?php include_once("../Components/footer.php") ?>
-
-
-	<!--  -->
 		 <script type="text/javascript">
-      $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $('.modal-trigger').leanModal();
-  });
+        $(document).ready(function()
+        {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+        });
     </script>
-    <!--  -->	
+    	
 </body>
 </html>

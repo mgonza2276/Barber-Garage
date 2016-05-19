@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-=======
-<?php 
-	@session_start();
-
- ?> 
->>>>>>> origin/master
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
