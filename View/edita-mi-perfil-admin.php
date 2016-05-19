@@ -37,7 +37,7 @@
 </head>
   <body id="fondo" class="fondo">
   <?php 
-      include_once("../Components/menu_sesion_iniciada.php") 
+      include_once("../Components/menu_admin.php") 
     ?>
   
         <div class="container">
@@ -72,7 +72,7 @@
                             <button id="boton" class="waves-effect  btn-large cyan" name="acc" value="u" >Actualizar</button>
                         </div>
                         <div class="col l6 s12">
-                            <a id="boton" href="sesion_iniciada.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
+                            <a id="boton" href="Dashboard_Admin.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
                         </div>
                       
               

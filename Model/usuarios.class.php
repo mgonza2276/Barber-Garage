@@ -1,4 +1,5 @@
 <?php
+	
 	class Gestion_Usuarios{
 
 			function Create($Id_usuario,$Clave,$Cedula,$Nombre,$Direccion,$Telefono,$Celular,$Correo,$Perfil){
