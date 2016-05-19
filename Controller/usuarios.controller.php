@@ -7,6 +7,8 @@
 	require_once("../Model/usuarios.class.php");
 
 	
+
+	
 	// la variable accion nos indica que parte del crud crearemos
 	$accion=$_REQUEST["acc"];
 	switch ($accion) {
