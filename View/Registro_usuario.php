@@ -66,11 +66,7 @@
 						<div class="col l6  input-field"  >
 							<input type="hidden" name="pag" value="registro_usuario">
 							<i class="material-icons prefix">account_circle</i>
-<<<<<<< HEAD
 							<input type="text" placeholder="Nombre de Usuario..." name="id_usuario" id="nickname" required />
-=======
-							<input type="text" placeholder="Nombre de Usuario.." name="id_usuario" required />
->>>>>>> origin/master
 							<i class="material-icons prefix">vpn_key</i>
 							<input type="password" placeholder="Contraseña..." name="clave" id="clave" required/>
 							<i class="material-icons prefix">person_pin</i>

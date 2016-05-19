@@ -57,7 +57,7 @@
               </div>
               <div class="col l12 s12">
                   
-                  <button id="boton" class="waves-effect waves-light btn blue-grey darken-1" href="Registro_usuario.php">Regístrate</button>
+                  <a id="boton" class="waves-effect waves-light btn blue-grey darken-1" href="Registro_usuario.php"><spam>Regístrate</spam></a>
               </div> 
         </form>
       </div>		
