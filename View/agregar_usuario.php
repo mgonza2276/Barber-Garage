@@ -35,6 +35,26 @@
 
     	<!--Aqui llamaremos los estilos necesarios-->
 	  <link  rel="stylesheet" type="text/css" href="estilos.css">
+	  
+		<script type="text/javascript" src="../Controller/validarcampos.js"></script>
+	  <!--Aqui llamaremos los estilos necesarios-->
+	  <link  rel="stylesheet" type="text/css" href="estilos.css">    
+
+	  <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
+
+		<script src="sweetalert-master/dist/sweetalert.min.js"></script>
+     	<script type="text/javascript">
+     	$(document).ready(function(){
+     	
+        <?php
+
+	  	if(isset($_GET["msn"])){
+	  		echo "swal( '".$_GET["msn"]."','', 'success');";
+	  	}
+	  ?>
+	})
+	  </script>     	
+
 
 	</head>
 
@@ -53,25 +73,25 @@
 						<div class="col l6  input-field"  >
 							<input type="hidden" name="pag" value="agregar_usuario">
 							<i class="material-icons prefix">account_circle</i>
-							<input type="text" placeholder="Id_usuario..." name="id_usuario" required />
+							<input type="text" placeholder="Id_usuario..." name="id_usuario" id="nickname" />
 							<i class="material-icons prefix">vpn_key</i>
-							<input type="password" placeholder="Clave..." name="clave" required/>
+							<input type="password" placeholder="Clave..." name="clave" id="clave"/>
 							<i class="material-icons prefix">person_pin</i>
-							<input type="number" placeholder="Cedula..." name="cedula" required />
+							<input type="number" placeholder="Cedula..." name="cedula" id="cedula"/>
 							<i class="material-icons prefix">person</i>
-							<input type="text" placeholder="Nombre..." name="nombre" required />
+							<input type="text" placeholder="Nombre..." name="nombre" id="nombre" />
 
 				</div>
 
 						<div class="col l6  input-field"  >
 							<i class="material-icons prefix">store</i>
-							<input type="text" placeholder="Dirección..." name="direccion" />
+							<input type="text" placeholder="Dirección..." name="direccion" id="direccion" />
 							<i class="material-icons prefix">phone</i>
-							<input type="number" placeholder="Telefono..." name="telefono" id="icon_telephone" />
+							<input type="number" placeholder="Telefono..." name="telefono" id="telefono" />
 							<i class="material-icons prefix">stay_current_portrait</i>
-							<input type="number" placeholder="Celular..." name="celular" id="icon_telephone"/>
+							<input type="number" placeholder="Celular..." name="celular" id="celular" />
 							<i class="material-icons prefix">email</i>
-							<input type="email" placeholder="Correo..." name="correo" required />
+							<input type="email" placeholder="Correo..." name="correo" id="email" />
 						</div>
 						<div class="col l12 input-field">
 								<i class="material-icons prefix">email</i>
@@ -84,7 +104,7 @@
 						</div>
 						<div class="col l6  input-field">
 						
-						<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" >Registrar</button>
+						<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" onclick="return validar()">Registrar</button>
 						
 						</div>
 						<div class="col l6  input-field">

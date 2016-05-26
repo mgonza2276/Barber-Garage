@@ -13,8 +13,12 @@
       <!-- iconos -->
   	  <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 
-	  <!--Aqui llamaremos los estilos necesarios-->
-	  <link  rel="stylesheet" type="text/css" href="estilos.css">
+	  <script type="text/javascript" src="../Controller/validarcampos.js"></script>
+   
+
+    <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
+
+    <script src="sweetalert-master/dist/sweetalert.min.js"></script>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -24,8 +28,27 @@
       <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
 		
-	  <!--Aqui llamaremos los estilos necesarios-->
-	  <link  rel="stylesheet" type="text/css" href="estilos.css">      
+      <script type="text/javascript" src="../Controller/validarcampos.js"></script>
+    <!--Aqui llamaremos los estilos necesarios-->
+    <link  rel="stylesheet" type="text/css" href="estilos.css">    
+
+    <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
+
+    <script src="sweetalert-master/dist/sweetalert.min.js"></script>
+      <script type="text/javascript">
+      $(document).ready(function(){
+      
+        <?php
+
+      if(isset($_GET["m"])){
+        echo "swal( '".$_GET["m"]."','', 'warning');";
+      }
+    ?>
+  })
+    </script>
+
+
+
 </head>
 <body class="fondo">
 	<?php include_once("../Components/menu.php") ?>
@@ -41,12 +64,12 @@
       				    <center><h3 id="bajar_titulo">Login</h3></center>
 
 						        <i class="material-icons prefix">account_circle</i>
-						        <input type="text" placeholder="Nombre de usuario" name="Id_usuario" required />
+						        <input type="text" placeholder="Nombre de usuario" name="Id_usuario" id="id_usuario"required />
 						        
                     <i class="material-icons prefix">vpn_key</i>
-						        <input type="password" placeholder="Contraseña..." name="Clave" required/>
+						        <input type="password" placeholder="Contraseña..." name="Clave" id="clave_usuario"required/>
 						        
-                    <button href="comp_menu.php" id="boton" class="waves-effect waves-light btn cyan">Ingresar</button>
+                    <button href="comp_menu.php" id="boton" class="waves-effect waves-light btn cyan" onclick="return validar_login()">Ingresar</button>
               
               <div class="col l12 s12">
                     <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
@@ -65,6 +88,8 @@
     </div>
   </div>
 </div>
+
+
 	<?php include_once("../Components/footer.php") ?>
 		 <script type="text/javascript">
         $(document).ready(function()
