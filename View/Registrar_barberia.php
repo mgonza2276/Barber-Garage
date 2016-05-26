@@ -45,29 +45,37 @@ session_start();
   	<script type="text/javascript">
     var map;
     $(document).ready(function(){
-      var map = new GMaps({
+      var map = new GMaps
+      ({
         el: '#map',
-        lat: -12.043333,
-        lng: -77.028333
+        lat: -6.1637075,
+        lng: -75.6231504
+         
       });
+          
+      
+     
       GMaps.geolocate({
         success: function(position){
           map.setCenter(position.coords.latitude, position.coords.longitude);
+          
         },
         error: function(error){
-          alert('Geolocation failed: '+error.message);
+          alert('Geolocalizacion fallida: '+error.message);
         },
         not_supported: function(){
           alert("Your browser does not support geolocation");
         },
-        always: function(){
-          alert("Hola, Humano!");
-        }
+               
+        
+        // always: function(){
+        //   alert("Hola, Humano!");
+        // }
       });
     });
   </script>
 </head>
-<body id="fondo">
+<body id="fondomapa">
 
 <?php  
   include("../Components/menu_admin.php");
@@ -81,12 +89,12 @@ session_start();
 
       	<div class="row">
 
-      		<div id="formulario" class="col l6 offset-l3">
+      		<div id="formMapa" class="col l12 s12 m10 ">
           		<form action="../Controller/barberias.controller.php" method="POST">
             		<div class="col l12  input-field"  >
              <!-- aqui -->
              			<center><h4>Registrar Barberia</h4></center>
-            			<div class="col l6 input-field ">
+            			<div class="col l4 input-field ">
             <!-- aqui -->
               
               				<i class="fa fa-hashtag prefix"></i>
@@ -99,17 +107,20 @@ session_start();
               					<input type="number" placeholder="Telefono" name="telefono" required/>
               				<i class="material-icons prefix">business</i>
               					<input type="text" placeholder="Ciudad" name="ciudad" required/>
-              				<a id="boton" class="waves-effect  btn-large red "  >Cancelar</a>
+              				
              			</div>            
-            			<div class="col l6 input-field">
+            			<div class="col l8 input-field">
             				<b>Selecciona tu ubicacion :</b>
                   			<div id="map">
                   			</div>
-                  			<button id="boton" name="acc" value="c" class="waves-effect  btn-large green " >Registrar</button>       
-             			</div> 
-						
-             				
-             			   
+                        <div class="col l6">
+                        <button id="boton" name="acc" value="c" class="waves-effect  btn-large green " >Registrar</button> 
+                        </div>
+                        <div class="col l6">
+                        <a id="boton" class="waves-effect  btn-large red "  >Cancelar</a>
+                        </div>
+                  			      
+             			</div>             			   
             		</div>
           		</form>     
         	</div>
