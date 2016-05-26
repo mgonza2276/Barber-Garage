@@ -58,14 +58,25 @@
 						<div class="col l6  input-field"  >
 							<input type="hidden" name="pag" value="registro_usuario">
 							<i class="material-icons prefix">account_circle</i>
+							
 							<input type="text" placeholder="Nombre de Usuario..." name="id_usuario" id="nickname" required />
+							<span id="resultadobusqueda" class="red-text accent-3 left"></span>
+							<div id="last">							
+							
 							<i class="material-icons prefix">vpn_key</i>
 							<input type="password" placeholder="Contraseña..." name="clave" id="clave" required/>
+							
 							<i class="material-icons prefix">person_pin</i>
 							<input type="number" placeholder="Cedula..." name="cedula" id="cedula" required/>
+							
 							<i class="material-icons prefix">person</i>
 							<input type="text" placeholder="Nombre Completo..." name="nombre" id="nombre" required/>
+							
+							<div id="buttons">
 							<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" onclick="return validar()" >Registrar</button>
+							</div>
+							</div>
+
 						</div>
 						<div class="col l6  input-field"  >
 							<i class="material-icons prefix">store</i>
@@ -101,7 +112,7 @@
           var id_usuario = $("#nickname").val();
           var accion = "existe_usuario";
 
-          $.post("../Controller/usuarios.controller.php", {id_usuario: id_usuario, accion: accion}, function(result){
+          $.post("../Controller/usuarios.controller.php", {id_usuario: Id_usuario, accion: acc}, function(result){
 
               $("#resultadobusqueda").html(result.msn); 
 

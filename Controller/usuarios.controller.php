@@ -74,9 +74,9 @@
  		break;
 
  	case 'existe_usuario':
-	  	$Id_usuario = $_POST["id_usuario"]; 
+	  	$id_usuario = $_POST["id_usuario"]; 
 	  	try{
-	  		$usuario = Gestion_Usuarios::ReadbyId($Id_usuario);
+	  		$usuario = Gestion_Usuarios::ReadbyNICK($Id_usuario);
 
 	  		if(count($usuario[0]) > 0){
 	  			$existe = true;	
