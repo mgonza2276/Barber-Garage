@@ -57,9 +57,9 @@
 							<i class="material-icons prefix">vpn_key</i>
 							<input type="password" placeholder="Clave..." name="clave" required/>
 							<i class="material-icons prefix">person_pin</i>
-							<input type="number" placeholder="Cedula..." name="cedula"/>
+							<input type="number" placeholder="Cedula..." name="cedula" required />
 							<i class="material-icons prefix">person</i>
-							<input type="text" placeholder="Nombre..." name="nombre" />
+							<input type="text" placeholder="Nombre..." name="nombre" required />
 
 				</div>
 

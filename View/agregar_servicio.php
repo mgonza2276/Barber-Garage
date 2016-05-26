@@ -54,13 +54,13 @@ session_start();
                     <center>
                         <h4>Agregar Servicio</h4>
                             
-                            <input type="text" name="Id_servicio" placeholder="Número de servicio" />
+                            <input type="text" name="Id_servicio" placeholder="Número de servicio" required />
                                                         
-                            <input type="text" name="Nombre" placeholder="Nombre del servicio"/>
+                            <input type="text" name="Nombre" placeholder="Nombre del servicio" required />
                                                      
-                            <input type="text" name="Precio" placeholder="Precio"/>
+                            <input type="text" name="Precio" placeholder="Precio" required />
 
-                            <input type="text" name="Duracion" placeholder="Duracion"/>
+                            <input type="text" name="Duracion" placeholder="Duracion" />
                             
                             <button id="btnreg" type="submit"  class="waves-effect  btn-large green" style="width:100%" name="acc" value="c">Agregar
                             </button>

@@ -64,13 +64,13 @@
 							<i class="fa fa-hashtag prefix"></i>
 							<input type="text" placeholder="NIT" name="nit" value="<?php echo $barberias[0]?>" readonly/>
 							<i class="material-icons prefix">store</i>
-							<input type="text" placeholder="Nombre" name="nombre" value="<?php echo $barberias[1]?>"  />
+							<input type="text" placeholder="Nombre" name="nombre" required value="<?php echo $barberias[1]?>"  />
 							<i class="material-icons prefix">location_on</i>
-							<input type="text" placeholder="Direccion" name="direccion" value="<?php echo $barberias[2]?>" />
+							<input type="text" placeholder="Direccion" name="direccion" required value="<?php echo $barberias[2]?>" />
 							<i class="material-icons prefix">phone</i>
-							<input type="number" placeholder="Telefono" name="telefono"value="<?php echo $barberias[3]?>"  />
+							<input type="number" placeholder="Telefono" name="telefono" required value="<?php echo $barberias[3]?>"  />
 							<i class="material-icons prefix">business</i>
-							<input type="text" placeholder="Ciudad" name="ciudad" value="<?php echo $barberias[4]?>"  />				
+							<input type="text" placeholder="Ciudad" name="ciudad" required value="<?php echo $barberias[4]?>"  />				
 						</div>
                         <div class="col l6 s12">
                             <button id="boton" name="acc" value="u" class="waves-effect  btn-large green" >Actualizar</button>

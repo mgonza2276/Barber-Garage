@@ -44,14 +44,6 @@
 
 </head>
 
-
-
-
-
-
-
-
-
 <body class="fondo">
 	<?php include_once("../Components/menu.php") ?>
 
@@ -61,8 +53,8 @@
 
 		<div id="formulario" class="col l8 offset-l2">
 
-			<form action="../Controller/usuarios.controller.php" name="fvalidacion"method="POST" >
-						<center><h4>Registro Usuario</h4></center>
+			<form action="../Controller/usuarios.controller.php" name="fvalidacion" method="POST" >
+						<center><h4>Regístrate</h4></center>
 						<div class="col l6  input-field"  >
 							<input type="hidden" name="pag" value="registro_usuario">
 							<i class="material-icons prefix">account_circle</i>
@@ -89,9 +81,7 @@
 							<i class="material-icons prefix"hidden>assignment_ind</i> 
 							<input type="hidden" value="Usuario" name="perfil"/>					
 							
-							<!-- <?php //swal //@$_GET["msn"];  ?> -->
-							<!-- swal(<?php //@$_GET["msn"];  ?>) -->
-							<!-- <?php //echo //@$_REQUEST["msn"]; ?> -->
+							
 					</form >
 
 				</div>
@@ -100,6 +90,37 @@
 
 		</div>
 		<?php include_once("../Components/footer.php") ?>
+
+		<script type="text/javascript" src="Jquery/jquery-1.12.1.min.js"></script>
+		<script type="text/javascript" src="materialize/js/materialize.js"></script>
+		<script>
+		$(document).ready(function() {
+	    $('select').material_select();
+
+      $("#nickname").keyup(function(){
+          var id_usuario = $("#nickname").val();
+          var accion = "existe_usuario";
+
+          $.post("../Controller/usuarios.controller.php", {id_usuario: id_usuario, accion: accion}, function(result){
+
+              $("#resultadobusqueda").html(result.msn); 
+
+              if(result.ue == true){ 
+                $("button").prop("disabled",true);
+                $("#last").addClass("hide");
+              }
+
+              if(result.ue == false){ 
+                $("button").prop("disabled",false);
+                $("#last").removeClass("hide");
+              }
+          }, "json");
+      });
+
+
+	  });
+
+	</script>
 		
 
 	</body>

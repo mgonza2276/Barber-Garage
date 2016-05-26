@@ -61,11 +61,11 @@
                     <center>
                         <h4>Editar Servicio</h4>
                             
-                		<input type="text" name="Id_servicio" placeholder="Número de servicio" value="<?php echo $servicios[0]; ?>" />
+                		<input type="text" name="Id_servicio" placeholder="Número de servicio" required value="<?php echo $servicios[0]; ?>" />
                                                         
-                		<input type="text" name="Nombre" placeholder="Nombre del servicio" value="<?php echo $servicios[1] ?>"/>
+                		<input type="text" name="Nombre" placeholder="Nombre del servicio" required value="<?php echo $servicios[1] ?>"/>
                                                      
-                		<input type="text" name="Precio" placeholder="Precio" value="<?php echo $servicios[2] ?>"/>
+                		<input type="text" name="Precio" placeholder="Precio"  value="<?php echo $servicios[2] ?>"/>
 
                 		<input type="text" name="Duracion" placeholder="Duracion" value="<?php echo $servicios[3] ?>"/>
                             

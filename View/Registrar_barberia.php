@@ -90,15 +90,15 @@ session_start();
             <!-- aqui -->
               
               				<i class="fa fa-hashtag prefix"></i>
-              					<input type="text" placeholder="NIT" name="nit"/>
+              					<input type="text" placeholder="NIT" name="nit" required/>
               				<i class="material-icons prefix">store</i>
-              					<input type="text" placeholder="Nombre" name="nombre" />
+              					<input type="text" placeholder="Nombre" name="nombre" required />
               				<i class="material-icons prefix">location_on</i>
-             				 	<input type="text" placeholder="Direccion" name="direccion"/>
+             				 	<input type="text" placeholder="Direccion" name="direccion" required/>
               				<i class="material-icons prefix">phone</i>
-              					<input type="number" placeholder="Telefono" name="telefono" />
+              					<input type="number" placeholder="Telefono" name="telefono" required/>
               				<i class="material-icons prefix">business</i>
-              					<input type="text" placeholder="Ciudad" name="ciudad" />
+              					<input type="text" placeholder="Ciudad" name="ciudad" required/>
               				<a id="boton" class="waves-effect  btn-large red "  >Cancelar</a>
              			</div>            
             			<div class="col l6 input-field">

@@ -52,9 +52,9 @@
               <i class="material-icons prefix">account_circle</i>
               <input type="text" placeholder="Nombre de Usuario..." name="id_usuario" required value="<?php echo $usuario[0]?>" readonly />
               <i class="material-icons prefix">person_pin</i>
-              <input type="number" placeholder="Cedula..." name="cedula" value="<?php echo $usuario[2]?>"/>
+              <input type="number" placeholder="Cedula..." name="cedula" required value="<?php echo $usuario[2]?>"/>
               <i class="material-icons prefix">person</i>          
-              <input type="text" placeholder="Nombre y Apellido..." name="nombre" value="<?php echo $usuario[3]?>"/>
+              <input type="text" placeholder="Nombre y Apellido..." name="nombre" required value="<?php echo $usuario[3]?>"/>
               <i class="material-icons prefix">store</i>
               <input type="text" placeholder="Dirección..." name="direccion" value="<?php echo $usuario[4]?>" />      
             </div>

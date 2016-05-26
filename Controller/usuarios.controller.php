@@ -73,5 +73,26 @@
 		header("Location: ../View/gestion_usuarios.php?msn=".$msn);
  		break;
 
+ 	case 'existe_usuario':
+	  	$Id_usuario = $_POST["id_usuario"]; 
+	  	try{
+	  		$usuario = Gestion_Usuarios::ReadbyId($Id_usuario);
+
+	  		if(count($usuario[0]) > 0){
+	  			$existe = true;	
+	  			$message = "El usuario ya existe en nuestra aplicación";
+	  		}else{
+	  			$existe = false;
+	  			$message = "";
+	  		} 
+	  	}catch(Exception $e){
+	  		echo $e->getMessage();
+	  	}
+
+	  	echo json_encode(array('ue' => $existe, 'msn' => $message));
+
+	  break;
+
+
     }
 ?>
