@@ -33,20 +33,35 @@
 	 <!-- iconos -->
   	  <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 
-    <link rel="stylesheet" type="text/css" href="sweet/dist/sweetalert.css">
-    <script src="sweet/dist/sweetalert.min.js"></script> 
+    <!-- plugins de las sweetalerts -->
+    <script src="sweetalert-master/dist/sweetalert.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
 
+
+   <!-- para las alertas -->
   <?php 
-      if(isset($_GET["m"])){
-        if($_GET["m"] !=""){
-          echo "<script>alert('".$_GET["m"]."')</script>";
-        }
-      }
-     ?>  
-
-    
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+      
+if(isset($_GET["m"]) and isset($_GET["tm"])){
+         if($_GET["m"] != ""){
+           echo "<script>
+                   $(document).ready(function(){
+                      sweetAlert({
+                           title: '...',   
+                           text: '".$_GET["m"]."',   
+                           type: '".$_GET["tm"]."',   
+                           showCancelButton: false,
+                           confirmButtonColor: '#4db6ac',   
+                           confirmButtonText: 'Aceptar',   
+                          cancelButtonText: 'No, cancel plx!',   
+                           closeOnConfirm: false,   
+                           closeOnCancel: false
+                       });
+                   });
+                </script>";
+           }
+         }
+?>
+  
 
 </head>
 

@@ -141,5 +141,24 @@
 		Softmar_BD::Disconnect();
 	}
 
+
+	// metodo para seleccionar el nombre del barbero en el formulario de Reservar Citas
+	function Barbero(){
+			$conexion=BarberGarage_BD::Connect();
+			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+			$consulta ="SELECT * FROM usuario WHERE Perfil='Empleado'";
+
+			$query = $conexion->prepare($consulta);
+			$query->execute();
+
+			$results = $query->fetchALL(PDO::FETCH_BOTH);
+			BarberGarage_BD::Disconect();
+
+			return $results;
+
+
+		}
+
 	}
 ?>

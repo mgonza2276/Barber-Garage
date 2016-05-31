@@ -223,4 +223,7 @@ spam{
 	font-size: 15px;
 }
 
-
+/*estilo del tamaño del textbox de fecha citas*/
+#fecha_cita{
+	width: 90%;
+}

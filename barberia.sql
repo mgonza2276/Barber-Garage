@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2016 a las 03:48:11
+-- Tiempo de generación: 31-05-2016 a las 05:46:07
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -39,10 +39,9 @@ CREATE TABLE IF NOT EXISTS `barberia` (
 --
 
 INSERT INTO `barberia` (`Cod_barberia`, `Nombre`, `Direccion`, `Telefono`, `Ciudad`) VALUES
-('456', 'barberia NY', 'calle 96', '2589656', 'itagui'),
-('565', 'afrika', 'calle 88', '78785454', 'medellin'),
-('5899', 'Babilonia', 'calle 88', '2222222', 'caldas'),
-('896', 'barberia 80', 'crr 80', '1245453', 'itagui');
+('456', 'barberia NY', 'calle 20', '2589656', 'itagui'),
+('54545', 'afrika', 'calle 28', '7894561', 'itagui'),
+('5899', 'Babilonia', 'calle 88', '45454545', 'caldas');
 
 -- --------------------------------------------------------
 
@@ -62,11 +61,22 @@ CREATE TABLE IF NOT EXISTS `barberia_servicio` (
 --
 
 CREATE TABLE IF NOT EXISTS `citas` (
-  `Cod_cita` varchar(50) NOT NULL,
-  `Fecha` date NOT NULL,
+  `Cod_cita` int(11) NOT NULL,
+  `Fecha` varchar(50) NOT NULL,
   `Hora` varchar(30) NOT NULL,
+  `Servicio` varchar(50) NOT NULL,
+  `Barbero` varchar(50) NOT NULL,
   `Id_Usuario` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `citas`
+--
+
+INSERT INTO `citas` (`Cod_cita`, `Fecha`, `Hora`, `Servicio`, `Barbero`, `Id_Usuario`) VALUES
+(13, 'Miercoles, 11 Mayo, 2016', '8:30 am', 'barba', 'estiven monsalve', 'caliche'),
+(18, 'Miercoles, 8 Febrero, 2017', '8:00 am', 'barba', 'estiven monsalve', 'mango'),
+(19, 'Martes, 31 Mayo, 2016', '8:30 am', 'depilada', 'jorge lopez', 'mango');
 
 -- --------------------------------------------------------
 
@@ -76,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `citas` (
 
 CREATE TABLE IF NOT EXISTS `detalle_cita` (
   `Id_detalle_cita` varchar(50) NOT NULL,
-  `Cod_cita` varchar(50) NOT NULL,
+  `Cod_cita` int(11) NOT NULL,
   `Id_servicio` varchar(50) NOT NULL,
   `Id_usuario` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -110,9 +120,10 @@ CREATE TABLE IF NOT EXISTS `servicio` (
 --
 
 INSERT INTO `servicio` (`Id_servicio`, `Nombre`, `Precio`, `Duracion`) VALUES
-('147', 'depilada', '6700', '40 min'),
-('303', 'barba', '7000', '1 hora'),
-('777', 'corte', '50000', '5 min');
+('147', 'depilada', '2000', '50 min'),
+('303', 'barba', '3000', '1 hora'),
+('4545', 'corte', '5000', '30min'),
+('5623', 'peinar', '7500', '20 min');
 
 -- --------------------------------------------------------
 
@@ -137,10 +148,16 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`Id_usuario`, `Clave`, `Cedula`, `Nombre`, `Direccion`, `Telefono`, `Celular`, `Correo`, `Perfil`) VALUES
-('j.andres', '123', '78784543', 'andres uribe', 'calle 68', '78745454', '212454545', 'j.andres@hotmail.com', 'Administrador'),
+('caliche', 'caliche22', '45612365', 'carlos arturo', 'css', '2562425', '1452368952', 'ca@gmail.com', 'Usuario'),
+('chombo', 'chombo58', '1478536', 'juan camilo', 'ca56', '2365897', '2813698258', 'ch@gmail.com', 'Administrador'),
+('j.andres', '123', '78784543', 'andres uribe', 'calle 63 a n 58', '78745454', '212454545', 'j.andres@hotmail.com', 'Administrador'),
 ('luigi', 'l78', '456454', 'fernei castro', 'calle 28', '78745100', '14545787', 'luigi@gmail.com', 'Administrador'),
+('mango', 'mangomango', '5655645', 'mango', 'calle 65', '4785412', '1236547896', 'mg@hotmail.com', 'Usuario'),
+('norguys', 'norguys123456', '7847541212', 'estiven monsalve', 'calle 22', '4564545', '1478521478', 'nor@gmail.com', 'Empleado'),
 ('papo', 'p14', '4787871', 'omar andres', 'calle 45 b', '4878454', '4545212', 'papo@hotmail.com', 'Empleado'),
 ('pepe', 'pepe2', '7845123', 'pepe sanchez', 'calle 55', '87874541', '897845152', 'pepes@hotmail.com', 'Usuario'),
+('poli', 'poli789', '454541', 'julian valencia', 'calle58', '2563142', '1236547896', 'jv@hotmail.com', 'Usuario'),
+('vato', 'vato357', '789456123', 'jose luis chilavert', 'callejon', '2589632', '1231231231', 'di@hotmail.com', 'Administrador'),
 ('yayo', 'y23', '157874512', 'jorge lopez', 'calle 87', '5454545212', '54878454', 'yayo@gmail.com', 'Empleado');
 
 --
@@ -194,6 +211,15 @@ ALTER TABLE `servicio`
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`Id_usuario`);
 
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `citas`
+--
+ALTER TABLE `citas`
+  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -24,9 +24,9 @@
 
 <!-- submenu de Citas -->
 <ul id="dropdown2" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#!">Reservar <br> Cita</a></li>
+  <li><a class="indigo-text text-darken-4" href="../View/Reservar_Citas.php">Reservar <br> Cita</a></li>
   <!-- <li class="divider"></li> -->
-  <li><a class="indigo-text text-darken-4" href="#!">Modificar <br> Cita</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/Gestion_Citas.php">Modificar <br> Cita</a ></li>
 </ul>
 
 
