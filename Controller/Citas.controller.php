@@ -33,6 +33,7 @@ $accion=$_REQUEST["acc"];
 
 	case 'U':
 
+	$Cod_cita=$_POST["Cod_cita"];
 	$fecha=$_POST["Fecha"];
 	$hora=$_POST["Hora"];
 	$servicio=$_POST["Servicio"];
@@ -40,7 +41,7 @@ $accion=$_REQUEST["acc"];
 	$id_usuario=$_POST["Id_usuario"];
 
 	try{
-		Gestionar_citas::Update($fecha,$hora,$servicio,$barbero,$id_usuario);
+		Gestionar_citas::Update($Cod_cita,$fecha,$hora,$servicio,$barbero,$id_usuario);
 		$mensaje="su cita se modifico correctamente";
 		$tipomensaje="success";
 		header("Location: ../View/Gestion_Citas.php?m=".$mensaje."&tm=".$tipomensaje);

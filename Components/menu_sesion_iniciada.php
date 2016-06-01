@@ -14,14 +14,21 @@
 
 
 
-   <!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content red darken-1">
+   <!-- Dropdown configuracion del usuario desktop -->
+<ul id="dropdown_user_desktop" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="edita-mi-perfil.php">Mi Perfil</a></li>
-  <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
-  <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="../View/cerrarsesion.php">Cerrar Sesion</a></li>
 </ul>
+
+<!-- Dropdown configuracion del usuario movil -->
+<ul id="dropdown_user_movil" class="dropdown-content red darken-1">
+  <li><a class="indigo-text text-darken-4" href="edita-mi-perfil.php">Mi Perfil</a></li>
+  <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/cerrarsesion.php">Cerrar Sesion</a></li>
+</ul>
+
+<!-- desktop -->
 
 <nav id="menu">
     <div class="nav-wrapper red accent-4">
@@ -31,20 +38,21 @@
         <li><a class="inicio" href="sesion_iniciada.php">Inicio</a></li>
         <li><a class="acerca" href="#">Acerca de <br> Barber Garage</a></li>
         <li><a class="contacto" href="#">Contacto</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_user_desktop"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
+
+
+
+<!-- movil -->
 
       <ul class="side-nav" id="mobile-demo">
         <li><a class="inicio" href="sesion_iniciada.php">Inicio</a></li>
-        <li><a class="acerca" href="#">Acerca de...</a></li>
+        <li><a class="acerca" href="#">Acerca&nbspde&nbspBarber&nbspGarage</a></li>
         <li><a class="contacto" href="#">Contacto</a></li>
-        <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li> -->
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_user_movil"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
     </div>
   </nav>
 
 
-  <!--Import jQuery before materialize.js-->
-        <!--<script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>-->
-        <!--<script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>-->
-
+ 

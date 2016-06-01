@@ -15,14 +15,14 @@ class Gestionar_citas{
 	}
 
 	// modificacion de las citas
-	function Update($fecha,$hora,$servicio,$barbero,$id_usuario){
+	function Update($Cod_cita,$fecha,$hora,$servicio,$barbero,$id_usuario){
 		$conexion=BarberGarage_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		
 
-		$consulta="UPDATE citas SET Fecha=?,Hora=?,Servicio=?,Barbero=? WHERE Cod_cita=? ";		
+		$consulta="UPDATE citas SET Fecha=?,Hora=?,Servicio=?,Barbero=?,Id_usuario=? WHERE Cod_cita=? ";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($fecha,$hora,$servicio,$barbero,$id_usuario));
+		$query->execute(array($fecha,$hora,$servicio,$barbero,$id_usuario,$Cod_cita));
 		
 		BarberGarage_BD::Disconect();		
 

@@ -104,7 +104,9 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                 <form action="../Controller/Citas.controller.php" method="POST">
                     <center>
                         <h4>Modificar Cita</h4>
+          
 
+                          <input type="text" name="Cod_cita"  value="<?php echo $citas[0] ?>"/>
                    		
                         	
                         	<!-- provisional de la fecha con calendario -->
@@ -114,7 +116,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                         	<!-- textbox provisional del horario -->
                         	<div class="input-field col s12">
     						<select name="Hora">
-      						<option value="<?php echo $citas[2]; ?>" disabled selected><?php echo $citas[2]  ?></option>
+      						<option value="<?php echo $citas[2]; ?>"><?php echo $citas[2]  ?></option>
       						<option value="8:00 am">8:00 am</option>
       						<option value="8:30 am">8:30 am</option>
       						<option value="9:00 am">9:00 am</option>
@@ -128,7 +130,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 							$services=Gestionar_servicio::ReadAll();
  							?>
     						<select name="Servicio">
-    						<option value="<?php echo $citas[3]; ?>" disabled selected><?php echo $citas[3] ?></option><?php 
+    						<option value="<?php echo $citas[3]; ?>"><?php echo $citas[3] ?></option><?php 
 							foreach ($services as $row) {
  							?>
  								
@@ -142,7 +144,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                             <div class="input-field col s12">
                             <?php $barberos=Gestion_Usuarios::Barbero() ?>
     						<select name="Barbero">
-    						<option value="<?php echo $citas[4] ?>" disabled selected><?php echo $citas[4] ?></option>
+    						<option value="<?php echo $citas[4] ?>"><?php echo $citas[4] ?></option>
     						<?php foreach ($barberos as $row) {
     							?>
     							<option value="<?php echo $row["Nombre"] ?>"><?php echo $row["Nombre"] ?></option>

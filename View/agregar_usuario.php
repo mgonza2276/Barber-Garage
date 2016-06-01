@@ -37,8 +37,7 @@
 	  <link  rel="stylesheet" type="text/css" href="estilos.css">
 	  
 		<script type="text/javascript" src="../Controller/validarcampos.js"></script>
-	  <!--Aqui llamaremos los estilos necesarios-->
-	  <link  rel="stylesheet" type="text/css" href="estilos.css">    
+	      
 
 	  <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
 

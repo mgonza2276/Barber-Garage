@@ -29,6 +29,8 @@
 
    
     <!--  -->
+    <!--Aqui llamaremos los estilos necesarios-->
+    <link  rel="stylesheet" type="text/css" href="estilos.css">
 
 
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
@@ -38,8 +40,8 @@
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
 
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+        <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
+        <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
     <script>
     $(document).ready( function () {

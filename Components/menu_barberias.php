@@ -8,29 +8,40 @@
 
     <link rel="stylesheet" href="../View/estilos_componentes.css">
 
-    <script>$( document ).ready(function(){
+    <script>
+    $( document ).ready(function(){
      $(".button-collapse").sideNav();
      });</script>
     
   
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content red darken-1">
+<!-- Dropdown de la configuracion del usuario desktop -->
+<ul id="dropdown_user_desktop" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="#!">Mi Perfil</a></li>
-  <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
-  <!-- <li class="divider"></li> -->
   <li><a class="indigo-text text-darken-4" href="../View/index.php">Cerrar Sesion</a></li>
 </ul>
 
-<!-- submenu de Citas -->
-<ul id="dropdown2" class="dropdown-content red darken-1">
+<!-- Dropdown configuracion del usuario movil -->
+<ul id="dropdown_user_movil" class="dropdown-content red darken-1">
+  <li><a class="indigo-text text-darken-4" href="#!">Mi Perfil</a></li>
+  <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/index.php">Cerrar Sesion</a></li>
+</ul>
+
+<!-- submenu de Citas desktop -->
+<ul id="dropdown_citas_desktop" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="../View/Reservar_Citas.php">Reservar <br> Cita</a></li>
-  <!-- <li class="divider"></li> -->
+  <li><a class="indigo-text text-darken-4" href="../View/Gestion_Citas.php">Modificar <br> Cita</a ></li>
+</ul>
+
+<!-- submenu de Citas movil -->
+<ul id="dropdown_citas_movil" class="dropdown-content red darken-1">
+  <li><a class="indigo-text text-darken-4" href="../View/Reservar_Citas.php">Reservar <br> Cita</a></li>
   <li><a class="indigo-text text-darken-4" href="../View/Gestion_Citas.php">Modificar <br> Cita</a ></li>
 </ul>
 
 
-
+<!-- desktop -->
 <nav id="menu">
     <div class="nav-wrapper red accent-4">
       <a href="#!" class="brand-logo">B-G</a>
@@ -39,18 +50,20 @@
         <li><a class="inicio_barberias" href="../View/Dashboard_Cliente.php">Inicio</a></li>
         <li><a class="cortes" href="#">Ver Cortes</a></li>
         <li><a class="servicios" href="#">Solicitar Servicios</a></li>
-        <li><a class="dropdown-button citas" href="#!" data-activates="dropdown2">Citas</a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button citas" href="#!" data-activates="dropdown_citas_desktop">Citas</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_user_desktop"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
         
 
       </ul>
+
+      <!-- movil -->
       
       <ul class="side-nav" id="mobile-demo">
         <li><a class="inicio_barberias" href="../View/Dashboard_Cliente.php">Inicio</a></li>
-        <li><a class="cortes" href="#">Ver Cortes</a></li>
-        <li><a class="servicios" href="#">Solicitar <br> Servicios</a></li>
-        <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Citas</a></li> -->
-        <!-- <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Nombre del usuario<i class="material-icons right">arrow_drop_down</i></a></li> -->
+        <li><a class="cortes" href="#">Ver&nbspCortes</a></li>
+        <li><a class="servicios" href="#">Solicitar&nbspServicios</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_citas_movil">Citas</a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown_user_movil"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
     </div>
   </nav>
@@ -59,6 +72,4 @@
 
 
 
-  <!--Import jQuery before materialize.js-->
-       <!-- <script type="text/javascript" src="..\View\Materialize\jquery-1.12.1.min.js"></script>-->
-       <!-- <script type="text/javascript" src="..\View\Materialize\materialize\js\materialize.js"></script>-->
+  
