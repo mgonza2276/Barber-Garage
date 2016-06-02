@@ -1,4 +1,5 @@
 <?php
+	session_start();
   require_once("../Model/conexion.php");
   require_once("../Model/usuarios.class.php");
 
@@ -6,7 +7,7 @@
     $msn = base64_encode("Debe iniciar sesion primero!");
     $tipo_msn = base64_encode("advertencia");
 
-    header("Location: ../View/login.php?m=".$msn."&tm=".$tipo_msn);
+    header("Location: ../View/index.php?m=".$msn."&tm=".$tipo_msn);
   }
 
   $usuario =  Gestion_Usuarios::ReadbyID(base64_decode($_REQUEST["ui"]));
