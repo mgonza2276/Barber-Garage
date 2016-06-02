@@ -50,7 +50,7 @@
     </div>
 
     <div class="col s12 m6 l6  iconos red darken-3"><h4>Citas</h4><a href="#"><i class="fa fa-calendar-o "></i></a><br>
-  <a class="links" href="#">Consultar citas</a><br>
+  <a class="links" href="Gestion_Citas.php">Consultar citas</a><br>
     </div>
 
     

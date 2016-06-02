@@ -1,3 +1,4 @@
+<?php @session_start();  ?>
  <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../View/Materialize/materialize/css/materialize.css"  media="screen,projection"/>
 

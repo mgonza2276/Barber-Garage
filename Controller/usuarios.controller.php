@@ -66,7 +66,7 @@
 	case 'd':
         try {
           $usuario = Gestion_Usuarios::Delete(base64_decode($_REQUEST["ui"]));
-          $msn = "se elimino correctamente";
+          $msn = "Se elimino correctamente";
         } catch (Exception $e) {
           $msn = "error";
         }

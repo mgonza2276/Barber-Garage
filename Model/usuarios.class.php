@@ -120,7 +120,7 @@
     	function ReadbyNICK($Id_usuario){
 
 		//Instanciamos y nos conectamos a la bd
-		$Conexion = Softmar_BD::Connect();
+		$Conexion = BarberGarage_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		
@@ -138,7 +138,7 @@
 		$resultado = $query->fetch(PDO::FETCH_BOTH);
 		return $resultado;
 
-		Softmar_BD::Disconnect();
+		BarberGarage_BD::Disconnect();
 	}
 
 

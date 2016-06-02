@@ -1,4 +1,4 @@
-
+<?php @session_start(); ?>
 
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="../View/Materialize/materialize/css/materialize.css"  media="screen,projection"/>
@@ -78,7 +78,7 @@
         
         <li><a class="dropdown-button gestionar_usuarios" href="#!" data-activates="sub_menu_gest_usuario_desktop">Gestionar  Usuarios</a></li>
 
-        <li><a class="consultar_citas" href="#">Consultar Citas</a></li>
+        <li><a class="consultar_citas" href="">Consultar Citas</a></li>
         
         <li><a class="dropdown-button gestionar_barberia" href="#!" data-activates="sub_menu_gest_barberia_desktop">Gestionar Barberia</a></li>
         
