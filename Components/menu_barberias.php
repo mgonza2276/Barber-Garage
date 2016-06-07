@@ -31,13 +31,13 @@
 <!-- submenu de Citas desktop -->
 <ul id="dropdown_citas_desktop" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="../View/Reservar_Citas.php">Reservar <br> Cita</a></li>
-  <li><a class="indigo-text text-darken-4" href="../View/Gestion_Citas.php">Modificar <br> Cita</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/Mi_Cita.php?ja=<?php echo $_SESSION["Id_usuario"] ?>">Modificar <br> Cita</a ></li>
 </ul>
 
 <!-- submenu de Citas movil -->
 <ul id="dropdown_citas_movil" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="../View/Reservar_Citas.php">Reservar <br> Cita</a></li>
-  <li><a class="indigo-text text-darken-4" href="../View/Gestion_Citas.php">Modificar <br> Cita</a ></li>
+  <li><a class="indigo-text text-darken-4" href="../View/Mi_Cita.php?ja=<?php echo $_SESSION["Id_usuario"] ?>">Modificar <br> Cita</a ></li>
 </ul>
 
 
@@ -49,7 +49,6 @@
       <ul class="right hide-on-med-and-down">
         <li><a class="inicio_barberias" href="../View/Dashboard_Cliente.php">Inicio</a></li>
         <li><a class="cortes" href="#">Ver Cortes</a></li>
-        <li><a class="servicios" href="#">Solicitar Servicios</a></li>
         <li><a class="dropdown-button citas" href="#!" data-activates="dropdown_citas_desktop">Citas</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown_user_desktop"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
         
@@ -61,7 +60,6 @@
       <ul class="side-nav" id="mobile-demo">
         <li><a class="inicio_barberias" href="../View/Dashboard_Cliente.php">Inicio</a></li>
         <li><a class="cortes" href="#">Ver&nbspCortes</a></li>
-        <li><a class="servicios" href="#">Solicitar&nbspServicios</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown_citas_movil">Citas</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown_user_movil"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>

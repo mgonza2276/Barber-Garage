@@ -1,5 +1,5 @@
 <?php 
-// session_start();
+ session_start();
 
 include_once("../Model/conexion.php");
 include_once("../Model/Citas.class.php");
@@ -42,9 +42,19 @@ $accion=$_REQUEST["acc"];
 
 	try{
 		Gestionar_citas::Update($Cod_cita,$fecha,$hora,$servicio,$barbero,$id_usuario);
-		$mensaje="su cita se modifico correctamente";
+		$mensaje="la cita se modifico correctamente";
 		$tipomensaje="success";
-		header("Location: ../View/Gestion_Citas.php?m=".$mensaje."&tm=".$tipomensaje);
+		if ($_SESSION["Perfil"] =="Administrador") {
+		
+		header("Location: ../View/Gestion_Citas.php?m=".$mensaje."&tm=".$tipomensaje);	
+		}
+		elseif ($_SESSION["Perfil"] =="Usuario") {
+			
+			header("Location: ../View/Mi_Cita.php?m=".$mensaje."&tm=".$tipomensaje);
+		}
+
+
+		
 		
 		}catch(Exception $e){
 			$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
@@ -52,6 +62,7 @@ $accion=$_REQUEST["acc"];
 			header("Location: ../View/Modificar_Cita.php?m=".$mensaje."&tm=".$tipomensaje);
 
 		}
+
 
 		break;
 

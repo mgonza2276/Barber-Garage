@@ -43,7 +43,7 @@ class Gestionar_citas{
 
 	// funcion ReadbyId
 
-	function ReadbyId($Cod_cita){
+	function ReadbyId($Cod_cita){//para el modificar de todos los usuarios
 		$conexion=BarberGarage_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
@@ -58,7 +58,24 @@ class Gestionar_citas{
 		return $resultado;		
 	}
 
-	function ReadAll(){
+	function Mi_Cita($id_usuario){//para el modificar de todos los usuarios
+		$conexion=BarberGarage_BD::Connect();
+		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+		$consulta="SELECT * FROM citas WHERE Id_usuario=?";
+		$query=$conexion->prepare($consulta);
+		$query->execute(array($id_usuario));
+
+		$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+		BarberGarage_BD::Disconect();
+
+		return $resultado;		
+	}
+
+
+
+	function ReadAll(){//para el administrador y el barbero
 		$conexion=BarberGarage_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		

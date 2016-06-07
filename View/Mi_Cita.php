@@ -71,7 +71,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
  </head>
  <body>
 
- 	<?php include_once("../Components/menu_admin.php") ?>
+ 	<?php include_once("../Components/menu_barberias.php") ?>
  	
  	<h1>Gestion Citas</h1>
 		<a href="Reservar_Citas.php">Reservar Nueva Cita</a>
@@ -88,7 +88,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 			
  		<tbody>
  			<?php 
- 			$citas=Gestionar_citas::ReadAll();
+ 			$citas=Gestionar_citas::Mi_Cita($_REQUEST["ja"]);
  			foreach ($citas as $row) {
  			 	
  			  
