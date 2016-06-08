@@ -104,16 +104,20 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                 <form action="../Controller/Citas.controller.php" method="POST">
                     <center>
                         <h4>Modificar Cita</h4>
+                    </center>
           
-
-                          <input type="text" name="Cod_cita"  value="<?php echo $citas[0] ?>"/>
+                          <label>Numero de cita :</label>
+                          <input type="text" name="Cod_cita"  value="<?php echo $citas[0] ?> " readonly/>
                    		
                         	
                         	<!-- provisional de la fecha con calendario -->
+                          <label>Fecha :</label>
                         	<input type="text" name="Fecha" placeholder="clic en el calendario" id="fecha_cita" value="<?php echo $citas[1] ?>"/>
 
 
                         	<!-- textbox provisional del horario -->
+                          <br>
+                          <label>Hora :</label>
                         	<div class="input-field col s12">
     						<select name="Hora">
       						<option value="<?php echo $citas[2]; ?>"><?php echo $citas[2]  ?></option>
@@ -125,11 +129,13 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
                             
                         	<!-- combobox de servicios -->
+                          
                             <div class="input-field col l12">
 							<?php 
 							$services=Gestionar_servicio::ReadAll();
  							?>
-    						<select name="Servicio">
+    						
+                <select name="Servicio">
     						<option value="<?php echo $citas[3]; ?>"><?php echo $citas[3] ?></option><?php 
 							foreach ($services as $row) {
  							?>
@@ -143,6 +149,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
                             <div class="input-field col s12">
                             <?php $barberos=Gestion_Usuarios::Barbero() ?>
+                
     						<select name="Barbero">
     						<option value="<?php echo $citas[4] ?>"><?php echo $citas[4] ?></option>
     						<?php foreach ($barberos as $row) {
@@ -166,7 +173,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                             </button>
                             <a class="waves-effect  btn-large red" href="Gestion_Citas.php" style="width:100%">Cancelar
                             </a>
-                    </center>
+                    
                 </form>
             </div>
         </div>

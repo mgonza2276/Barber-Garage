@@ -66,7 +66,7 @@
 	case 'd':
         try {
           $usuario = Gestion_Usuarios::Delete(base64_decode($_REQUEST["ui"]));
-          $msn = "Se elimino correctamente";
+          $msn = "se elimino correctamente";
         } catch (Exception $e) {
           $msn = "error";
         }
@@ -74,16 +74,16 @@
  		break;
 
  	case 'existe_usuario':
-	  	$id_usuario = $_POST["id_usuario"]; 
+	  	$id_usuario = $_POST["nickname"]; 
 	  	try{
-	  		$usuario = Gestion_Usuarios::ReadbyNICK($Id_usuario);
+	  		$usuario = Gestion_Usuarios::ReadbyNICK($id_usuario);
 
 	  		if(count($usuario[0]) > 0){
 	  			$existe = true;	
-	  			$message = "El usuario ya existe en nuestra aplicación";
+	  			$message = "Este usuario ya existe.";
 	  		}else{
 	  			$existe = false;
-	  			$message = "";
+	  			$message = "Esta disponible";
 	  		} 
 	  	}catch(Exception $e){
 	  		echo $e->getMessage();

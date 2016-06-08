@@ -39,6 +39,28 @@
 	  		echo "swal( '".$_GET["msn"]."','', 'success');";
 	  	}
 	  ?>
+            
+               
+	    $('select').material_select();
+
+      $("#nickname").keyup(function(){
+          var usuario = $("#nickname").val();
+          var accion = "existe_usuario";
+          
+          $.post("../Controller/usuarios.controller.php", {nickname: usuario, acc: accion}, function(result){
+              $("#resultadobusqueda").html(result.msn);
+              if(result.ue == true){ 
+                $("#boton").prop("disabled",true);
+              }else{
+                  $("#boton").prop("disabled",false);
+              }
+              
+          }, "json");      
+          
+        
+          
+      });
+
 	})
 	  </script>
 
@@ -64,9 +86,12 @@
 			<form action="../Controller/usuarios.controller.php" method="POST" >
 						<center><h4>Registro Usuario</h4></center>
 						<div class="col l6  input-field"  >
-							<input type="hidden" name="pag" value="registro_usuario">
+                            					
+                            <input type="hidden" name="pag" value="registro_usuario">
 							<i class="material-icons prefix">account_circle</i>
-							<input type="text" placeholder="Nombre de Usuario..." name="id_usuario" id="nickname" required />
+                            
+                            <span id="resultadobusqueda" class="red-text accent-3 left" style="margin-left: 50px;"> </span>
+							<input  type="text" placeholder="Nombre de Usuario..." name="id_usuario" id="nickname" required />                      
 							<i class="material-icons prefix">vpn_key</i>
 							<input type="password" placeholder="Contraseña..." name="clave" id="clave" required/>
 							<i class="material-icons prefix">person_pin</i>
@@ -89,9 +114,7 @@
 							<i class="material-icons prefix"hidden>assignment_ind</i> 
 							<input type="hidden" value="Usuario" name="perfil"/>					
 							
-							<!-- <?php //swal //@$_GET["msn"];  ?> -->
-							<!-- swal(<?php //@$_GET["msn"];  ?>) -->
-							<!-- <?php //echo //@$_REQUEST["msn"]; ?> -->
+							
 					</form >
 
 				</div>
@@ -100,6 +123,8 @@
 
 		</div>
 		<?php include_once("../Components/footer.php") ?>
+    <!-- ajax -->
+ 
 		
 
 	</body>

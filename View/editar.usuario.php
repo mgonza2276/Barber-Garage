@@ -61,7 +61,7 @@
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" required  value="<?php echo $usuario[7]?>"/>
 							<i class="material-icons prefix">assignment_ind</i> 
-							<input type="text"  name="perfil" value="<?php echo $usuario[8]?>" />							
+							<input  type="text"  name="perfil" value="<?php echo $usuario[8]?>" readonly  />							
 						</div>
                         <div class="col l6 s12">
                             <button id="boton" class="waves-effect  btn-large cyan" name="acc" value="u" >Actualizar</button>
