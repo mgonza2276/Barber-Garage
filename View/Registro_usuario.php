@@ -59,7 +59,7 @@
 
 		<div class="row">
 
-		<div id="formulario" class="col l8 offset-l2">
+		<div id="formulario" class="col s12 m10 offset-m1 l8 offset-l2">
 
 			<form action="../Controller/usuarios.controller.php" method="POST" >
 						<center><h4>Registro Usuario</h4></center>
@@ -73,7 +73,7 @@
 							<input type="number" placeholder="Cedula..." name="cedula" id="cedula" required/>
 							<i class="material-icons prefix">person</i>
 							<input type="text" placeholder="Nombre Completo..." name="nombre" id="nombre" required/>
-							<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" onclick="return validar()" >Registrar</button>
+							<!-- <button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" onclick="return validar()" >Registrar</button> -->
 						</div>
 						<div class="col l6  input-field"  >
 							<i class="material-icons prefix">store</i>
@@ -84,14 +84,20 @@
 							<input type="number" placeholder="Celular..." name="celular" id="celular"/>
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" id="email"required />
-							<a id="boton" href="index.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
+							<!-- <a id="boton" href="index.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a> -->
 						</div>
 							<i class="material-icons prefix"hidden>assignment_ind</i> 
 							<input type="hidden" value="Usuario" name="perfil"/>					
 							
-							<!-- <?php //swal //@$_GET["msn"];  ?> -->
-							<!-- swal(<?php //@$_GET["msn"];  ?>) -->
-							<!-- <?php //echo //@$_REQUEST["msn"]; ?> -->
+						<div class="col l12 s12 m12">
+						 <div class="col l6 s6 m6">
+						 	<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" onclick="return validar()" >Registrar</button>
+						 </div>
+						 <div class="col l6 s6 m6">
+						 	<a id="boton" href="index.php" class="waves-effect  btn-large blue-grey darken-1">Cancelar</a>
+						 </div>
+							
+						</div>	
 					</form >
 
 				</div>
