@@ -36,7 +36,7 @@
 			}
 		
 		if ($origen_pagina =="registro_usuario") {
-			header("location: ../View/registro_usuario.php?msn=".$mensaje);
+			header("location: ../View/index.php?msn=".$mensaje);
 		}elseif ($origen_pagina == "agregar_usuario") {
 			header("location: ../View/agregar_usuario.php?msn=".$mensaje);
 		}

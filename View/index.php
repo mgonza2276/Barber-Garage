@@ -35,18 +35,19 @@
     <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
 
     <script src="sweetalert-master/dist/sweetalert.min.js"></script>
+      
       <script type="text/javascript">
       $(document).ready(function(){
       
         <?php
 
-      if(isset($_GET["m"])){
-        echo "swal( '".$_GET["m"]."','', 'warning');";
+      if(isset($_GET["msn"])){
+        echo "swal( '".$_GET["msn"]."','', 'success');";
       }
     ?>
     
   })
-    </script>
+    </script>   
 
 
 
@@ -58,29 +59,29 @@
     
     <div class="row">
 
-      <div id="centro"  class="col l4 s12 offset-s0 offset-l4 input-field" >
+      <div id="centro"  class="col l4 s12 m8 offset-m2 offset-s0 offset-l4 input-field" >
       	
         <form id="formulario" action="../Controller/validausuario.controller.php" method="post">				
 
-      				    <center><h3 id="bajar_titulo">Login</h3></center>
+      			<center><h3 id="bajar_titulo">Log In</h3></center>
 
-						        <i class="material-icons prefix">account_circle</i>
-						        <input type="text" placeholder="Nombre de usuario" name="Id_usuario" id="id_usuario"required />
+						  <i class="material-icons prefix">account_circle</i>
+						      <input type="text" placeholder="Nombre de usuario" name="Id_usuario" id="id_usuario"required />
 						        
-                    <i class="material-icons prefix">vpn_key</i>
-						        <input type="password" placeholder="Contraseña..." name="Clave" id="clave_usuario"required/>
-						        
-                    <button href="comp_menu.php" id="boton" class="waves-effect waves-light btn cyan" onclick="return validar_login()">Ingresar</button>
-              
-              <div class="col l12 s12">
+              <i class="material-icons prefix">vpn_key</i>
+						      <input type="password" placeholder="Contraseña..." name="Clave" id="clave_usuario"required/>
+						  <div class="col l12 s12">  
+                  <button href="comp_menu.php" id="boton" class="waves-effect waves-light btn cyan" onclick="return validar_login()">Ingresar</button>
+              </div> 
+              <!-- Recordar contraseña -->
+              <!-- <div class="col l12 s12">
                     <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
                       <label for="filled-in-box">Recordar</label>
                       <br>
                       <br>
                       <hr>
-              </div>
-              <div class="col l12 s12">
-                  
+              </div> -->
+              <div class="col l12 s12">                  
                   <a id="boton" class="waves-effect waves-light btn blue-grey darken-1" href="Registro_usuario.php"><spam>Regístrate</spam></a>
               </div> 
         </form>

@@ -76,11 +76,11 @@
       <ul class="right hide-on-med-and-down">
         <li><a class="inicio_administrador" href="../View/Dashboard_Admin.php">Inicio</a></li>
         
-        <li><a class="dropdown-button gestionar_usuarios" href="#!" data-activates="sub_menu_gest_usuario_desktop">Gestionar  Usuarios</a></li>
+        <li><a class="dropdown-button gestionar_usuarios" href="../View/gestion_usuarios.php" data-activates="sub_menu_gest_usuario_desktop">Gestionar  Usuarios</a></li>
 
         <li><a class="consultar_citas" href="../View/Gestion_Citas.php">Consultar Citas</a></li>
         
-        <li><a class="dropdown-button gestionar_barberia" href="#!" data-activates="sub_menu_gest_barberia_desktop">Gestionar Barberia</a></li>
+        <li><a class="dropdown-button gestionar_barberia" href="../View/gestion_barberias.php" data-activates="sub_menu_gest_barberia_desktop">Gestionar Barberia</a></li>
         
         <li><a class="dropdown-button" href="#!" data-activates="submenu_sesion_admin_desktop"><?php echo $_SESSION["Nombre"] ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
@@ -91,11 +91,11 @@
       <ul class="side-nav" id="mobile-demo">
 
         <li><a class="inicio_administrador" href="Dashboard_Admin.php">Inicio</a></li>
-        <li><a class="dropdown-button gestionar_usuarios" href="#!" data-activates="sub_menu_gest_usuario_movil">Gestionar Usuarios</a></li>
+        <li><a class="dropdown-button gestionar_usuarios" href="../View/gestion_usuarios.php" data-activates="sub_menu_gest_usuario_movil">Gestionar Usuarios</a></li>
 
-        <li><a class="consultar_citas" href="#">Consultar Citas</a></li>
+        <li><a class="consultar_citas" href="../View/Gestion_Citas.php">Consultar Citas</a></li>
         
-        <li><a class="dropdown-button gestionar_barberia" href="#!" data-activates="sub_menu_gest_barberia_movil">Gestionar Barberia</a></li>
+        <li><a class="dropdown-button gestionar_barberia" href="../View/gestion_barberias.php" data-activates="sub_menu_gest_barberia_movil">Gestionar Barberia</a></li>
         
         <li><a class="dropdown-button" href="#!" data-activates="submenu_sesion_admin_movil"><?php echo $_SESSION["Nombre"] ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>

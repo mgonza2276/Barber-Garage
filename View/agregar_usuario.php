@@ -93,22 +93,22 @@
 							<i class="material-icons prefix">email</i>
 							<input type="email" placeholder="Correo..." name="correo" id="email" />
 						</div>
-						<div class="col l12 input-field">
+						<div class="col s12 m12 l12  input-field">
 								<i class="material-icons prefix">email</i>
-							<div class="col l5 offset-l1" >
+							<div class="col s6 offset-s1 m6 offset-m1 l5 offset-l1" >
 								<select id="select_perfil" name="perfil">
 									<option value="Administrador"> Administrador</option>
 									<option value="Empleado"> Empleado</option>
 								</select>
 							</div>
 						</div>
-						<div class="col l6  input-field">
+						<div class="col s12 m6 l6   input-field">
 						
 						<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" onclick="return validar()">Registrar</button>
 						
 						</div>
-						<div class="col l6  input-field">
-							<a id="boton" href="agregar_usuario.php" class="waves-effect  btn-large  blue-grey darken-1">Cancelar</a>
+						<div class="col s12 m6 l6  input-field">
+							<a id="boton" href="Dashboard_Admin.php" class="waves-effect  btn-large  blue-grey darken-1">Cancelar</a>
 						</div>
                          <?php /*echo @$_REQUEST["msn"]; 
                         */?>

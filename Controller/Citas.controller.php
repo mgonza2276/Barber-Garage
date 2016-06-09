@@ -5,7 +5,7 @@ include_once("../Model/conexion.php");
 include_once("../Model/Citas.class.php");
 
 
-$accion=$_REQUEST["acc"];
+	$accion=$_REQUEST["acc"];
 	switch ($accion) {
 
 	case 'R':
@@ -81,7 +81,31 @@ $accion=$_REQUEST["acc"];
 
 	}		
 
-	
+	break;
+    // citas validacion con ajax
+	case 'valida_citas':
+	  	$fecha = $_POST["fecha_cita"]; 
+	  	$hora = $_POST["hora"]; 
+	  	$barbero = $_POST["emple"];
+	 
+	  	try{
+	  		$cita = Gestionar_Citas::ValidoCita($fecha, $hora, $barbero);
+
+	  		if($cita[0] != ""){
+	  			$existe = true;	
+	  			$message = "Este horario ya se encuentra ocupado.";
+	  		}else{
+	  			$existe = false;
+	  			$message = "";
+	  		} 
+	  	}catch(Exception $e){
+	  		echo $e->getMessage();
+	  	}
+
+
+	  	echo json_encode(array('ue' => $existe, 'msn' => $message));
+
+	  break;
 
 }
 

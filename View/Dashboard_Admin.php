@@ -49,7 +49,7 @@
   <a class="links" href="#">Modificar Usuarios</a>
     </div>
 
-    <div class="col s12 m6 l6  iconos red darken-3"><h4>Citas</h4><a href="#"><i class="fa fa-calendar-o "></i></a><br>
+    <div class="col s12 m6 l6  iconos red darken-3"><h4>Citas</h4><a href="Gestion_Citas.php"><i class="fa fa-calendar-o "></i></a><br>
   <a class="links" href="Gestion_Citas.php">Consultar citas</a><br>
     </div>
 
