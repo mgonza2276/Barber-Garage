@@ -28,7 +28,7 @@
 	  <link  rel="stylesheet" type="text/css" href="estilos.css">    
 
 
-<<<<<<< HEAD
+
 		<script src="sweetalert-master/dist/sweetalert.min.js"></script>
      	<script type="text/javascript">
      	$(document).ready(function(){
@@ -40,7 +40,7 @@
 	  	}
 	  ?>
             
-               
+         <!-- //ajax -->      
 	    $('select').material_select();
 
       $("#nickname").keyup(function(){
@@ -63,19 +63,9 @@
 
 	})
 	  </script>
-=======
->>>>>>> origin/master
+
 
 </head>
-
-
-
-
-
-
-
-
-
 <body class="fondo">
 	<?php include_once("../Components/menu.php") ?>
 
@@ -116,9 +106,7 @@
 							<i class="material-icons prefix"hidden>assignment_ind</i> 
 							<input type="hidden" value="Usuario" name="perfil"/>					
 							
-<<<<<<< HEAD
-							
-=======
+
 						<div class="col l12 s12 m12">
 						 <div class="col l6 s6 m6">
 						 	<button id="boton" class="waves-effect  btn-large cyan" name="acc" value="c" onclick="return validar()" >Registrar</button>
@@ -128,7 +116,7 @@
 						 </div>
 							
 						</div>	
->>>>>>> origin/master
+
 					</form >
 
 				</div>
@@ -137,7 +125,7 @@
 
 		</div>
 		<?php include_once("../Components/footer.php") ?>
-    <!-- ajax -->
+    
  
 		
 
