@@ -50,7 +50,7 @@ session_start();
     <!-- inicializacion del calendario y los selects -->
 
     <script>
-  $(function() {
+  $(document).ready(function() {
     $('select').material_select();
     $('#fecha_cita').datepicker({
       
@@ -58,9 +58,27 @@ session_start();
       buttonImage:"calendario/images/calen.png",
       buttonImageOnly:true,
       showButtonPanel:true,
-    });
-  
-  });
+    
+});
+
+  $("#emple").change(function(){
+          var hora = $("#hora").val();
+          var fecha_cita = $("#fecha_cita").val();
+          var empleado = $("#emple").val();
+          var accion = "valida_citas";
+
+          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita}, function(result){
+
+              
+                 if(result.ue == true){ 
+                    swal(result.msn);
+                    $("#btnreg").prop("disabled",true);
+                 }else{
+                    $("#btnreg").prop("disabled",false);
+                }
+          },"json");
+      });
+  })
   </script>
   
 
@@ -112,13 +130,15 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
                         	<!-- textbox provisional del horario -->
                         	<div class="input-field col s12">
-    						<select name="Hora">
+    						<select name="Hora" id="hora">
       						<option value="" disabled selected>Seleccione la hora de su cita</option>
       						<option value="8:00 am">8:00 am</option>
       						<option value="8:30 am">8:30 am</option>
       						<option value="9:00 am">9:00 am</option>
     						</select>
+                
   							</div>
+               
 
                             
                         	<!-- combobox de servicios -->
@@ -140,7 +160,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
                             <div class="input-field col s12">
                             <?php $barberos=Gestion_Usuarios::Barbero() ?>
-    						<select name="Barbero">
+    						<select name="Barbero" id="emple">
     						<option value="" disabled selected>Seleccione un Barbero</option>
     						<?php foreach ($barberos as $row) {
     							?>
@@ -157,7 +177,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
 
 
-
+ <span id="resultadobusqueda" class="red-text accent-3 left" style="margin-left: 50px;"> </span>
 
                             <button id="btnreg" type="submit"  class="waves-effect  btn-large green" style="width:100%" name="acc" value="R" >Reservar cita
                             </button>
