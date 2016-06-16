@@ -109,10 +109,10 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                 		<td>
                     <div class='col s12 m12 l12'>
                 		    <div class='col s3 m3 l3'>
-                          <a href='Modificar_cita.php?ui=".base64_encode($row["Cod_cita"])."'><i class='fa fa-pencil  tooltipped' data-position='bottom' data-delay='50' data-tooltip='Editar'></i></a>
+                          <a href='Modificar_cita.php?ui=".base64_encode($row["Cod_cita"])."'><i class='fa fa-pencil  tooltipped' data-position='left' data-delay='50' data-tooltip='Editar'></i></a>
                         </div>
                         <div class='col s3 m3 l3'>
-                  		    <a href='../Controller/Citas.controller.php?ui=".base64_encode($row["Cod_cita"])."&acc=D'><i class='fa fa-trash tooltipped' data-position='bottom' data-delay='50' data-tooltip='Modificar'></i></a>
+                  		    <a href='../Controller/Citas.controller.php?ui=".base64_encode($row["Cod_cita"])."&acc=D'><i class='fa fa-trash tooltipped' data-position='left' data-delay='50' data-tooltip='Borrar'></i></a>
                         </div>
                     </div>
 
