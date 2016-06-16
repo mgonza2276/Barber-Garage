@@ -28,7 +28,7 @@
 	  <link  rel="stylesheet" type="text/css" href="estilos.css">    
 
 
-
+	  	<link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
 		<script src="sweetalert-master/dist/sweetalert.min.js"></script>
      	<script type="text/javascript">
      	$(document).ready(function(){
