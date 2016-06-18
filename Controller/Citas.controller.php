@@ -10,15 +10,18 @@ include_once("../Model/Citas.class.php");
 
 	case 'R':
 
-	$fecha=$_POST["Fecha"];
+	$fecha=$_POST["Fecha"];	
 	$hora=$_POST["Hora"];
 	$servicio=$_POST["Servicio"];
 	$barbero=$_POST["Barbero"];
+	$formato = $_POST["Formato"];
+	$minutos = $_POST["Min"];	
 	$id_usuario=$_POST["Id_usuario"];
+	
 
 	try{
 
-		Gestionar_citas::Create($fecha,$hora,$servicio,$barbero,$id_usuario);
+		Gestionar_citas::Create($fecha,$hora,$servicio,$barbero,$formato,$minutos,$id_usuario);
 		$mensaje="Su cita fue reservada con exito";
 		$tipomensaje = "success";
 		header("Location: ../View/Reservar_Citas.php?m=".$mensaje."&tm=".$tipomensaje);
@@ -87,13 +90,15 @@ include_once("../Model/Citas.class.php");
 	  	$fecha = $_POST["fecha_cita"]; 
 	  	$hora = $_POST["hora"]; 
 	  	$barbero = $_POST["emple"];
+	  	$formato = $_POST["formato"];
+	  	$minutos = $_POST["min"];
 	 
 	  	try{
-	  		$cita = Gestionar_Citas::ValidoCita($fecha, $hora, $barbero);
+	  		$cita = Gestionar_Citas::ValidoCita($fecha, $hora, $barbero, $formato, $minutos);
 
 	  		if($cita[0] != ""){
 	  			$existe = true;	
-	  			$message = "Este horario ya se encuentra ocupado.";
+	  			$message = "Este Horario o Barbero ya se encuentra ocupado.";
 	  		}else{
 	  			$existe = false;
 	  			$message = "";

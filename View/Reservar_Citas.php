@@ -62,12 +62,14 @@ session_start();
 });
 
   $("#emple").change(function(){
-          var hora = $("#hora").val();
-          var fecha_cita = $("#fecha_cita").val();
-          var empleado = $("#emple").val();
-          var accion = "valida_citas";
+          var hora        = $("#hora").val();
+          var fecha_cita  = $("#fecha_cita").val();
+          var empleado    = $("#emple").val();
+          var formato     = $("#formato").val();
+          var min         = $("#min").val();
+          var accion      = "valida_citas";
 
-          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita}, function(result){
+          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita, formato: formato, min:min}, function(result){
 
               
                  if(result.ue == true){ 
@@ -116,28 +118,47 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
   <?php include_once("../Components/menu_barberias.php") ?>
 
 <div class="container">
-        <div class="row">
-            <div id="centro" class="col l6 offset-l3">
-                <form action="../Controller/Citas.controller.php" method="POST">
-                    <center>
-                        <h4>Citas</h4>
-
-                   		
-                        	
-                        	<!-- provisional de la fecha con calendario -->
-                        	<input type="text" name="Fecha" placeholder="clic en el calendario" id="fecha_cita"/>
-
-
+  <div class="row">
+    <div id="centro" class="col l6 offset-l3">
+      <form action="../Controller/Citas.controller.php" method="POST">
+        <center>
+          <h4>Citas</h4>                       	
+                <!-- provisional de la fecha con calendario -->
+                <input type="text" name="Fecha" placeholder="clic en el calendario" id="fecha_cita" readonly required="Los campos no pueden ir vacios" />
                         	<!-- textbox provisional del horario -->
-                        	<div class="input-field col s12">
-    						<select name="Hora" id="hora">
-      						<option value="" disabled selected>Seleccione la hora de su cita</option>
-      						<option value="8:00 am">8:00 am</option>
-      						<option value="8:30 am">8:30 am</option>
-      						<option value="9:00 am">9:00 am</option>
-    						</select>
-                
+                <div class="input-field col s12">
+                  <div class="input-field col s5">
+      						  <select name="Hora" id="hora" required="Los campos no pueden ir vacios">
+        						  <option value="" disabled selected>Seleccione la hora </option>
+        						  <option value="8:">8:</option>
+        						  <option value="8:">8:</option>
+        						  <option value="9:">9:</option>
+      						  </select>   
+                </div>
+                  <div class="input-field col s3">
+                    <select name="Min" id="min" required="Los campos no pueden ir vacios">
+                      <option value="" disabled selected>Minutos</option>
+                      <option value="30">30</option>
+                      <option value="00">00</option>                    
+                    </select>  
+                    </div>  
+                  <!--<div class="input-field col s4">
+                    <input name="formato" type="radio" id="test1" value="am" checked required />
+                  <label for="test1">am</label>
+                  <input name="Formato" type="radio" id="test2" value="pm" />
+                  <label for="test2">pm</label> 
+                  </div>--> 
+                  <div class="input-field col s4">
+                    <select name="Formato" id="formato" required="Los campos no pueden ir vacios">
+                      <option value="" disabled selected>Jornada</option>
+                      <option value="am">am</option>
+                      <option value="pm">pm</option>                    
+                    </select>  
+                  </div>            
   							</div>
+
+                
+
                
 
                             

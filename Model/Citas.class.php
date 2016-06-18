@@ -3,13 +3,13 @@
 class Gestionar_citas{
 
 	// Reservar las citas
-	function Create($fecha,$hora,$servicio,$barbero,$id_usuario){
+	function Create($fecha,$hora,$servicio,$barbero,$formato,$minutos,$id_usuario){
 		$conexion=BarberGarage_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="INSERT INTO citas (Fecha,Hora,Servicio,Barbero,Id_usuario) VALUES (?,?,?,?,?)";		
+		$consulta="INSERT INTO citas (Fecha,Hora,Servicio,Barbero,Formato,Minutos,Id_usuario) VALUES (?,?,?,?,?,?,?)";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($fecha,$hora,$servicio,$barbero,$id_usuario));
+		$query->execute(array($fecha,$hora,$servicio,$barbero,$formato,$minutos,$id_usuario));
 
 		BarberGarage_BD::Disconect();			
 	}
@@ -90,7 +90,7 @@ class Gestionar_citas{
 		return $resultado;		
 	}
 
-	function ValidoCita($fecha, $hora, $barbero){
+	function ValidoCita($fecha, $hora, $barbero, $formato, $minutos){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = BarberGarage_BD::Connect();
@@ -99,10 +99,10 @@ class Gestionar_citas{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND Barbero =? ";
+		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND Barbero =? AND Formato =? AND Minutos =? ";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($fecha, $hora, $barbero ));
+		$query->execute(array($fecha, $hora, $barbero, $formato, $minutos ));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
