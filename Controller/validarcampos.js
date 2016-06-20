@@ -99,5 +99,23 @@ function validar_login(){
 	}
 
 	
+function validarCita()
+	{
+		Fecha	 = document.getElementById('Fecha').value;
+		Hora	 = document.getElementById('Hora').value;
+		Servicio = document.getElementById('Servicio').value;
+		Barbero	 = document.getElementById('Barbero').value;
+		Formato	 = document.getElementById('Formato').value;
+		Min		 = document.getElementById('Min').value;
+		expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
+	if (Fecha===""&&Hora===""&&Servicio===""&&Barbero===""&&Formato===""&&Min==="") 
+		{
+			swal("Llene los campos!","","warning");
+			return false;
+		}
+
+
+		
+	}
 }

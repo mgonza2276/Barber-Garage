@@ -51,6 +51,12 @@ session_start();
 
     <script>
   $(document).ready(function() {
+     <?php
+
+      if(isset($_GET["msn"])){
+        echo "swal( '".$_GET["msn"]."','', 'success');";
+      }
+    ?>
     $('select').material_select();
     $('#fecha_cita').datepicker({
       
@@ -124,22 +130,31 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
         <center>
           <h4>Citas</h4>                       	
                 <!-- provisional de la fecha con calendario -->
-                <input type="text" name="Fecha" placeholder="clic en el calendario" id="fecha_cita" readonly required="Los campos no pueden ir vacios" />
+                <input type="text" name="Fecha" placeholder="clic en el calendario" required id="fecha_cita" readonly  />
                         	<!-- textbox provisional del horario -->
                 <div class="input-field col s12">
                   <div class="input-field col s5">
-      						  <select name="Hora" id="hora" required="Los campos no pueden ir vacios">
+      						  <select name="Hora" id="hora" required>
         						  <option value="" disabled selected>Seleccione la hora </option>
-        						  <option value="8:">8:</option>
-        						  <option value="8:">8:</option>
-        						  <option value="9:">9:</option>
+                      <option value="12">12</option>
+        						  <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+        						  <option value="5">5</option>
+        						  <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>                      
       						  </select>   
                 </div>
                   <div class="input-field col s3">
-                    <select name="Min" id="min" required="Los campos no pueden ir vacios">
-                      <option value="" disabled selected>Minutos</option>
-                      <option value="30">30</option>
-                      <option value="00">00</option>                    
+                    <select name="Min" id="min">
+                      <option required value="" disabled selected>Minutos</option>
+                      <option value="00">00</option> 
+                      <option value="30">30</option>                                         
                     </select>  
                     </div>  
                   <!--<div class="input-field col s4">
@@ -149,8 +164,8 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                   <label for="test2">pm</label> 
                   </div>--> 
                   <div class="input-field col s4">
-                    <select name="Formato" id="formato" required="Los campos no pueden ir vacios">
-                      <option value="" disabled selected>Jornada</option>
+                    <select name="Formato" id="formato">
+                      <option required value="" disabled selected>Jornada</option>
                       <option value="am">am</option>
                       <option value="pm">pm</option>                    
                     </select>  
@@ -200,7 +215,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
  <span id="resultadobusqueda" class="red-text accent-3 left" style="margin-left: 50px;"> </span>
 
-                            <button id="btnreg" type="submit"  class="waves-effect  btn-large green" style="width:100%" name="acc" value="R" >Reservar cita
+                            <button id="btnreg" type="submit"  class="waves-effect  btn-large green" onclick="return validarCita()" style="width:100%" name="acc" value="R" >Reservar cita
                             </button>
                             <button class="waves-effect  btn-large red" style="width:100%">Cancelar
                             </button>
