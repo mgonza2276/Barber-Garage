@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2016 a las 05:46:07
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Tiempo de generación: 21-06-2016 a las 00:48:19
+-- Versión del servidor: 10.1.10-MariaDB
+-- Versión de PHP: 5.5.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `barberia`
 --
+CREATE DATABASE IF NOT EXISTS `barberia` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `barberia`;
 
 -- --------------------------------------------------------
 
@@ -26,7 +28,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `barberia`
 --
 
-CREATE TABLE IF NOT EXISTS `barberia` (
+CREATE TABLE `barberia` (
   `Cod_barberia` varchar(50) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Direccion` varchar(30) NOT NULL,
@@ -49,7 +51,7 @@ INSERT INTO `barberia` (`Cod_barberia`, `Nombre`, `Direccion`, `Telefono`, `Ciud
 -- Estructura de tabla para la tabla `barberia_servicio`
 --
 
-CREATE TABLE IF NOT EXISTS `barberia_servicio` (
+CREATE TABLE `barberia_servicio` (
   `Cod_barberia` varchar(50) NOT NULL,
   `Id_servicio` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -60,23 +62,26 @@ CREATE TABLE IF NOT EXISTS `barberia_servicio` (
 -- Estructura de tabla para la tabla `citas`
 --
 
-CREATE TABLE IF NOT EXISTS `citas` (
+CREATE TABLE `citas` (
   `Cod_cita` int(11) NOT NULL,
   `Fecha` varchar(50) NOT NULL,
   `Hora` varchar(30) NOT NULL,
   `Servicio` varchar(50) NOT NULL,
   `Barbero` varchar(50) NOT NULL,
-  `Id_Usuario` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+  `Id_Usuario` varchar(50) NOT NULL,
+  `Minutos` varchar(2) NOT NULL,
+  `Formato` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `citas`
 --
 
-INSERT INTO `citas` (`Cod_cita`, `Fecha`, `Hora`, `Servicio`, `Barbero`, `Id_Usuario`) VALUES
-(13, 'Miercoles, 11 Mayo, 2016', '8:30 am', 'barba', 'estiven monsalve', 'caliche'),
-(18, 'Miercoles, 8 Febrero, 2017', '8:00 am', 'barba', 'estiven monsalve', 'mango'),
-(19, 'Martes, 31 Mayo, 2016', '8:30 am', 'depilada', 'jorge lopez', 'mango');
+INSERT INTO `citas` (`Cod_cita`, `Fecha`, `Hora`, `Servicio`, `Barbero`, `Id_Usuario`, `Minutos`, `Formato`) VALUES
+(13, 'Miercoles, 11 Mayo, 2016', '8:30 am', 'barba', 'estiven monsalve', 'caliche', '', ''),
+(18, 'Miercoles, 8 Febrero, 2017', '8:00 am', 'barba', 'estiven monsalve', 'mango', '', ''),
+(19, 'Martes, 31 Mayo, 2016', '8:30 am', 'depilada', 'jorge lopez', 'mango', '', ''),
+(20, 'Martes, 21 Junio, 2016', '8:', 'barba', 'estiven monsalve', 'j.andres', '30', 'am');
 
 -- --------------------------------------------------------
 
@@ -84,7 +89,7 @@ INSERT INTO `citas` (`Cod_cita`, `Fecha`, `Hora`, `Servicio`, `Barbero`, `Id_Usu
 -- Estructura de tabla para la tabla `detalle_cita`
 --
 
-CREATE TABLE IF NOT EXISTS `detalle_cita` (
+CREATE TABLE `detalle_cita` (
   `Id_detalle_cita` varchar(50) NOT NULL,
   `Cod_cita` int(11) NOT NULL,
   `Id_servicio` varchar(50) NOT NULL,
@@ -97,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `detalle_cita` (
 -- Estructura de tabla para la tabla `empleados`
 --
 
-CREATE TABLE IF NOT EXISTS `empleados` (
+CREATE TABLE `empleados` (
   `Id_Usuario` varchar(50) NOT NULL,
   `Cod_barberia` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -108,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `empleados` (
 -- Estructura de tabla para la tabla `servicio`
 --
 
-CREATE TABLE IF NOT EXISTS `servicio` (
+CREATE TABLE `servicio` (
   `Id_servicio` varchar(50) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Precio` varchar(50) NOT NULL,
@@ -131,7 +136,7 @@ INSERT INTO `servicio` (`Id_servicio`, `Nombre`, `Precio`, `Duracion`) VALUES
 -- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE IF NOT EXISTS `usuario` (
+CREATE TABLE `usuario` (
   `Id_usuario` varchar(50) NOT NULL,
   `Clave` varchar(50) NOT NULL,
   `Cedula` varchar(20) NOT NULL,
@@ -219,7 +224,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
