@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -20,52 +20,41 @@ session_start();
 <head>
 	<title>Reservar Citas</title>
 	<link  rel="stylesheet" type="text/css" href="estilos.css">
-	 <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
-
-
-      <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-		<!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
-    
-    <!-- iconos -->
-      <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
-
-
-     <script src="sweetalert-master/dist/sweetalert.min.js"></script>
-      <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
-    
-
-    <!-- calendario de citas -->
-    
-    <link rel="stylesheet" href="calendario\calendario.css">
-    <script type="text/javascript" src="calendario\calendario.js"></script>
-    
-
-    <!-- inicializacion del calendario y los selects -->
-
-    <script>
+	<!--Import Google Icon Font-->
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
+  <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
+  <!-- iconos -->
+  <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
+  <script src="sweetalert-master/dist/sweetalert.min.js"></script>
+	<script type="text/javascript" src="../Controller/validarcampos.js"></script>
+  <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
+  <!-- calendario de citas -->
+  <link rel="stylesheet" href="calendario\calendario.css">
+  <script type="text/javascript" src="calendario\calendario.js"></script>
+  <!-- inicializacion del calendario y los selects -->
+  <script>
   $(document).ready(function() {
      <?php
-
       if(isset($_GET["msn"])){
         echo "swal( '".$_GET["msn"]."','', 'success');";
       }
     ?>
     $('select').material_select();
     $('#fecha_cita').datepicker({
-      
+
       showOn: "button",
       buttonImage:"calendario/images/calen.png",
       buttonImageOnly:true,
       showButtonPanel:true,
-    
+
 });
+
 
   $("#emple").change(function(){
           var hora        = $("#hora").val();
@@ -77,8 +66,8 @@ session_start();
 
           $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita, formato: formato, min:min}, function(result){
 
-              
-                 if(result.ue == true){ 
+
+                 if(result.ue == true){
                     swal(result.msn);
                     $("#btnreg").prop("disabled",true);
                  }else{
@@ -88,24 +77,22 @@ session_start();
       });
   })
   </script>
-  
-
   <!-- para las alertas -->
-  <?php 
-      
+  <?php
+
 if(isset($_GET["m"]) and isset($_GET["tm"])){
          if($_GET["m"] != ""){
            echo "<script>
                    $(document).ready(function(){
                       sweetAlert({
-                           title: '...',   
-                           text: '".$_GET["m"]."',   
-                           type: '".$_GET["tm"]."',   
+                           title: '...',
+                           text: '".$_GET["m"]."',
+                           type: '".$_GET["tm"]."',
                            showCancelButton: false,
-                           confirmButtonColor: '#4db6ac',   
-                           confirmButtonText: 'Aceptar',   
-                          cancelButtonText: 'No, cancel plx!',   
-                           closeOnConfirm: false,   
+                           confirmButtonColor: '#4db6ac',
+                           confirmButtonText: 'Aceptar',
+                          cancelButtonText: 'No, cancel plx!',
+                           closeOnConfirm: false,
                            closeOnCancel: false
                        });
                    });
@@ -113,28 +100,24 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
            }
          }
 ?>
-    
-  
 </head>
-
-
-
 <body>
-
-  <?php include_once("../Components/menu_barberias.php") ?>
-
+  <?php
+	 	include_once("../Components/menu_barberias.php")
+	?>
 <div class="container">
   <div class="row">
     <div id="centro" class="col l6 offset-l3">
-      <form action="../Controller/Citas.controller.php" method="POST">
+      <form action="../Controller/Citas.controller.php" method="post" name="formulario"  >
         <center>
-          <h4>Citas</h4>                       	
+          <h4>Citas</h4>
                 <!-- provisional de la fecha con calendario -->
-                <input type="text" name="Fecha" placeholder="clic en el calendario" required id="fecha_cita" readonly  />
-                        	<!-- textbox provisional del horario -->
-                <div class="input-field col s12">
-                  <div class="input-field col s5">
-      						  <select name="Hora" id="hora" required>
+                <input type="text" name="Fecha" placeholder="clic en el calendario"  id="fecha_cita" readonly  />
+
+                <!-- textbox provisional del horario -->
+                <div class="input-field col s12 l12">
+                  <div class="input-field col l6 s6">
+      						  <select name="Hora" id="hora" >
         						  <option value="" disabled selected>Seleccione la hora </option>
                       <option value="12">12</option>
         						  <option value="1">1</option>
@@ -147,85 +130,79 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                       <option value="8">8</option>
                       <option value="9">9</option>
                       <option value="10">10</option>
-                      <option value="11">11</option>                      
-      						  </select>   
+                      <option value="11">11</option>
+      						  </select>
                 </div>
-                  <div class="input-field col s3">
-                    <select name="Min" id="min">
-                      <option required value="" disabled selected>Minutos</option>
-                      <option value="00">00</option> 
-                      <option value="30">30</option>                                         
-                    </select>  
-                    </div>  
+                  <div class="input-field col l3 s6">
+                    <select name="Min" id="min"  >
+                      <option value="" disabled selected>Minutos</option>
+                      <option value="00">00</option>
+                      <option value="30">30</option>
+                    </select>
+                    </div>
                   <!--<div class="input-field col s4">
                     <input name="formato" type="radio" id="test1" value="am" checked required />
                   <label for="test1">am</label>
                   <input name="Formato" type="radio" id="test2" value="pm" />
-                  <label for="test2">pm</label> 
-                  </div>--> 
-                  <div class="input-field col s4">
+                  <label for="test2">pm</label>
+                  </div>-->
+                  <div class="input-field col l3 s12">
                     <select name="Formato" id="formato">
-                      <option required value="" disabled selected>Jornada</option>
+                      <option value="" disabled selected>Jornada</option>
                       <option value="am">am</option>
-                      <option value="pm">pm</option>                    
-                    </select>  
-                  </div>            
+                      <option value="pm">pm</option>
+                    </select>
+                  </div>
   							</div>
-
-                
-
-               
-
-                            
-                        	<!-- combobox de servicios -->
-                            <div class="input-field col l12">
-							<?php 
-							$services=Gestionar_servicio::ReadAll();
- 							?>
-    						<select name="Servicio">
-    						<option disabled selected>Seleccione un servicio</option><?php 
-							foreach ($services as $row) {
- 							?>
- 								
-     							<option value="<?php echo $row["Nombre"] ?>" ><?php echo $row["Nombre"] ?></option>
-      							<?php } ?>
+								<!-- combobox de servicios -->
+              <div class="input-field col s12 l12">
+									<?php
+									$services=Gestionar_servicio::ReadAll();
+		 							?>
+    					<select name="Servicio" id="servicio" required>
+    						<option disabled selected>Seleccione un servicio</option>
+								<?php
+									foreach ($services as $row) {
+ 								?>
+     						<option value="<?php echo $row["Nombre"] ?>" >
+									<?php
+										echo $row["Nombre"]
+									?>
+								</option>
+      						<?php
+									 	}
+									?>
     						</select>
   							</div>
-                            
-                            <!-- combobox de los barberos -->
-
-                            <div class="input-field col s12">
-                            <?php $barberos=Gestion_Usuarios::Barbero() ?>
+                <!-- combobox de los barberos -->
+                <div class="input-field col s12">
+                  	<?php
+											$barberos=Gestion_Usuarios::Barbero()
+										?>
     						<select name="Barbero" id="emple">
     						<option value="" disabled selected>Seleccione un Barbero</option>
-    						<?php foreach ($barberos as $row) {
+    							<?php
+										foreach ($barberos as $row) {
     							?>
-    							<option value="<?php echo $row["Nombre"] ?>"><?php echo $row["Nombre"] ?></option>
-    						<?php } ?> 
-      						
-    						</select>
-  
+    						<option value="<?php echo $row["Nombre"] ?>"><?php echo $row["Nombre"] ?></option>
+    							<?php
+										}
+									?>
+      						</select>
   							</div>
-
-  							
-
   							<input type="hidden" name="Id_usuario" value="<?php echo $_SESSION["Id_usuario"]; ?>"/>
-
-
-
- <span id="resultadobusqueda" class="red-text accent-3 left" style="margin-left: 50px;"> </span>
-
-                            <button id="btnreg" type="submit"  class="waves-effect  btn-large green" onclick="return validarCita()" style="width:100%" name="acc" value="R" >Reservar cita
-                            </button>
-                            <button class="waves-effect  btn-large red" style="width:100%">Cancelar
-                            </button>
-                    </center>
+ 									<span id="resultadobusqueda" class="red-text accent-3 left" style="margin-left: 50px;"> </span>
+                  <button id="btnreg" type="submit" class="waves-effect  btn-large green" style="width:100%" name="acc" value="R" onclick="return validarCita()" >Reservar cita
+                  </button>
+                  <button class="waves-effect  btn-large red" style="width:100%">Cancelar
+                  </button>
+        </center>
                 </form>
             </div>
         </div>
     </div>
-
-    <?php include_once("../Components/footer.php") ?>
-
+    <?php
+			include_once("../Components/footer.php")
+		?>
 </body>
 </html>

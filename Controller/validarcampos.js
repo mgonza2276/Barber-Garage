@@ -15,11 +15,11 @@ function validar(){
 		swal("Llene los campos!","","warning");
 		return false;
 	}
-	
+
 	if (clave==="") {
 		swal("Debe llenar el campo clave");
 		return false;
-	} 
+	}
 
 	if (clave.length<6) {
 		swal("Oops...La contraseña es muy corta!", "", "error");
@@ -29,22 +29,22 @@ function validar(){
 	if (cedula==="") {
 		swal("Debe llenar el campo cedula");
 		return false;
-	} 
+	}
 
 	if (nombre==="") {
 		swal("Debe llenar el campo nombre");
 		return false;
-	} 
+	}
 
 	if (direccion==="") {
 		swal("Debe llenar el campo dirección");
 		return false;
-	} 
+	}
 
 	if (telefono==="") {
 		swal("Debe llenar el campo telefono");
 		return false;
-	} 
+	}
 
 	if (telefono.length>7||telefono.length<7) {
 		swal("Oops...El telefono no es valido", "", "error");
@@ -54,7 +54,7 @@ function validar(){
 	if (celular==="") {
 		swal("Debe llenar el campo celular");
 		return false;
-	} 
+	}
 
 	if (celular.length>10||celular.length<10) {
 		swal("Oops...El numero de celular no es valido", "", "error");
@@ -67,7 +67,7 @@ function validar(){
 		return false;
 	}
 
-	
+
 	if ( !expr.test(email) ) {
         swal("Error!!, El correo " + email + " es invalido.","","error");
     	return false;
@@ -86,7 +86,7 @@ function validar_login(){
 		swal("Ingrese usuario y clave!","","warning");
 		return false;
 	}
-	
+
 
 	if (id_usuario==="") {
 		swal("Ingrese su usuario!","","warning");
@@ -97,25 +97,29 @@ function validar_login(){
 		swal("Ingrese su clave!","","warning");
 		return false;
 	}
+}
 
-	
+
 function validarCita()
 	{
-		Fecha	 = document.getElementById('Fecha').value;
-		Hora	 = document.getElementById('Hora').value;
-		Servicio = document.getElementById('Servicio').value;
-		Barbero	 = document.getElementById('Barbero').value;
-		Formato	 = document.getElementById('Formato').value;
-		Min		 = document.getElementById('Min').value;
+		fecha_actual=document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+		fecha_cita	 = document.getElementById('fecha_cita').value;
+		hora	 = document.getElementById('hora').value;
+		servicio = document.getElementById('servicio').value;
+		emple	 = document.getElementById('emple').value;
+		formato	 = document.getElementById('formato').value;
+		min		 = document.getElementById('min').value;
 		expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
-	if (Fecha===""&&Hora===""&&Servicio===""&&Barbero===""&&Formato===""&&Min==="") 
+	if (fecha_cita==="" || hora===""|| servicio===""|| emple===""|| formato===""|| min==="")
 		{
 			swal("Llene los campos!","","warning");
 			return false;
 		}
-
-
-		
+	if (fecha_cita<fecha_actual) {
+			swal("La fecha no esta disponible");
 	}
-}
+
+
+
+	}
