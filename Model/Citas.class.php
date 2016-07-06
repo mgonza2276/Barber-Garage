@@ -3,26 +3,26 @@
 class Gestionar_citas{
 
 	// Reservar las citas
-	function Create($fecha,$hora,$servicio,$barbero,$formato,$minutos,$id_usuario){
+	function Create($fecha,$hora,$servicio,$barbero,$formato,$minutos,$id_usuario,$cod_barberia){
 		$conexion=BarberGarage_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="INSERT INTO citas (Fecha,Hora,Servicio,Barbero,Formato,Minutos,Id_usuario) VALUES (?,?,?,?,?,?,?)";		
+		$consulta="INSERT INTO citas (Fecha,Hora,Minutos,Formato,Servicio,Barbero,Id_usuario,Cod_barberia) VALUES (?,?,?,?,?,?,?,?)";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($fecha,$hora,$servicio,$barbero,$formato,$minutos,$id_usuario));
+		$query->execute(array($fecha,$hora,$minutos,$formato,$servicio,$barbero,$id_usuario,$cod_barberia));
 
 		BarberGarage_BD::Disconect();			
 	}
 
 	// modificacion de las citas
-	function Update($Cod_cita,$fecha,$hora,$servicio,$barbero,$id_usuario){
+	function Update($Cod_cita,$fecha,$hora,$minutos,$formato,$servicio,$barbero,$id_usuario,$cod_barberia){
 		$conexion=BarberGarage_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 		
 
-		$consulta="UPDATE citas SET Fecha=?,Hora=?,Servicio=?,Barbero=?,Id_usuario=? WHERE Cod_cita=? ";		
+		$consulta="UPDATE citas SET Fecha=?,Hora=?,Minutos=?,Formato=?,Servicio=?,Barbero=?,Id_usuario=?,Cod_barberia=? WHERE Cod_cita=? ";		
 		$query=$conexion->prepare($consulta);
-		$query->execute(array($fecha,$hora,$servicio,$barbero,$id_usuario,$Cod_cita));
+		$query->execute(array($fecha,$hora,$minutos,$formato,$servicio,$barbero,$id_usuario,$cod_barberia,$Cod_cita));
 		
 		BarberGarage_BD::Disconect();		
 

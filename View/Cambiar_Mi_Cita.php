@@ -18,10 +18,10 @@
     <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"/>
-  <title>modificar citas</title>
-  <link  rel="stylesheet" type="text/css" href="estilos.css">
-   <!--Import Google Icon Font-->
+	<meta charset="utf-8"/>
+	<title>modificar citas</title>
+	<link  rel="stylesheet" type="text/css" href="estilos.css">
+	 <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
@@ -30,7 +30,7 @@
       <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <!--Import jQuery before materialize.js-->
+		<!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
     
@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="calendario\calendario.css">
     <script type="text/javascript" src="calendario\calendario.js"></script>
 
-  <!-- inicializacion del calendario y los selects -->
+	<!-- inicializacion del calendario y los selects -->
 
     <script>
   $(function() {
@@ -95,8 +95,8 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 </head>
 
 <body>
-  
-  <?php include_once("../Components/menu_admin.php") ?>
+	
+	<?php include_once("../Components/menu_barberias.php") ?>
 
 <div class="container">
         <div class="row">
@@ -110,15 +110,15 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                           <!-- codigo de la cita -->
                           <label id="label_cita">Numero de cita :</label>
                           <input type="text" name="Cod_cita"  value="<?php echo $citas[0] ?> " readonly/>
-                      
-                          
-                          <!--fecha con calendario -->
+                   		
+                        	
+                        	<!--fecha con calendario -->
                           <label>Fecha :</label>
-                          <input type="text" name="Fecha" placeholder="clic en el calendario" id="fecha_cita" value="<?php echo $citas[1] ?>"/>
+                        	<input type="text" name="Fecha" placeholder="clic en el calendario" id="fecha_cita" value="<?php echo $citas[1] ?>"/>
 
 
                  
-                          <!-- combobox del horario -->
+                        	<!-- combobox del horario -->
                 
               <!-- hora -->
 
@@ -130,9 +130,9 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
                 <div class="input-field col s5">
                   <label id="label_hora">Hora: </label>
-                  <select name="Hora" id="hora">
-                    <option value="<?php echo $citas[2]; ?>"><?php echo $citas[2]  ?></option>
-                      <option value="12">12</option>
+    						  <select name="Hora" id="hora">
+      						  <option value="<?php echo $citas[2]; ?>"><?php echo $citas[2]  ?></option>
+      						    <option value="12">12</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -144,8 +144,8 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                       <option value="9">9</option>
                       <option value="10">10</option>
                       <option value="11">11</option>
-                  </select>
-                </div>
+    						  </select>
+  							</div>
                 
                   <!-- minutos -->
                 
@@ -173,23 +173,23 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
               </div>
 
                             
-                          <!-- combobox de servicios -->
+                        	<!-- combobox de servicios -->
                           
                             <div class="input-field col l12">
                             <label id="label_servicio">Servicio :</label>
-              <?php 
-              $services=Gestionar_servicio::ReadAll();
-              ?>
-                
+							<?php 
+							$services=Gestionar_servicio::ReadAll();
+ 							?>
+    						
                 <select name="Servicio">
-                <option value="<?php echo $citas[5]; ?>"><?php echo $citas[5] ?></option><?php 
-              foreach ($services as $row) {
-              ?>
-                
-                  <option value="<?php echo $row["Nombre"] ?>" ><?php echo $row["Nombre"] ?></option>
-                    <?php } ?>
-                </select>
-                </div>
+    						<option value="<?php echo $citas[5]; ?>"><?php echo $citas[5] ?></option><?php 
+							foreach ($services as $row) {
+ 							?>
+ 								
+     							<option value="<?php echo $row["Nombre"] ?>" ><?php echo $row["Nombre"] ?></option>
+      							<?php } ?>
+    						</select>
+  							</div>
                             
                             <!-- combobox de los barberos -->
 
@@ -197,37 +197,37 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                             <label id="label_barbero">Barbero :</label> 
                             <?php $barberos=Gestion_Usuarios::Barbero() ?>
                 
-                <select name="Barbero" id="emple">
-                <option value="<?php echo $citas[6] ?>"><?php echo $citas[6] ?></option>
-                <?php foreach ($barberos as $row) {
-                  ?>
-                  <option value="<?php echo $row["Nombre"] ?>"><?php echo $row["Nombre"] ?></option>
-                <?php } ?> 
-                  
-                </select>
+    						<select name="Barbero" id="emple">
+    						<option value="<?php echo $citas[6] ?>"><?php echo $citas[6] ?></option>
+    						<?php foreach ($barberos as $row) {
+    							?>
+    							<option value="<?php echo $row["Nombre"] ?>"><?php echo $row["Nombre"] ?></option>
+    						<?php } ?> 
+      						
+    						</select>
   
-                </div>
+  							</div>
 
-                
+  							
 
-                <input type="hidden" name="Id_usuario" value="<?php echo $_SESSION["Id_usuario"]; ?>"/>
+  							<input type="hidden" name="Id_usuario" value="<?php echo $_SESSION["Id_usuario"]; ?>"/>
 
 
                 <input type="hidden" name="Cod_barberia" value="<?php echo $_SESSION["nit"]; ?>"/>
 
 
 
-                            <button id="btnreg" type="submit"  class="waves-effect  btn-large green" style="width:100%" name="acc" value="U" >Modificar Cita
+                            <button id="btnreg" type="submit"  class="waves-effect  btn-large green" style="width:100%" name="acc" value="U">Modificar Cita
                             </button>
-                            <a class="waves-effect  btn-large red" href="Gestion_Citas.php" style="width:100%">Cancelar
+                            <a class="waves-effect  btn-large red" href="Mi_Cita.php?ja=<?php echo $_SESSION["Id_usuario"] ?>" style="width:100%">Cancelar
                             </a>
                     
                 </form>
             </div>
         </div>
-    </div>  
+    </div>	
 
 
 <?php include_once("../Components/footer.php") ?>
 </body>
-</html>    
+</html>  

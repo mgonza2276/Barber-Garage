@@ -1,9 +1,9 @@
 <?php 
-	session_start();
-	include_once("../Model/conexion.php");
-	include_once("../Model/Citas.class.php");
+  session_start();
+  include_once("../Model/conexion.php");
+  include_once("../Model/Citas.class.php");
 
-	if(!isset($_SESSION["Id_usuario"])){
+  if(!isset($_SESSION["Id_usuario"])){
     $msn = base64_encode("Debe iniciar sesion primero!");
     $tipo_msn = base64_encode("advertencia");
 
@@ -14,14 +14,14 @@
  <!DOCTYPE html>
  <html lang="en">
  <head>
- 	<meta charset="UTF-8">
- 	<title>Gestion de las Citas</title>
+  <meta charset="UTF-8">
+  <title>Gestion de las Citas</title>
 
-	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
-    	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+      <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
      
       <!--  -->
       <!--Import materialize.css-->
@@ -37,7 +37,7 @@
        <script src="sweetalert-master/dist/sweetalert.min.js"></script>
       <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
 
-	<?php
+  <?php
 
 if(isset($_GET["m"]) and isset($_GET["tm"])){
          if($_GET["m"] != ""){
@@ -62,58 +62,62 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
 
 
-		<script>
-    		$(document).ready( function () {
-      		$('#datatable');
-    		});
-    	</script>
-	
+    <script>
+        $(document).ready( function () {
+          $('#datatable');
+        });
+      </script>
+  
  </head>
  <body>
 
- 	<?php include_once("../Components/menu_barberias.php") ?>
- 	
- 	<h1>Gestion Citas</h1>
-		<a href="Reservar_Citas.php">Reservar Nueva Cita</a>
-		<table id="datatable" class="display highlight centered responsive-table bordered">
- 		<thead>
- 			<tr>
- 				<th>CODIGO CITA</th>
- 				<th>FECHA</th>
- 				<th>HORA</th>
- 				<th>SERVICIO</th>
- 				<th>BARBERO</th>
- 			</tr>			
- 		</thead>
-			
- 		<tbody>
- 			<?php 
- 			$citas=Gestionar_citas::Mi_Cita($_REQUEST["ja"]);
- 			foreach ($citas as $row) {
- 			 	
- 			  
- 		echo "<tr>
-                		<td>".$row["Cod_cita"]."</td>
-                		<td>".$row["Fecha"]."</td>
-                		<td>".$row["Hora"]."</td>
-                		<td>".$row["Servicio"]."</td>
-                		<td>".$row["Barbero"]."</td>
-                		<td>
-                		<a href='Modificar_cita.php?ui=".base64_encode($row["Cod_cita"])."'><i class='fa fa-pencil'></i></a>
+  <?php include_once("../Components/menu_barberias.php") ?>
+  
+  <h1>Gestion Citas</h1>
+    <a href="Reservar_Citas.php">Reservar Nueva Cita</a>
+    <table id="datatable" class="display highlight centered responsive-table bordered">
+    <thead>
+      <tr>
+        <th>CODIGO CITA</th>
+        <th>FECHA</th>
+        <th>HORA</th>
+        <th>MINUTOS</th>
+        <th>FORMATO</th>
+        <th>SERVICIO</th>
+        <th>BARBERO</th>
+      </tr>     
+    </thead>
+      
+    <tbody>
+      <?php 
+      $citas=Gestionar_citas::Mi_Cita($_REQUEST["ja"]);
+      foreach ($citas as $row) {
+        
+        
+    echo "<tr>
+                    <td>".$row["Cod_cita"]."</td>
+                    <td>".$row["Fecha"]."</td>
+                    <td>".$row["Hora"]."</td>
+                    <td>".$row["Minutos"]."</td>
+                    <td>".$row["Formato"]."</td>
+                    <td>".$row["Servicio"]."</td>
+                    <td>".$row["Barbero"]."</td>
+                    <td>
+                    <a href='Cambiar_Mi_Cita.php?ui=".base64_encode($row["Cod_cita"])."'><i class='fa fa-pencil'></i></a>
 
-                  		<a href='../Controller/Citas.controller.php?ui=".base64_encode($row["Cod_cita"])."&acc=D'><i class='fa fa-trash'></i></a>
+                      <a href='../Controller/Citas.controller.php?ui=".base64_encode($row["Cod_cita"])."&acc=D'><i class='fa fa-trash'></i></a>
 
 
-                		</td>
-              		  </tr>";
-			}
-			?>
+                    </td>
+                    </tr>";
+      }
+      ?>
 
-		
- 		</tbody>
+    
+    </tbody>
 
- 	</table>
+  </table>
 
- 	<?php include_once("../Components/footer.php") ?>
+  <?php include_once("../Components/footer.php") ?>
  </body>
  </html>

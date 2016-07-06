@@ -226,7 +226,27 @@ spam{
 	font-size: 15px;
 }
 
-/*estilo del tamaño del textbox de fecha citas*/
+/*estilos modulo de modificar citas citas*/
 #fecha_cita{
-	width: 90%;
+	width: 80%;
+}
+
+#label_minutos{
+	margin-top: -35px;
+}
+#label_formato{
+	margin-top: -35px;
+}
+
+#label_hora{
+	margin-top: -35px;
+}
+#label_servicio{
+	margin-top: -25px;
+}
+#label_barbero{
+	margin-top: -25px;
+}
+#label_cita{
+	font-size: 15px;
 }

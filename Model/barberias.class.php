@@ -99,5 +99,23 @@
 
 		BarberGarage_BD::Disconect();
 	}
+
+		// validacion de las barberias para las variables de session
+
+	function ValidaBarberia($Cod_barberia){
+		      $conexion=BarberGarage_BD::Connect();
+		      $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		      $consulta = "SELECT * FROM barberia WHERE Cod_barberia = ?";
+
+		      $query = $conexion->prepare($consulta);
+
+		      $query->execute(array($Cod_barberia));
+
+		      $resultado = $query->fetch(PDO::FETCH_BOTH);
+		      BarberGarage_BD::Disconect();
+
+		      return $resultado;
+    	}
 	}
 ?>

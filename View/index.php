@@ -71,7 +71,7 @@
               <i class="material-icons prefix">vpn_key</i>
 						      <input type="password" placeholder="Contraseña..." name="Clave" id="clave_usuario"required/>
 						  <div class="col l12 s12">  
-                  <button href="comp_menu.php" id="boton" class="waves-effect waves-light btn cyan" onclick="return validar_login()">Ingresar</button>
+                  <button id="boton" class="waves-effect waves-light btn cyan" >Ingresar</button>
               </div> 
               <!-- Recordar contraseña -->
               <!-- <div class="col l12 s12">

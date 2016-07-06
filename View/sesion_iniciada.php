@@ -1,3 +1,8 @@
+<?php 
+include_once("../Model/barberias.class.php");
+
+ ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +24,12 @@
   <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
+    <script>
+      $(document).ready(function() {
+      $('select').material_select();
+  });
+    </script>
+    
 </head>
 <body Class="fondo">
 
@@ -42,13 +53,35 @@
           <div class="card red darken-4">
             <div class="card-content white-text">
               <h1>Encuentra tu <br>Barberia Favorita</h1>
-              <input id="txtnom_barberia"type="text" placeholder="Escriba el Nombre de la Barberia"/>
-              <a class="waves-effect waves-light btn btn_buscar_barberia">Buscar Barberia</a>
-              <div id="barber_relac">
-                <div class="icono_barber"></div>
-                <div class="barberia_encontrada"><a href="Dashboard_Cliente.php">barberia #1</a></div><br>
-                <a class="waves-effect waves-light btn btn_entrar_bar">Entrar</a>
+
+              
+              <form action="../Controller/validabarberia.controller.php" method="post">
+
+              <div class="input-field col s12">
+              
+              <?php 
+                  $barberias= Gestion_barberias::ReadAll();
+                 ?>
+              <select name="nit">
                 
+                  
+              
+                <option value="" disabled selected>Seleccione una barberia</option>
+                
+                <?php 
+                  foreach ($barberias as $barberia) {
+                   ?> 
+                  
+                 
+                <option value="<?php echo $barberia[0]; ?>"><?php echo $barberia[1]; ?></option>
+
+               <?php }  ?> 
+              </select>
+            </div>
+
+
+              <button type="submit" class="waves-effect waves-light btn btn_entrar_bar">Entrar a la Barberia</button>
+              </form>  
               </div>
 
             </div>
@@ -57,7 +90,7 @@
 
     </div>
 
-  </div>    
+    
   <?php include_once("../Components/footer.php") ?>
 
 
