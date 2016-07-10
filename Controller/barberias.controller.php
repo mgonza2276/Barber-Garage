@@ -17,10 +17,12 @@
 		$Direccion   	=$_POST["direccion"];
 		$Telefono    	=$_POST["telefono"];
 		$Ciudad      	=$_POST["ciudad"];
+		$GeoX			=$_POST["Geo_x"];
+		$GeoY			=$_POST["Geo_y"];
 
 
 		try {
-			Gestion_barberias::Create($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad);
+			Gestion_barberias::Create($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY);
 			$mensaje= "Registro barberia exitoso!";
 			$tipomensaje = "success";
 			header("Location: ../View/gestion_barberias.php?m= ".$mensaje."&tm=".$tipomensaje);

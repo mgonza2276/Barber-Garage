@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
  ?>
 
 <!DOCTYPE html>
@@ -48,11 +47,22 @@ session_start();
       var map = new GMaps
       ({
         el: '#map',
-        lat: -6.1637075,
-        lng: -75.6231504
-         
-      });
-          
+        lat: 6.244203,
+        lng: -75.58121189999997,
+         click: function(e){
+
+          map.addMarker({
+            lat: e.latLng.lat(),
+            lng: e.latLng.lng()
+
+          });
+
+
+          $("#ltn").val(e.latLng.lat());
+          $("#lng").val(e.latLng.lng());
+
+        }
+      });     
       
      
       GMaps.geolocate({
@@ -107,7 +117,8 @@ session_start();
               					<input type="number" placeholder="Telefono" name="telefono" required/>
               				<i class="material-icons prefix">business</i>
               					<input type="text" placeholder="Ciudad" name="ciudad" required/>
-              				
+              				<input type="hidden" value="" name="Geo_x" id="ltn"> 
+                      <input type="hidden" value="" name="Geo_y" id="lng">
              			</div>            
             			<div class="col l8 input-field">
             				<b>Selecciona tu ubicacion :</b>
