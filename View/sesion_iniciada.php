@@ -40,7 +40,7 @@ include_once("../Model/barberias.class.php");
   
 
     <div class="row">
-        <div class="col s12 m6  ">
+        <div class="col s12 m6">
           <div class="card red darken-4 ">
             <div class="card-content white-text">
               <p>Barber Garage es la <br> aplicacion ideal para <br> reservar tus citas en tu <br> barberia favorita</p>
@@ -49,7 +49,7 @@ include_once("../Model/barberias.class.php");
         </div>
 
     
-    <div class="col s12 m6">
+    <div class="col s12 m6 l6">
           <div class="card red darken-4">
             <div class="card-content white-text">
               <h1>Encuentra tu <br>Barberia Favorita</h1>
@@ -57,16 +57,17 @@ include_once("../Model/barberias.class.php");
               
               <form action="../Controller/validabarberia.controller.php" method="post">
 
-              <div class="input-field col s12">
+              <div class="input-field col l8 offset-l2 s12">
               
               <?php 
                   $barberias= Gestion_barberias::ReadAll();
                  ?>
-              <select name="nit">
+                 <br><br>
+              <select name="nit" >
                 
                   
               
-                <option value="" disabled selected>Seleccione una barberia</option>
+                <option disabled selected>Seleccione una barberia</option>
                 
                 <?php 
                   foreach ($barberias as $barberia) {

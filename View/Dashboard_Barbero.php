@@ -37,27 +37,40 @@
 <div class="container">
 <div class="row">
     <div class="col s12 m6 l6 iconos  red darken-4"><h3>Citas</h3><a href="#"><i class="fa fa-calendar-o "></i></a><br>
-	<a class="links" href="#">Reservar Cita</a><br>
+	<!-- <a class="links" href="#">Reservar Cita</a><br>
 	<a class="links" href="#">Modificar Cita</a><br>
 	<a class="links" href="#">Consultar Cita</a><br>
-	<a class="links" href="#">Mis Citas Asignadas</a>
-
+	<a class="links" href="#">Mis Citas Asignadas</a> -->
+		<div class="row">
+      		<div class="tooltipped col s2 offset-l4 offset-s4 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Mis Citas Asignadas">3</div>
+      		<div class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Modificar Citas">3</div> 
+    	</div>
     </div>
+
     <div class="col s12 m6 l6  iconos  red darken-3"><h3>Cortes</h3><a href="#"><i class="fa fa-picture-o"></i></a><br>
-	<a class="links" href="#">Ver Cortes</a><br>
-	<a class="links" href="#">Ver Estilos de Barba</a>
+	<!-- <a class="links" href="#">Ver Cortes</a><br>
+	<a class="links" href="#">Ver Estilos de Barba</a> -->
+		<div class="row">
+      		<div class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Ver Cortes">3</div>
+    	</div>
     </div>
 
 
-    <div class="col s12 m6 l6  iconos  red darken-3"><h3>Consultar usuarios</h3><a href="#"><i class="fa fa-users"></i></a><br>
-	<a class="links" href="#">Consultar Usuarios</a>
+    <div class="col s12 m6 l6  iconos  red darken-3"><h3 id="cons_usua">Consultar usuarios</h3><a href="#"><i class="fa fa-users"></i></a><br>
+	<!-- <a class="links" href="#">Consultar Usuarios</a> -->
+		<div class="row">
+      		<div class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Consultar Usuarios">3</div>
+    	</div>
     </div>
 
-    <div class="col s12 m6 l6  iconos  red darken-4"><h3>Configuracion</h3><a href="#"><i class="fa fa-cog"></i></a><br>
-	<a class="links" href="#">Mi perfil</a><br>
-	<a class="links" href="#">Cambiar mi Contraseña</a>
-
+    <div class="col s12 m6 l6  iconos  red darken-4"><h3 id="configuracion">Configuración</h3><a href="#"><i class="fa fa-cog"></i></a><br>
+	<!-- <a class="links" href="#">Mi perfil</a><br>
+	<a class="links" href="#">Cambiar mi Contraseña</a> -->
+		<div class="row">
+        	<div class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Mi Perfil">3</div>
+      	</div>
     </div>
+  
   </div>
 
 </div>

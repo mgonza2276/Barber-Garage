@@ -171,17 +171,39 @@
 
 .iconos>h3{
 	color: #fff;
-	margin-left:90px; 
+	margin-left:150px; 
 }
 
 .iconos>h4{
 	color: #fff;
-	margin-left:90px; 
+	margin-left:170px; 
+}
+
+#configuracion{
+	margin-left:80px; 
+}
+
+#gest_usu{
+	margin-left:80px; 
+}
+
+#gest_bar{
+	margin-left:80px; 
+}
+
+#cons_usua{
+	margin-left:50px;
 }
 
 .iconos a{
-	margin-left: 90px;
+	margin-left: 170px;
 }
+
+.div_enlaces{
+	height: 60px;
+	margin-top: 20px;
+}
+
 
 
 
@@ -194,37 +216,21 @@
 
 /*Estilos de la parte de buscar barberia en el archivo seccion_iniciada*/
 
-.icono_barber{
-
-	width: 60px;
-	height: 60px;
-	background-color: #fff;
-}
-
-.barberia_encontrada{
-	height: 45px;
-	width: 280px;
-	background-color: #FA5858;
-	float: right;
-	margin-top: -50px;
-}
-
 .btn_entrar_bar{
-
-	/*float: right;*/
-	margin-top: -15px;
-	height: 20px;
+	margin-left: 60px;
 
 }
+
+
+
+
 
 #prueba{
 	font-size: 14px;
 	margin-left: 50px;
 	margin-top: 14px;
 }
-spam{
-	font-size: 15px;
-}
+
 
 /*estilos modulo de modificar citas citas*/
 #fecha_cita{

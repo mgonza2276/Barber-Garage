@@ -29,18 +29,16 @@
 
 <!-- submenu Citas desktop -->
 <ul id="citas_barbero_desktop" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#!">Reservar Cita</a></li>
-  <li><a class="indigo-text text-darken-4" href="#!">Modificar Cita</a ></li>
-  <li><a class="indigo-text text-darken-4" href="#!">Consultar Cita</a ></li>
   <li><a class="indigo-text text-darken-4" href="#!">Mis Citas Asignadas</a ></li>
+  <li><a class="indigo-text text-darken-4" href="#!">Modificar Citas</a ></li>
 </ul>
 
 <!-- submenu Citas movil -->
 <ul id="citas_barbero_movil" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#!">Reservar Cita</a></li>
-  <li><a class="indigo-text text-darken-4" href="#!">Modificar Cita</a ></li>
-  <li><a class="indigo-text text-darken-4" href="#!">Consultar Cita</a ></li>
   <li><a class="indigo-text text-darken-4" href="#!">Mis Citas Asignadas</a ></li>
+  <li><a class="indigo-text text-darken-4" href="#!">Modificar Citas</a ></li>
+  
+  
 </ul>
 
 
