@@ -74,6 +74,23 @@ class Gestionar_citas{
 	}
 
 
+	// metodo para que el barberro visualize las citas que tiene asignadas
+	function Mis_citas_asignadas($barbero){//para el modificar de todos los usuarios
+		$conexion=BarberGarage_BD::Connect();
+		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+		$consulta="SELECT * FROM citas WHERE Barbero=?";
+		$query=$conexion->prepare($consulta);
+		$query->execute(array($barbero));
+
+		$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+		BarberGarage_BD::Disconect();
+
+		return $resultado;		
+	}
+
+
 
 	function ReadAll(){//para el administrador y el barbero
 		$conexion=BarberGarage_BD::Connect();
