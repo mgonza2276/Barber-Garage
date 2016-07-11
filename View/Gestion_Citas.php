@@ -1,4 +1,4 @@
-<?php 
+<?php
   session_start();
   include_once("../Model/conexion.php");
   include_once("../Model/Citas.class.php");
@@ -17,19 +17,14 @@
   <meta charset="UTF-8">
   <title>Gestion de las Citas</title>
 
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
-      <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
-     
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+      <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
       <!--  -->
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
-
       <!-- iconos -->
       <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
-      
       <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
@@ -44,14 +39,14 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
            echo "<script>
                    $(document).ready(function(){
                       sweetAlert({
-                           title: '...',   
-                           text: '".$_GET["m"]."',   
-                           type: '".$_GET["tm"]."',   
+                           title: '...',
+                           text: '".$_GET["m"]."',
+                           type: '".$_GET["tm"]."',
                            showCancelButton: false,
-                           confirmButtonColor: '#4db6ac',   
-                           confirmButtonText: 'Aceptar',   
-                          cancelButtonText: 'No, cancel plx!',   
-                           closeOnConfirm: false,   
+                           confirmButtonColor: '#4db6ac',
+                           confirmButtonText: 'Aceptar',
+                          cancelButtonText: 'No, cancel plx!',
+                           closeOnConfirm: false,
                            closeOnCancel: false
                        });
                    });
@@ -61,28 +56,29 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 ?>
 
 
-
+<script type="text/javascript" charset="utf8" src="DataTable/jquery.dataTables.js"></script>
+<link rel="stylesheet" type="text/css" href="DataTable/jquery.dataTables.css">
     <script>
         $(document).ready( function () {
-          $('#datatable');
+          $('#datatable').DataTable();
         });
       </script>
-  
+
  </head>
  <body>
 
   <?php include_once("../Components/menu_admin.php") ?>
-  
+
   <center><h1>Gestion Citas</h1></center>
   <div class="container">
-    <div class="row">      
+    <div class="row">
      <!--  <div class="col s1 l1 m1  offset-m5 offset-l5"><a class="btn-floating btn-large waves-effect waves-light green" href="Reservar_Citas.php"><i class="material-icons">add</i></a></div>
       <div class="col s6 offset-s1 l6 m6"><p><b>Nueva Cita<b></p></div> -->
     </div>
   </div>
-    
+
     <!-- <button class="waves-effect  btn-large cyan" href="Reservar_Citas.php">Reservar Nueva Cita</button> -->
-    
+
     <table id="datatable" class="display highlight centered responsive-table bordered">
     <thead>
       <tr>
@@ -94,15 +90,16 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
         <th>SERVICIO</th>
         <th>BARBERO</th>
         <th>ID_USUARIO</th>
-      </tr>     
+        <th></th>
+      </tr>
     </thead>
-      
+
     <tbody>
-      <?php 
+      <?php
       $citas=Gestionar_citas::ReadAll();
       foreach ($citas as $row) {
-        
-        
+
+
     echo "<tr>
                     <td>".$row["Cod_cita"]."</td>
                     <td>".$row["Fecha"]."</td>
@@ -129,7 +126,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
       }
       ?>
 <!-- class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip -->
-    
+
     </tbody>
 
   </table>

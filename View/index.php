@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"> -->
 	<meta charset="UTF-8">
 	<title>Barber Garage</title>
 
@@ -14,7 +15,7 @@
   	  <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 
 	  <script type="text/javascript" src="../Controller/validarcampos.js"></script>
-   
+
 
     <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
 
@@ -27,27 +28,27 @@
       <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
       <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
-		
+
       <script type="text/javascript" src="../Controller/validarcampos.js"></script>
     <!--Aqui llamaremos los estilos necesarios-->
-    <link  rel="stylesheet" type="text/css" href="estilos.css">    
+    <link  rel="stylesheet" type="text/css" href="estilos.css">
 
     <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
 
     <script src="sweetalert-master/dist/sweetalert.min.js"></script>
-      
+
       <script type="text/javascript">
       $(document).ready(function(){
-      
+
         <?php
 
-      if(isset($_GET["msn"])){
-        echo "swal( '".$_GET["msn"]."','', 'success');";
+      if(isset($_GET["m"])){
+        echo "swal( '".$_GET["m"]."','', 'success');";
       }
     ?>
-    
+
   })
-    </script>   
+    </script>
 
 
 
@@ -56,23 +57,23 @@
 	<?php include_once("../Components/menu.php") ?>
 
 	<div class="container ">
-    
+
     <div class="row">
 
       <div id="centro"  class="col l4 s12 m8 offset-m2 offset-s0 offset-l4 input-field" >
-      	
-        <form id="formulario" action="../Controller/validausuario.controller.php" method="post">				
+
+        <form id="formulario" action="../Controller/validausuario.controller.php" method="post">
 
       			<center><h3 id="bajar_titulo">Log In</h3></center>
 
 						  <i class="material-icons prefix">account_circle</i>
 						      <input type="text" placeholder="Nombre de usuario" name="Id_usuario" id="id_usuario"required />
-						        
+
               <i class="material-icons prefix">vpn_key</i>
 						      <input type="password" placeholder="Contraseña..." name="Clave" id="clave_usuario"required/>
-						  <div class="col l12 s12">  
+						  <div class="col l12 s12">
                   <button id="boton" class="waves-effect waves-light btn cyan" onclick="return validar_login()">Ingresar</button>
-              </div> 
+              </div>
               <!-- Recordar contraseña -->
               <!-- <div class="col l12 s12">
                     <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
@@ -81,11 +82,11 @@
                       <br>
                       <hr>
               </div> -->
-              <div class="col l12 s12">                  
+              <div class="col l12 s12">
                   <a id="boton" class="waves-effect waves-light btn blue-grey darken-1" href="Registro_usuario.php"><spam>Regístrate</spam></a>
-              </div> 
+              </div>
         </form>
-      </div>		
+      </div>
                   <!-- fin formulario login -->
     </div>
   </div>
@@ -100,6 +101,6 @@
         $('.modal-trigger').leanModal();
         });
     </script>
-    	
+
 </body>
 </html>

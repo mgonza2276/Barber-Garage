@@ -1,47 +1,47 @@
-<?php 
+<?php
 session_start();
  ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
+  <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+	<meta charset="UTF-8">
 	<title>Registrar_Barberia</title>
 	<link  rel="stylesheet" type="text/css" href="estilos.css">
 	  <!--Aqui llamaremos los iconos que necesitaremos-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	  
+
       <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
-    
-    
-    
-    <!-- iconos -->
-      <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
-
-    <link rel="stylesheet" type="text/css" href="sweet/dist/sweetalert.css">
-    <script src="sweet/dist/sweetalert.min.js"></script> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!-- mapas -->
-    <script type="text/javascript" src="gmaps/gmaps.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-  	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-  	
     <!--links de materialize-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
 
-  <?php 
+
+    <!-- iconos -->
+    <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="sweet/dist/sweetalert.css">
+    <script src="sweet/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- mapas -->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>  	 -->
+    <script type="text/javascript" src="gmaps/gmaps.js"></script>
+
+
+
+  <?php
       if(isset($_GET["m"])){
         if($_GET["m"] !=""){
           echo "<script>alert('".$_GET["m"]."')</script>";
         }
       }
-     ?>  
+     ?>
 
 
-  	<script type="text/javascript">
+  	<script>
     var map;
     $(document).ready(function(){
       var map = new GMaps
@@ -62,13 +62,13 @@ session_start();
           $("#lng").val(e.latLng.lng());
 
         }
-      });     
-      
-     
+      });
+
+
       GMaps.geolocate({
         success: function(position){
           map.setCenter(position.coords.latitude, position.coords.longitude);
-          
+
         },
         error: function(error){
           alert('Geolocalizacion fallida: '+error.message);
@@ -76,8 +76,8 @@ session_start();
         not_supported: function(){
           alert("Your browser does not support geolocation");
         },
-               
-        
+
+
         // always: function(){
         //   alert("Hola, Humano!");
         // }
@@ -87,14 +87,14 @@ session_start();
 </head>
 <body id="fondomapa">
 
-<?php  
+<?php
   include("../Components/menu_admin.php");
 ?>
 
 
   <?php include_once("../Components/menu_admin.php") ?>
 
-	
+
 	<div class="container">
 
       	<div class="row">
@@ -106,7 +106,7 @@ session_start();
              			<center><h4>Registrar Barberia</h4></center>
             			<div class="col l4 input-field ">
             <!-- aqui -->
-              
+
               				<i class="fa fa-hashtag prefix"></i>
               					<input type="text" placeholder="NIT" name="nit" required/>
               				<i class="material-icons prefix">store</i>
@@ -117,34 +117,34 @@ session_start();
               					<input type="number" placeholder="Telefono" name="telefono" required/>
               				<i class="material-icons prefix">business</i>
               					<input type="text" placeholder="Ciudad" name="ciudad" required/>
-              				<input type="hidden" value="" name="Geo_x" id="ltn"> 
+              				<input type="hidden" value="" name="Geo_x" id="ltn">
                       <input type="hidden" value="" name="Geo_y" id="lng">
-             			</div>            
+             			</div>
             			<div class="col l8 input-field">
             				<b>Selecciona tu ubicacion :</b>
                   			<div id="map">
                   			</div>
                         <div class="col l6">
-                        <button id="boton" name="acc" value="c" class="waves-effect  btn-large green " >Registrar</button> 
+                        <button id="boton" name="acc" value="c" class="waves-effect  btn-large green " >Registrar</button>
                         </div>
                         <div class="col l6">
                         <a id="boton" class="waves-effect  btn-large red "  >Cancelar</a>
                         </div>
-                  			      
-             			</div>             			   
+
+             			</div>
             		</div>
-          		</form>     
+          		</form>
         	</div>
 		</div>
 	</div>
 
-  <?php  
+  <?php
   include("../Components/footer.php");
 ?>
 
-		
 
-		<?php include_once("../Components/footer.php") ?> 
+
+		<?php include_once("../Components/footer.php") ?>
 
 </body>
 </html>

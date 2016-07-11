@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
 
+	<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
 	<meta charset="UTF-8">
 	<title>Dashboard Cliente</title>
 
@@ -27,12 +28,12 @@
 
 
 	<?php include_once("../Components/menu_barberias.php"); ?>
-	
-	
+
+
 	<div class="row ">
       <div class="col  s12 m12 l12  header" ></div>
     </div>
-	
+
 
 
 
@@ -44,7 +45,7 @@
 	<a class="links" href="#">Modificar Cita</a> -->
 	<div class="row">
       <div class="tooltipped col s2 offset-l4 offset-s4 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Reservar Cita">3</div>
-      <div class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Modificar Cita">3</div> 
+      <div class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Modificar Cita">3</div>
     </div>
     </div>
 
@@ -72,15 +73,15 @@
       <div class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Solicitar Servicio">3</div>
     </div>
     </div>
-    
+
   </div>
 
 </div>
-	
+
 
 	<?php include_once("../Components/footer.php"); ?>
 
 
-	
+
 </body>
 </html>

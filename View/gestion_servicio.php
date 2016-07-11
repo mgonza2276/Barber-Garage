@@ -1,4 +1,4 @@
-<?php 
+<?php
 	session_start();
 	require_once("../Model/conexion.php");
   	require_once("../Model/servicio.class.php");
@@ -16,19 +16,15 @@
 	<head>
 		<title>archivo gestion servicios</title>
 		<meta charset="utf-8">
-    	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
-    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-	    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>	
-    	<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
-     
-      <!--  -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	    <!--  -->
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="Materialize\materialize\css\materialize.css"  media="screen,projection"/>
 
       <!-- iconos -->
       <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
-      
+
       <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="Materialize\jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="Materialize\materialize\js\materialize.js"></script>
@@ -42,14 +38,14 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
            echo "<script>
                    $(document).ready(function(){
                       sweetAlert({
-                           title: '...',   
-                           text: '".$_GET["m"]."',   
-                           type: '".$_GET["tm"]."',   
+                           title: '...',
+                           text: '".$_GET["m"]."',
+                           type: '".$_GET["tm"]."',
                            showCancelButton: false,
-                           confirmButtonColor: '#4db6ac',   
-                           confirmButtonText: 'Aceptar',   
-                          cancelButtonText: 'No, cancel plx!',   
-                           closeOnConfirm: false,   
+                           confirmButtonColor: '#4db6ac',
+                           confirmButtonText: 'Aceptar',
+                          cancelButtonText: 'No, cancel plx!',
+                           closeOnConfirm: false,
                            closeOnCancel: false
                        });
                    });
@@ -57,7 +53,8 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
            }
          }
 ?>
-
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
 
 		<script>
     		$(document).ready( function () {
@@ -68,7 +65,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
 </head>
 
-<body>	
+<body>
 
     <?php include_once("../Components/menu_admin.php") ?>
 		<h1>Gestion Servicios</h1>
@@ -80,13 +77,14 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
           			<th>Nombre</th>
           			<th>Precio</th>
           			<th>Duracion</th>
+								<th></th>
         		</tr>
       		</thead>
       		<tbody>
-      			<?php 
+      			<?php
       				$servicios=Gestionar_servicio::ReadAll();
       				foreach ($servicios as $row) {
-        
+
         		echo "<tr>
                 		<td>".$row["Id_servicio"]."</td>
                 		<td>".$row["Nombre"]."</td>
@@ -103,10 +101,10 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
               		}
       		 	?>
-      		</tbody>	
+      		</tbody>
       	</table>
 
-    <?php include_once("../Components/footer.php") ?> 
+    <?php include_once("../Components/footer.php") ?>
 </body>
 
 </html>
