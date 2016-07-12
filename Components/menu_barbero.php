@@ -55,7 +55,7 @@
 
         <li><a class="Cortes_barbero" href="#">Ver Cortes</a></li>
 
-        <li><a class="Con_usuarios" href="#">Consultar Usuarios</a></li>
+        <li><a class="Con_usuarios" href="../View/gestion_usuarios.php">Consultar Usuarios</a></li>
         
         <li><a class="dropdown-button" href="#!" data-activates="submenu_sesion_barbero_desktop"><?php echo $_SESSION["Nombre"] ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>

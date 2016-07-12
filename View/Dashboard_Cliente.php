@@ -44,8 +44,8 @@
 	<!-- <a class="links" href="#">Reservar Cita</a><br>
 	<a class="links" href="#">Modificar Cita</a> -->
 	<div class="row">
-      <div class="tooltipped col s2 offset-l4 offset-s4 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Reservar Cita">3</div>
-      <div class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Modificar Cita">3</div>
+      <a href="" class="tooltipped col s2 offset-l4 offset-s4 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Reservar Cita"><i class="fa fa-calendar-check-o"></i></a>
+      <a href="" class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Modificar Cita"><i class="fa fa-retweet"></i></a>
     </div>
     </div>
 
@@ -53,24 +53,24 @@
 	<!-- <a class="links" href="#">Ver Cortes</a><br>
 	<a class="links" href="#">Ver Estilos de Barba</a> -->
 	<div class="row">
-      <div class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Ver Cortes">3</div>
+      <a href="" class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Ver Cortes"><i class="fa fa-file-image-o"></i></a>
     </div>
     </div>
 
 
-    <div class="col s12 m6 l6  iconos  red darken-3"><h3>Perfil</h3><a href="#"><i class="fa fa-user"></i></a><br>
+    <div class="col s12 m6 l6  iconos  red darken-3"><h3>Perfil</h3><a href="#"><i class="fa fa-user icono_usuario"></i></a><br>
 	<!-- <a class="links" href="#">Mi Perfil</a><br>
 	<a class="links" href="#">Cambiar Contraseña</a> -->
 	<div class="row">
-      <div class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Mi Perfil">3</div>
+      <a href="" class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Mi Perfil"><i class="fa fa-user"></i></a>
     </div>
 
     </div>
 
-    <div class="col s12 m6 l6  iconos  red darken-4"><h3>Servicios</h3><a href="#"><i class="fa fa-scissors"></i></a><br>
+    <div class="col s12 m6 l6  iconos  red darken-4"><h3>Servicios</h3><a href="#"><i class="fa fa-scissors icono_servicios"></i></a><br>
 	<!-- <a class="links" href="#">Solicitar Servicio</a> -->
 	<div class="row">
-      <div class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Solicitar Servicio">3</div>
+      <a href="" class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Solicitar Servicio"><i class="fa fa-scissors "></i></a>
     </div>
     </div>
 
