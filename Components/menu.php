@@ -19,14 +19,14 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="inicio" href="../View/index.php">Inicio</a></li>
-        <li><a class="acerca" href="#">Acerca de <br> Barber Garage</a></li>
+        <li><a class="acerca" href="#BarberG">Acerca de <br> Barber Garage</a></li>
         <li><a class="contacto" href="#">Contacto</a></li>
         
       </ul>
       
       <ul class="side-nav" id="mobile-demo">
         <li><a class="inicio" href="../View/index.php">Inicio</a></li>
-        <li><a class="acerca" href="#">Acerca de...</a></li>
+        <li><a class="acerca" href="#">Acerca de Barber-Garage</a></li>
         <li><a class="contacto" href="#">Contacto</a></li>        
         
       </ul>

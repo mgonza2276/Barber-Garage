@@ -39,7 +39,11 @@
 
       <script type="text/javascript">
       $(document).ready(function(){
-
+          
+          $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+          
         <?php
 
       if(isset($_GET["m"])){
@@ -49,50 +53,41 @@
 
   })
     </script>
-
-
-
 </head>
 <body class="fondo">
 	<?php include_once("../Components/menu.php") ?>
 
-	<div class="container ">
-
-    <div class="row">
-
-      <div id="centro"  class="col l4 s12 m8 offset-m2 offset-s0 offset-l4 input-field" >
-
-        <form id="formulario" action="../Controller/validausuario.controller.php" method="post">
-
-      			<center><h3 id="bajar_titulo">Log In</h3></center>
-
-						  <i class="material-icons prefix">account_circle</i>
-						      <input type="text" placeholder="Nombre de usuario" name="Id_usuario" id="id_usuario"required />
-
-              <i class="material-icons prefix">vpn_key</i>
-						      <input type="password" placeholder="Contraseña..." name="Clave" id="clave_usuario"required/>
-						  <div class="col l12 s12">
-                  <button id="boton" class="waves-effect waves-light btn cyan" onclick="return validar_login()">Ingresar</button>
-              </div>
-              <!-- Recordar contraseña -->
-              <!-- <div class="col l12 s12">
-                    <input type="checkbox" class="filled-in recordar" id="filled-in-box" checked="checked" />
-                      <label for="filled-in-box">Recordar</label>
-                      <br>
-                      <br>
-                      <hr>
-              </div> -->
-              <div class="col l12 s12">
-                  <a id="boton" class="waves-effect waves-light btn blue-grey darken-1" href="Registro_usuario.php"><spam>Regístrate</spam></a>
-              </div>
-        </form>
-      </div>
-                  <!-- fin formulario login -->
+<div class="container ">
+    <div class="row">       
+        
+          <div id="centro"  class="col l4 offset-l3 s12 m8 offset-m2 offset-s0  input-field" >
+            <form id="formulario" action="../Controller/validausuario.controller.php" method="post">
+                <center><h3 id="bajar_titulo">Log In</h3></center>
+                    <i class="material-icons prefix">account_circle</i>
+                    <input type="text" placeholder="Nombre de usuario" name="Id_usuario" id="id_usuario"required />
+                    <i class="material-icons prefix">vpn_key</i>
+                    <input type="password" placeholder="Contraseña..." name="Clave" id="clave_usuario"required/>
+                <div class="col l12 s12">
+                    <button id="boton" class="waves-effect waves-light btn cyan" onclick="return validar_login()">Ingresar</button>
+                </div>             
+                <div class="col l12 s12">
+                    <a id="boton" class="waves-effect waves-light btn blue-grey darken-1" href="Registro_usuario.php"><spam>Regístrate</spam></a>
+                </div>
+            </form>
+          </div>
+        <div class="col l4 s12 m8 offset-l1">
+           
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+              <div id="BarberG" class="collapsible-header active"><i class="material-icons">info</i>¿Que es Barber-Garage?</div>
+              <div  class="collapsible-body blue-grey lighten-5"><p>Somos un aplicativo desarrollado con el fin de facilitar a los usuarios reservar citas en su barberia favorita desde su dispositivo movil o computadora de una manera mas  facil.</p></div>
+            </li>    
+          </ul>
+          
+        
+        </div><!-- fin formulario login -->
     </div>
-  </div>
 </div>
-
-
 	<?php include_once("../Components/footer.php") ?>
 		 <script type="text/javascript">
         $(document).ready(function()

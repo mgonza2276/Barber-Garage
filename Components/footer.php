@@ -13,7 +13,7 @@
 
 
    
-	 <footer class="page-footer red accent-4">
+	 <footer class="page-footer red accent-4" id="footer" >
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
