@@ -51,7 +51,7 @@ include_once("../Model/Citas.class.php");
 		Gestionar_citas::Update($Cod_cita,$fecha,$hora,$minutos,$formato,$servicio,$barbero,$id_usuario,$cod_barberia);
 		$mensaje="la cita se modifico correctamente";
 		$tipomensaje="success";
-		if ($_SESSION["Perfil"] =="Administrador") {
+		if ($_SESSION["Perfil"] =="Administrador" ) {
 		
 		header("Location: ../View/Gestion_Citas.php?m=".$mensaje."&tm=".$tipomensaje);	
 		}
@@ -59,14 +59,19 @@ include_once("../Model/Citas.class.php");
 			
 			header("Location: ../View/Mi_Cita.php?ja=".$_SESSION["Id_usuario"]."");
 			// header("Location: ../View/Mi_Cita.php?m=".$mensaje."&tm=".$tipomensaje);
-		
+		}
+		elseif($_SESSION["Perfil"]=="Empleado"){
+			
+			header("Location: ../View/Mis_Citas_Asignadas.php?mca=".$_SESSION["Nombre"]."");	
+			// header("Location: ../View/Mis_Citas_Asignadas.php?m=".$mensaje."&tm=".$tipomensaje);
+		}
 
 		}
 
 
 		
 		
-		}catch(Exception $e){
+		catch(Exception $e){
 			$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
 			$tipomensaje="error";
 			header("Location: ../View/Modificar_Cita.php?m=".$mensaje."&tm=".$tipomensaje);
@@ -91,8 +96,13 @@ include_once("../Model/Citas.class.php");
 			
 			//aqui estamos enviando la variable ja nuevamente para que vuelva a mostrar los datos de la citas segunn el id del usuario.
 			header("Location: ../View/Mi_Cita.php?ja=".$_SESSION["Id_usuario"]."");
-
 		}
+
+		elseif($_SESSION["Perfil"]=="Empleado"){
+		header("Location: ../View/Mis_Citas_Asignadas.php?mca=".$_SESSION["Nombre"]."");	
+		
+		}
+
 
 	}catch(Exception $e){
 		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();

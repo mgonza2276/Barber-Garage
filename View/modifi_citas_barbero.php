@@ -96,7 +96,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
 <body>
   
-  <?php include_once("../Components/menu_admin.php") ?>
+  <?php include_once("../Components/menu_barbero.php") ?>
 
 <div class="container">
         <div class="row">

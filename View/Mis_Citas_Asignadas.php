@@ -103,10 +103,14 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                     <td>".$row["Servicio"]."</td>
                     <td>".$row["Id_Usuario"]."</td>
                     <td>
-                    <a href='Cambiar_Mi_Cita.php?ui=".base64_encode($row["Cod_cita"])."'><i class='fa fa-pencil'></i></a>
-
-                      <a href='../Controller/Citas.controller.php?ui=".base64_encode($row["Cod_cita"])."&acc=D'><i class='fa fa-trash'></i></a>
-
+                      <div class='col s12 m12 l12'>
+                        <div class='col s3 m3 l3'>
+                          <a href='modifi_citas_barbero.php?ui=".base64_encode($row["Cod_cita"])."'><i class='fa fa-pencil  tooltipped' data-position='left' data-delay='50' data-tooltip='Editar'></i></a>
+                        </div>
+                        <div class='col s3 m3 l3'>
+                          <a href='../Controller/Citas.controller.php?ui=".base64_encode($row["Cod_cita"])."&acc=D'><i class='fa fa-trash tooltipped' data-position='left' data-delay='50' data-tooltip='Borrar'></i></a>
+                        </div>
+                    </div>
 
                     </td>
                     </tr>";
