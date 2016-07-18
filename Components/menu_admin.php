@@ -18,14 +18,14 @@
 <!-- submenu configuracion administrador desktop -->
 <ul id="submenu_sesion_admin_desktop" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="../View/edita-mi-perfil-admin.php">Mi Perfil</a></li>
-  <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
+  <!-- <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li> -->
   <li><a class="indigo-text text-darken-4" href="../View/cerrarsesion.php">Cerrar Sesion</a></li>
 </ul>
 
 <!-- submenu configuracion administrador movil -->
 <ul id="submenu_sesion_admin_movil" class="dropdown-content red darken-1">
   <li><a class="indigo-text text-darken-4" href="../View/edita-mi-perfil-admin.php">Mi Perfil</a></li>
-  <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
+  <!-- <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li> -->
   <li><a class="indigo-text text-darken-4" href="../View/cerrarsesion.php">Cerrar Sesion</a></li>
 </ul>
 

@@ -1,5 +1,5 @@
 <?php
-	
+	session_start();
 	require_once("../Model/conexion.php");
 	BarberGarage_BD::Connect();
 	
@@ -49,8 +49,15 @@
 			Gestionar_servicio::Update($Id_servicio,$Nombre,$Precio,$Duracion);
 			$mensaje= " el Registro se actualizo exitosamente!";
 			$tipomensaje = "success";
+			 
+			 if ($_SESSION["Perfil"] =="Administrador" ) {
+
 			 header("Location: ../View/gestion_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);
-			
+			}
+			elseif($_SESSION["Perfil"]=="Empleado"){
+
+			header("Location: ../View/gestionar_servicios.php?m= ".$mensaje."&tm=".$tipomensaje);
+			}	
 			} catch (Exception $e) {
 				$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 				$tipomensaje = "error";
@@ -67,9 +74,17 @@
 			$tipomensaje = "success";
 			 header("Location: ../View/gestion_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);
 			
-			
-		}
-		catch(Exception $e){
+			if ($_SESSION["Perfil"] =="Administrador" ) {
+
+			 header("Location: ../View/gestion_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);
+			}
+			elseif($_SESSION["Perfil"]=="Empleado"){
+
+			header("Location: ../View/gestionar_servicios.php?m= ".$mensaje."&tm=".$tipomensaje);
+			}
+
+
+		}catch(Exception $e){
 			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 				$tipomensaje = "error";
 				header("Location: ../View/editar_servicio.php?m= ".$mensaje."&tm=".$tipomensaje);

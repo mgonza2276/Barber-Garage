@@ -48,16 +48,16 @@
   <a class="links" href="#">Consultar Usuarios</a><br>
   <a class="links" href="#">Modificar Usuarios</a> -->
       <div class="row">
-        <a href="" class="tooltipped col s2 offset-l3 offset-s3 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Ingresar Usuarios"><i class="fa fa-user-plus"></i></a>
-        <a href="" class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Consultar Usuarios"><i class="fa fa-users"></i></a> 
-        <a href="" class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Modificar Usuarios"><i class="fa fa-user-times"></i></a>
+        <a href="agregar_usuario.php" class="tooltipped col s2 offset-l3 offset-s3 red darken-3 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Ingresar Usuarios"><i class="fa fa-user-plus ico"></i></a>
+        <a href="gestion_usuarios.php" class="tooltipped col s2 red darken-3 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Consultar Usuarios"><i class="fa fa-users ico"></i></a> 
+        <a href="gestion_usuarios.php" class="tooltipped col s2 red darken-3 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Modificar Usuarios"><i class="fa fa-user-times ico"></i></a>
       </div>
     </div>
 
     <div class="col s12 m6 l6  iconos red darken-3"><h4>Citas</h4><a href="Gestion_Citas.php"><i class="fa fa-calendar-o "></i></a><br>
   <!-- <a class="links" href="Gestion_Citas.php">Consultar citas</a><br> -->
       <div class="row">
-      <a href="" class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Consultar Citas"><i class="fa fa-calendar-check-o"></i></a>
+      <a href="Gestion_Citas.php" class="tooltipped col s2 offset-l5 offset-s5 red darken-4 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Consultar Citas"><i class="fa fa-calendar-check-o ico"></i></a>
     </div>
     </div>
 
@@ -70,10 +70,10 @@
   <a class="links" href="#">Consultar Servicios</a><br>
   <a class="links" href="#">Editar Barberia</a> -->
       <div class="row">
-        <a href="" class="tooltipped col s2 offset-l2 offset-s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Registar Barberia"><i class="fa fa-university"></i></a>
-        <a href="" class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Editar Barberia"><i class="fa fa-pencil-square-o"></i></a>
-        <a href="" class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Agregar Servicios"><i class="fa fa-scissors"></i></a> 
-        <a href="" class="tooltipped col s2 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Consultar Servicios"><i class="fa fa-search"></i></a> 
+        <a href="Registrar_barberia.php" class="tooltipped col s2 offset-l2 offset-s2 red darken-4 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Registar Barberia"><i class="fa fa-university ico"></i></a>
+        <a href="gestion_barberias.php" class="tooltipped col s2 red darken-4 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Editar Barberia"><i class="fa fa-pencil-square-o ico"></i></a>
+        <a href="agregar_servicio.php" class="tooltipped col s2 red darken-4 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Agregar Servicios"><i class="fa fa-scissors ico"></i></a> 
+        <a href="gestion_servicio.php" class="tooltipped col s2 red darken-4 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Consultar Servicios"><i class="fa fa-search ico"></i></a> 
         
       </div>
     </div>
@@ -82,7 +82,7 @@
   <!-- <a class="links" href="edita-mi-perfil-admin.php">Mi Perfil</a><br>
   <a class="links" href="#">Cambiar Contraseña</a> -->
       <div class="row">
-        <a href="" class="tooltipped col s2 offset-l5 offset-s5 indigo darken-2 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Mi Perfil"><i class="fa fa-user"></i></a>
+        <a href="edita-mi-perfil-admin.php" class="tooltipped col s2 offset-l5 offset-s5 red darken-3 div_enlaces" data-position="bottom" data-delay="50" data-tooltip="Mi Perfil"><i class="fa fa-user ico"></i></a>
       </div>
     </div>
     

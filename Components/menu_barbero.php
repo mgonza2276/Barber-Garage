@@ -14,15 +14,15 @@
 
      <!-- submenu configuracion barbero desktop -->
 <ul id="submenu_sesion_barbero_desktop" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#!">Mi Perfil</a></li>
-  <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
+  <li><a class="indigo-text text-darken-4" href="editar_mi_perfil_barbero.php">Mi Perfil</a></li>
+  <!-- <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li> -->
   <li><a class="indigo-text text-darken-4" href="../View/index.php">Cerrar Sesion</a></li>
 </ul>
 
      <!-- submenu configuracion barbero movil -->
 <ul id="submenu_sesion_barbero_movil" class="dropdown-content red darken-1">
-  <li><a class="indigo-text text-darken-4" href="#!">Mi Perfil</a></li>
-  <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li>
+  <li><a class="indigo-text text-darken-4" href="editar_mi_perfil_barbero.php">Mi Perfil</a></li>
+  <!-- <li><a class="indigo-text text-darken-4" href="#!">Cambiar Contraseña</a ></li> -->
   <li><a class="indigo-text text-darken-4" href="../View/index.php">Cerrar Sesion</a></li>
 </ul>
 
@@ -53,9 +53,9 @@
         
         <li><a class="dropdown-button gest_citas" href="#!" data-activates="citas_barbero_desktop">Citas</a></li>
 
-        <li><a class="Cortes_barbero" href="#">Ver Cortes</a></li>
+        <li><a class="Cortes_barbero" href="../View/gestionar_servicios.php">Servicios</a></li>
 
-        <li><a class="Con_usuarios" href="../View/gestion_usuarios.php">Consultar Usuarios</a></li>
+        <li><a class="Con_usuarios" href="../View/consulta_usuarios.php">Consultar Usuarios</a></li>
         
         <li><a class="dropdown-button" href="#!" data-activates="submenu_sesion_barbero_desktop"><?php echo $_SESSION["Nombre"] ?><i class="material-icons right">arrow_drop_down</i></a></li>
       </ul>
@@ -69,7 +69,7 @@
         
         <li><a class="dropdown-button" href="#!" data-activates="citas_barbero_movil">Citas</a></li>
 
-        <li><a class="Cortes" href="#">Ver Cortes</a></li>
+        <li><a class="Cortes" href="../View/gestionar_servicios.php">Servicios</a></li>
 
         <li><a class="Con_usuarios" href="#">Consultar Usuarios</a></li>
         
