@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-07-2016 a las 05:31:43
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Tiempo de generación: 29-08-2016 a las 18:45:02
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `barberia`
 --
+CREATE DATABASE IF NOT EXISTS `barberia` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `barberia`;
 
 -- --------------------------------------------------------
 
@@ -26,25 +28,27 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `barberia`
 --
 
-CREATE TABLE IF NOT EXISTS `barberia` (
+CREATE TABLE `barberia` (
   `Cod_barberia` varchar(50) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Direccion` varchar(30) NOT NULL,
   `Telefono` varchar(20) NOT NULL,
   `Ciudad` varchar(50) NOT NULL,
   `GeoX` longtext NOT NULL,
-  `GeoY` longtext NOT NULL
+  `GeoY` longtext NOT NULL,
+  `Hora_inicio` time NOT NULL,
+  `Hora_fin` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `barberia`
 --
 
-INSERT INTO `barberia` (`Cod_barberia`, `Nombre`, `Direccion`, `Telefono`, `Ciudad`, `GeoX`, `GeoY`) VALUES
-('456', 'barberia NY', 'calle 20', '2589656', 'itagui', '', ''),
-('4589', 'victor', 'calle 63 a ', '126658', 'itagui', '6.2412769883680035', '-75.57147234678268'),
-('54545', 'afrika', 'calle 28', '7894561', 'itagui', '', ''),
-('5899', 'Babilonia', 'calle 88', '45454545', 'caldas', '', '');
+INSERT INTO `barberia` (`Cod_barberia`, `Nombre`, `Direccion`, `Telefono`, `Ciudad`, `GeoX`, `GeoY`, `Hora_inicio`, `Hora_fin`) VALUES
+('456', 'barberia NY', 'calle 20', '2589656', 'itagui', '', '', '00:00:00', '00:00:00'),
+('4589', 'victor', 'calle 63 a ', '126658', 'itagui', '6.2412769883680035', '-75.57147234678268', '00:00:00', '00:00:00'),
+('54545', 'afrika', 'calle 28', '7894561', 'itagui', '', '', '00:00:00', '00:00:00'),
+('5899', 'Babilonia', 'calle 88', '45454545', 'caldas', '', '', '00:00:00', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -52,7 +56,7 @@ INSERT INTO `barberia` (`Cod_barberia`, `Nombre`, `Direccion`, `Telefono`, `Ciud
 -- Estructura de tabla para la tabla `barberia_servicio`
 --
 
-CREATE TABLE IF NOT EXISTS `barberia_servicio` (
+CREATE TABLE `barberia_servicio` (
   `Cod_barberia` varchar(50) NOT NULL,
   `Id_servicio` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -63,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `barberia_servicio` (
 -- Estructura de tabla para la tabla `citas`
 --
 
-CREATE TABLE IF NOT EXISTS `citas` (
+CREATE TABLE `citas` (
   `Cod_cita` int(11) NOT NULL,
   `Fecha` varchar(50) NOT NULL,
   `Hora` varchar(30) NOT NULL,
@@ -73,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `citas` (
   `Barbero` varchar(50) NOT NULL,
   `Id_Usuario` varchar(50) NOT NULL,
   `Cod_barberia` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `citas`
@@ -92,7 +96,7 @@ INSERT INTO `citas` (`Cod_cita`, `Fecha`, `Hora`, `Minutos`, `Formato`, `Servici
 -- Estructura de tabla para la tabla `detalle_cita`
 --
 
-CREATE TABLE IF NOT EXISTS `detalle_cita` (
+CREATE TABLE `detalle_cita` (
   `Id_detalle_cita` varchar(50) NOT NULL,
   `Cod_cita` int(11) NOT NULL,
   `Id_servicio` varchar(50) NOT NULL,
@@ -105,8 +109,8 @@ CREATE TABLE IF NOT EXISTS `detalle_cita` (
 -- Estructura de tabla para la tabla `empleados`
 --
 
-CREATE TABLE IF NOT EXISTS `empleados` (
-  `Id_Usuario` varchar(50) NOT NULL,
+CREATE TABLE `empleados` (
+  `Id_usuario` varchar(50) NOT NULL,
   `Cod_barberia` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -116,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `empleados` (
 -- Estructura de tabla para la tabla `servicio`
 --
 
-CREATE TABLE IF NOT EXISTS `servicio` (
+CREATE TABLE `servicio` (
   `Id_servicio` varchar(50) NOT NULL,
   `Nombre` varchar(50) NOT NULL,
   `Precio` varchar(50) NOT NULL,
@@ -139,7 +143,7 @@ INSERT INTO `servicio` (`Id_servicio`, `Nombre`, `Precio`, `Duracion`) VALUES
 -- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE IF NOT EXISTS `usuario` (
+CREATE TABLE `usuario` (
   `Id_usuario` varchar(50) NOT NULL,
   `Clave` varchar(50) NOT NULL,
   `Cedula` varchar(20) NOT NULL,
@@ -182,7 +186,8 @@ ALTER TABLE `barberia`
 -- Indices de la tabla `barberia_servicio`
 --
 ALTER TABLE `barberia_servicio`
-  ADD PRIMARY KEY (`Cod_barberia`,`Id_servicio`);
+  ADD PRIMARY KEY (`Cod_barberia`,`Id_servicio`),
+  ADD KEY `Id_servicio` (`Id_servicio`);
 
 --
 -- Indices de la tabla `citas`
@@ -206,7 +211,9 @@ ALTER TABLE `detalle_cita`
 -- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`Id_Usuario`,`Cod_barberia`);
+  ADD PRIMARY KEY (`Id_usuario`,`Cod_barberia`),
+  ADD KEY `Cod_barberia` (`Cod_barberia`),
+  ADD KEY `Id_usuario` (`Id_usuario`);
 
 --
 -- Indices de la tabla `servicio`
@@ -228,7 +235,37 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
+  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `barberia_servicio`
+--
+ALTER TABLE `barberia_servicio`
+  ADD CONSTRAINT `barberia_servicio_ibfk_1` FOREIGN KEY (`Id_servicio`) REFERENCES `servicio` (`Id_servicio`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `barberia_servicio_ibfk_2` FOREIGN KEY (`Cod_barberia`) REFERENCES `citas` (`Cod_barberia`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `citas`
+--
+ALTER TABLE `citas`
+  ADD CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `usuario` (`Id_usuario`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `detalle_cita`
+--
+ALTER TABLE `detalle_cita`
+  ADD CONSTRAINT `detalle_cita_ibfk_2` FOREIGN KEY (`Id_servicio`) REFERENCES `servicio` (`Id_servicio`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`Id_usuario`) REFERENCES `usuario` (`Id_usuario`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `empleados_ibfk_2` FOREIGN KEY (`Cod_barberia`) REFERENCES `barberia` (`Cod_barberia`) ON UPDATE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
