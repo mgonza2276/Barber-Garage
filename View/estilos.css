@@ -259,3 +259,18 @@
 #label_cita{
 	font-size: 15px;
 }
+
+
+/*hora entrada y hora salida*/
+
+.hora_entrada{
+	
+	margin-top: 315px;
+
+}
+
+.hora_salida{
+	
+	margin-top: 395px;
+
+}

@@ -118,7 +118,14 @@ session_start();
               				<i class="material-icons prefix">business</i>
               					<input type="text" placeholder="Ciudad" name="ciudad" required/>
               				<input type="hidden" value="" name="Geo_x" id="ltn">
-                      <input type="hidden" value="" name="Geo_y" id="lng">
+                      <input type="hidden" value="" name="Geo_y" id="lng"> </br> </br>
+                      
+                      <label class="hora_entrada">Hora de Entrada</label>
+                      <i class="material-icons prefix">schedule</i>  
+                      <input type="text" placeholder="Hora Entrada" name="entrada"></input> </br> </br>
+                      <label class="hora_salida">Hora de Salida</label>
+                      <i class="material-icons prefix">schedule</i>
+                      <input type="text" placeholder="Hora Salida" name="salida"></input>
              			</div>
             			<div class="col l8 input-field">
             				<b>Selecciona tu ubicacion :</b>

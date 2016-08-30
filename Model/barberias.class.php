@@ -3,17 +3,17 @@
 
 		// Metodo Create()
 		// El metodo guarda los datos en la tabla contactos, captura todos los parametros desde el formulario.
-		function Create($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY){
+		function Create($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida){
 			//Instanciamos y nos conectamos a la bd
 			$conexion=BarberGarage_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 
 			//Crear el query que vamos a realizar.
-			$consulta ="INSERT INTO barberia (Cod_barberia,Nombre,Direccion,Telefono,Ciudad,GeoX,GeoY) VALUES (?,?,?,?,?,?,?)";
+			$consulta ="INSERT INTO barberia (Cod_barberia,Nombre,Direccion,Telefono,Ciudad,GeoX,GeoY,Hora_inicio,Hora_fin) VALUES (?,?,?,?,?,?,?,?,?)";
 
 			$query = $conexion->prepare($consulta);
-			$query->execute(array($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY));
+			$query->execute(array($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida));
 
 			BarberGarage_BD::Disconect();
 		}
@@ -67,7 +67,7 @@
         }	
 
 
-        function Update($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad){
+        function Update($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida){
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = BarberGarage_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -75,10 +75,10 @@
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE barberia SET Nombre=?,Direccion=?,Telefono=?,Ciudad=? WHERE Cod_barberia = ?" ;
+		$consulta = "UPDATE barberia SET Nombre=?,Direccion=?,Telefono=?,Ciudad=?, GeoX=?, GeoY=?,Hora_inicio=?, Hora_fin=? WHERE Cod_barberia = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Nombre,$Direccion,$Telefono,$Ciudad,$Cod_barberia));		
+		$query->execute(array($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida));		
 
 		BarberGarage_BD::Disconect();
 		}

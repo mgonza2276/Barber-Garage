@@ -130,6 +130,11 @@ class Gestionar_citas{
 
 		BarberGarage_BD::Disconnect();
 	}
+
+
+	//seleccionar una hora segun el horario de la barberia
+
+	
 }
 
 

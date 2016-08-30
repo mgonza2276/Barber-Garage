@@ -19,10 +19,12 @@
 		$Ciudad      	=$_POST["ciudad"];
 		$GeoX			=$_POST["Geo_x"];
 		$GeoY			=$_POST["Geo_y"];
+		$entrada		=$_POST["entrada"];
+		$salida			=$_POST["salida"];
 
 
 		try {
-			Gestion_barberias::Create($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY);
+			Gestion_barberias::Create($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida);
 			$mensaje= "Registro barberia exitoso!";
 			$tipomensaje = "success";
 			header("Location: ../View/gestion_barberias.php?m= ".$mensaje."&tm=".$tipomensaje);
@@ -40,11 +42,14 @@
 			$Direccion   	=$_POST["direccion"];
 			$Telefono    	=$_POST["telefono"];
 			$Ciudad      	=$_POST["ciudad"];
-
+			$GeoX			=$_POST["Geo_x"];
+			$GeoY			=$_POST["Geo_y"];
+			$entrada		=$_POST["entrada"];
+			$salida			=$_POST["salida"];
             
 
 			try{
-				Gestion_barberias::Update($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad);
+				Gestion_barberias::Update($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida);
 				$mensaje = "Se actualizo correctamente";
 				$tipomensaje = "success";
 				header("Location: ../View/gestion_barberias.php?m= ".$mensaje."&tm=".$tipomensaje);
