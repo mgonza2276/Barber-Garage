@@ -64,6 +64,8 @@ session_start();
       buttonImage:"calendario/images/calen.png",
       buttonImageOnly:true,
       showButtonPanel:true,
+      minDate: "-0D"
+
 
 });
 

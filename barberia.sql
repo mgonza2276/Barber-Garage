@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-08-2016 a las 18:45:02
+-- Tiempo de generación: 30-08-2016 a las 18:22:16
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -84,7 +84,7 @@ CREATE TABLE `citas` (
 --
 
 INSERT INTO `citas` (`Cod_cita`, `Fecha`, `Hora`, `Minutos`, `Formato`, `Servicio`, `Barbero`, `Id_Usuario`, `Cod_barberia`) VALUES
-(13, 'Miercoles, 11 Mayo, 2016', '8:30 am', '', '', 'barba', 'estiven monsalve', 'caliche', ''),
+(13, 'Miercoles, 11 Mayo, 2016', '8:30 am', '', '', 'barba', 'Juaquin Bedoya', 'caliche', '456'),
 (18, 'Miercoles, 8 Febrero, 2017', '8:00 am', '', '', 'barba', 'estiven monsalve', 'mango', ''),
 (19, 'Martes, 31 Mayo, 2016', '8:30 am', '', '', 'depilada', 'jorge lopez', 'mango', ''),
 (20, 'Martes, 21 Junio, 2016', '8:', '30', 'am', 'barba', 'estiven monsalve', 'j.andres', ''),
@@ -110,9 +110,20 @@ CREATE TABLE `detalle_cita` (
 --
 
 CREATE TABLE `empleados` (
-  `Id_usuario` varchar(50) NOT NULL,
-  `Cod_barberia` varchar(50) NOT NULL
+  `Cod_empleado` int(11) NOT NULL,
+  `Cod_barberia` varchar(50) NOT NULL,
+  `Nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empleados`
+--
+
+INSERT INTO `empleados` (`Cod_empleado`, `Cod_barberia`, `Nombre`) VALUES
+(1, '456', 'Carlos Arturo'),
+(2, '456', 'Juaquin Bedoya'),
+(3, '4589', 'Alfonso Marin'),
+(4, '54545', 'Juan Gabriel');
 
 -- --------------------------------------------------------
 
@@ -211,9 +222,8 @@ ALTER TABLE `detalle_cita`
 -- Indices de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  ADD PRIMARY KEY (`Id_usuario`,`Cod_barberia`),
-  ADD KEY `Cod_barberia` (`Cod_barberia`),
-  ADD KEY `Id_usuario` (`Id_usuario`);
+  ADD PRIMARY KEY (`Cod_empleado`),
+  ADD KEY `Cod_barberia` (`Cod_barberia`);
 
 --
 -- Indices de la tabla `servicio`
@@ -237,6 +247,11 @@ ALTER TABLE `usuario`
 ALTER TABLE `citas`
   MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
+-- AUTO_INCREMENT de la tabla `empleados`
+--
+ALTER TABLE `empleados`
+  MODIFY `Cod_empleado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- Restricciones para tablas volcadas
 --
 
@@ -245,7 +260,7 @@ ALTER TABLE `citas`
 --
 ALTER TABLE `barberia_servicio`
   ADD CONSTRAINT `barberia_servicio_ibfk_1` FOREIGN KEY (`Id_servicio`) REFERENCES `servicio` (`Id_servicio`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `barberia_servicio_ibfk_2` FOREIGN KEY (`Cod_barberia`) REFERENCES `citas` (`Cod_barberia`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `barberia_servicio_ibfk_2` FOREIGN KEY (`Cod_barberia`) REFERENCES `barberia` (`Cod_barberia`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `citas`
@@ -257,14 +272,14 @@ ALTER TABLE `citas`
 -- Filtros para la tabla `detalle_cita`
 --
 ALTER TABLE `detalle_cita`
-  ADD CONSTRAINT `detalle_cita_ibfk_2` FOREIGN KEY (`Id_servicio`) REFERENCES `servicio` (`Id_servicio`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `detalle_cita_ibfk_2` FOREIGN KEY (`Id_servicio`) REFERENCES `servicio` (`Id_servicio`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `detalle_cita_ibfk_3` FOREIGN KEY (`Cod_cita`) REFERENCES `citas` (`Cod_cita`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`Id_usuario`) REFERENCES `usuario` (`Id_usuario`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `empleados_ibfk_2` FOREIGN KEY (`Cod_barberia`) REFERENCES `barberia` (`Cod_barberia`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`Cod_barberia`) REFERENCES `barberia` (`Cod_barberia`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
