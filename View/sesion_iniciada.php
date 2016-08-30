@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once("../Model/barberias.class.php");
 
  ?>
@@ -13,7 +13,7 @@ include_once("../Model/barberias.class.php");
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="Materialize/materialize/css/materialize.css"  media="screen,projection"/>
-  
+
   <!-- iconos -->
   <link rel="stylesheet" href="iconos/css/font-awesome.min.css">
 
@@ -29,15 +29,15 @@ include_once("../Model/barberias.class.php");
       $('select').material_select();
   });
     </script>
-    
+
 </head>
 <body Class="fondo">
 
-   
 
-  <?php include_once("../Components/menu_sesion_iniciada.php") ?> 
+
+  <?php include_once("../Components/menu_sesion_iniciada.php") ?>
   <div class="container ">
-  
+
 
     <div class="row">
         <div class="col s12 m6">
@@ -48,41 +48,41 @@ include_once("../Model/barberias.class.php");
           </div>
         </div>
 
-    
+
     <div class="col s12 m6 l6">
           <div class="card red darken-4">
             <div class="card-content white-text">
               <h1>Encuentra tu <br>Barberia Favorita</h1>
 
-              
+
               <form action="../Controller/validabarberia.controller.php" method="post">
 
               <div class="input-field col l8 offset-l2 s12">
-              
-              <?php 
+
+              <?php
                   $barberias= Gestion_barberias::ReadAll();
                  ?>
                  <br><br>
               <select name="nit" >
-                
-                  
-              
-                <option disabled selected>Seleccione una barberia</option>
-                
-                <?php 
-                  foreach ($barberias as $barberia) {
-                   ?> 
-                  
-                 
-                <option value="<?php echo $barberia[0]; ?>"><?php echo $barberia[1]; ?></option>
 
-               <?php }  ?> 
+
+
+                <option disabled selected>Seleccione una barberia</option>
+
+                <?php
+                  foreach ($barberias as $barberia) {
+                   ?>
+
+
+                <option name="barberia" value="<?php echo $barberia[0]; ?>"><?php echo $barberia[1]; ?></option>
+
+               <?php }  ?>
               </select>
             </div>
 
 
               <button type="submit" class="waves-effect waves-light btn btn_entrar_bar">Entrar a la Barberia</button>
-              </form>  
+              </form>
               </div>
 
             </div>
@@ -91,14 +91,14 @@ include_once("../Model/barberias.class.php");
 
     </div>
 
-    
+
   <?php include_once("../Components/footer.php") ?>
 
 
-   
-  
-  
+
+
+
   <!--Import jQuery before materialize.js-->
-    
+
 </body>
 </html>
