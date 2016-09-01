@@ -78,24 +78,24 @@
 		$consulta = "UPDATE barberia SET Nombre=?,Direccion=?,Telefono=?,Ciudad=?, GeoX=?, GeoY=?,Hora_inicio=?, Hora_fin=? WHERE Cod_barberia = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida));		
+		$query->execute(array($Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida,$Cod_barberia));		
 
 		BarberGarage_BD::Disconect();
 		}
 
 
 		function Delete($Cod_barberia){
-		//Instanciamos y nos conectamos a la bd
+	//Instanciamos y nos conectamos a la bd
 		$Conexion = BarberGarage_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 		//Crear el query que vamos a realizar
 		$consulta = "DELETE FROM barberia WHERE Cod_barberia = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Cod_barberia));		
+		$query->execute(array($Cod_barberia));
 
 		BarberGarage_BD::Disconect();
 	}

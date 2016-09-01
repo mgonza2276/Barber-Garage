@@ -70,7 +70,12 @@
 							<i class="material-icons prefix">phone</i>
 							<input type="number" placeholder="Telefono" name="telefono" required value="<?php echo $barberias[3]?>"  />
 							<i class="material-icons prefix">business</i>
-							<input type="text" placeholder="Ciudad" name="ciudad" required value="<?php echo $barberias[4]?>"  />				
+							<input type="text" placeholder="Ciudad" name="ciudad" required value="<?php echo $barberias[4]?>"  />			
+              <i class="material-icons prefix">schedule</i>  
+              <input type="time" name="entrada" value="<?php echo $barberias[7] ?>" max="14:00:00" min="06:00:00" > </br> </br>
+              <i class="material-icons prefix">schedule</i>
+
+              <input type="time" name="salida" value="<?php echo $barberias[8] ?>" max="20:00:00" min="14:00:00" >	
 						</div>
                         <div class="col l6 s12">
                             <button id="boton" name="acc" value="u" class="waves-effect  btn-large green" >Actualizar</button>

@@ -63,13 +63,13 @@
 
 	case 'd':
         	try {
-          		$barberias = Gestion_barberias::Delete(base64_decode($_REQUEST["ui"]));
-          		$msn = "se elimino correctamente";
-        	} catch (Exception $e) {
-          		$msn = "error";
-        		}
-			header("Location: ../View/gestion_barberias.php?msn=".$msn);
- 			break;
+          $barberias = Gestion_barberias::Delete(base64_decode($_REQUEST["ui"]));
+          $msn = "se elimino correctamente";
+        } catch (Exception $e) {
+          $msn = "error";
+        }
+		header("Location: ../View/gestion_barberias.php?msn=".$msn);
+ 		break;
 		}
 
 ?>

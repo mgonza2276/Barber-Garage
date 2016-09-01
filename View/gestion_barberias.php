@@ -71,6 +71,7 @@
           			<th>Direccion</th>
           			<th>Telefono</th>
           			<th>Ciudad</th>
+                <th>Horario</th>
 								<th></th>
         		</tr>
       		</thead>
@@ -85,11 +86,12 @@
                 	<td>".$row["Direccion"]."</td>
                 	<td>".$row["Telefono"]."</td>
                 	<td>".$row["Ciudad"]."</td>
+                  <td>".$row["Hora_inicio"]." ".$row["Hora_fin"]."</td>
                 	<td>
 
                   	<a href='editar_barberias.php?ui=".base64_encode($row["Cod_barberia"])."'><i class='fa fa-pencil'></i></a>
 
-                  	<a href='../Controller/barberias.controller.php?ui=".base64_encode($row["Cod_barberia"])."&acc=d'><i class='fa fa-trash'></i></a>
+                  	<a href='../Controller/barberias.controller.php?ui=".base64_encode($row[0])."&acc=d'><i class='fa fa-trash'></i></a>
 
 
                 	</td>

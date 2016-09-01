@@ -122,10 +122,10 @@ session_start();
                       
                       <label class="hora_entrada">Hora de Entrada</label>
                       <i class="material-icons prefix">schedule</i>  
-                      <input type="text" placeholder="Hora Entrada" name="entrada"></input> </br> </br>
+                      <input type="time"name="salida" value="06:00:00" max="14:00:00" min="06:00:00"> </br> </br>
                       <label class="hora_salida">Hora de Salida</label>
                       <i class="material-icons prefix">schedule</i>
-                      <input type="text" placeholder="Hora Salida" name="salida"></input>
+                      <input type="time" name="salida" value="14:00:00" max="20:00:00" min="14:00:00">
              			</div>
             			<div class="col l8 input-field">
             				<b>Selecciona tu ubicacion :</b>
