@@ -86,7 +86,7 @@
                 	<td>".$row["Direccion"]."</td>
                 	<td>".$row["Telefono"]."</td>
                 	<td>".$row["Ciudad"]."</td>
-                  <td>".$row["Hora_inicio"]." ".$row["Hora_fin"]."</td>
+                  <td>".$row["Hora_inicio"]."hs ".$row["Hora_fin"]."hs"."</td>
                 	<td>
 
                   	<a href='editar_barberias.php?ui=".base64_encode($row["Cod_barberia"])."'><i class='fa fa-pencil'></i></a>

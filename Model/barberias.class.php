@@ -92,7 +92,7 @@
 
 
 		//Crear el query que vamos a realizar
-		$consulta = "DELETE FROM barberia WHERE Cod_barberia = ?" ;
+		$consulta = "DELETE FROM barberia WHERE Cod_barberia = ? " ;
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($Cod_barberia));

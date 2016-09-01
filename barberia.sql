@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-08-2016 a las 18:22:16
+-- Tiempo de generación: 01-09-2016 a las 18:43:51
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -45,10 +45,8 @@ CREATE TABLE `barberia` (
 --
 
 INSERT INTO `barberia` (`Cod_barberia`, `Nombre`, `Direccion`, `Telefono`, `Ciudad`, `GeoX`, `GeoY`, `Hora_inicio`, `Hora_fin`) VALUES
-('456', 'barberia NY', 'calle 20', '2589656', 'itagui', '', '', '00:00:00', '00:00:00'),
-('4589', 'victor', 'calle 63 a ', '126658', 'itagui', '6.2412769883680035', '-75.57147234678268', '00:00:00', '00:00:00'),
-('54545', 'afrika', 'calle 28', '7894561', 'itagui', '', '', '00:00:00', '00:00:00'),
-('5899', 'Babilonia', 'calle 88', '45454545', 'caldas', '', '', '00:00:00', '00:00:00');
+('4589', 'victor', 'calle 63 a ', '126658', 'itagui', '6.2412769883680035', '-75.57147234678268', '12:00:00', '20:00:00'),
+('5899', 'Babilonia', 'calle 88', '45454545', 'caldas', '', '', '10:00:00', '20:00:00');
 
 -- --------------------------------------------------------
 
@@ -84,11 +82,7 @@ CREATE TABLE `citas` (
 --
 
 INSERT INTO `citas` (`Cod_cita`, `Fecha`, `Hora`, `Minutos`, `Formato`, `Servicio`, `Barbero`, `Id_Usuario`, `Cod_barberia`) VALUES
-(13, 'Miercoles, 11 Mayo, 2016', '8:30 am', '', '', 'barba', 'Juaquin Bedoya', 'caliche', '456'),
-(18, 'Miercoles, 8 Febrero, 2017', '8:00 am', '', '', 'barba', 'estiven monsalve', 'mango', ''),
-(19, 'Martes, 31 Mayo, 2016', '8:30 am', '', '', 'depilada', 'jorge lopez', 'mango', ''),
-(20, 'Martes, 21 Junio, 2016', '8:', '30', 'am', 'barba', 'estiven monsalve', 'j.andres', ''),
-(25, 'Lunes, 1 Agosto, 2016', '2', '00', 'am', 'corte', 'jorge lopez', 'pepe', '54545');
+(25, 'Lunes, 1 Agosto, 2016', '2', '00', 'am', 'corte', 'jorge lopez', 'pepe', '5899');
 
 -- --------------------------------------------------------
 
@@ -120,10 +114,7 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`Cod_empleado`, `Cod_barberia`, `Nombre`) VALUES
-(1, '456', 'Carlos Arturo'),
-(2, '456', 'Juaquin Bedoya'),
-(3, '4589', 'Alfonso Marin'),
-(4, '54545', 'Juan Gabriel');
+(3, '5899', 'Alfonso Marin');
 
 -- --------------------------------------------------------
 
@@ -245,7 +236,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
@@ -279,7 +270,7 @@ ALTER TABLE `detalle_cita`
 -- Filtros para la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`Cod_barberia`) REFERENCES `barberia` (`Cod_barberia`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `empleados_ibfk_1` FOREIGN KEY (`Cod_barberia`) REFERENCES `barberia` (`Cod_barberia`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
