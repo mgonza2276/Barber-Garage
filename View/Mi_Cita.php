@@ -81,8 +81,6 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
         <th>CODIGO CITA</th>
         <th>FECHA</th>
         <th>HORA</th>
-        <th>MINUTOS</th>
-        <th>FORMATO</th>
         <th>SERVICIO</th>
         <th>BARBERO</th>
       </tr>     
@@ -97,9 +95,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
     echo "<tr>
                     <td>".$row["Cod_cita"]."</td>
                     <td>".$row["Fecha"]."</td>
-                    <td>".$row["Hora"]."</td>
-                    <td>".$row["Minutos"]."</td>
-                    <td>".$row["Formato"]."</td>
+                    <td>".$row["Hora"].":".$row["Minutos"]." hs"."</td>
                     <td>".$row["Servicio"]."</td>
                     <td>".$row["Barbero"]."</td>
                     <td>

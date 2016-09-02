@@ -162,14 +162,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                 <!-- formato -->
 
 
-                <div class="input-field col s4">
-                    <label id="label_formato">Jornada :</label>
-                    <select name="Formato" id="formato" id="emple">
-                      <option value="<?php echo $citas[4]; ?>"><?php echo $citas[4]; ?></option>
-                      <option value="am">am</option>
-                      <option value="pm">pm</option>
-                    </select>
-                </div>
+         
 
               </div>
 
@@ -183,7 +176,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
  							?>
 
                 <select name="Servicio">
-    						<option value="<?php echo $citas[5]; ?>"><?php echo $citas[5] ?></option><?php
+    						<option value="<?php echo $citas[4]; ?>"><?php echo $citas[4] ?></option><?php
 							foreach ($services as $row) {
  							?>
 

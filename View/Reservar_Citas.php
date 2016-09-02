@@ -152,7 +152,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                       <option value="11">11</option>
                     </select>
                 </div>
-                  <div class="input-field col s3">
+                  <div class="input-field col s4">
                     <select name="Min" id="min">
                       <option required value="" disabled selected>Minutos</option>
                       <option value="00">00</option>
@@ -165,12 +165,8 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                   <input name="Formato" type="radio" id="test2" value="pm" />
                   <label for="test2">pm</label>
                   </div>-->
-                  <div class="input-field col s4">
-                    <select name="Formato" id="formato">
-                      <option required value="" disabled selected>Jornada</option>
-                      <option value="am">am</option>
-                      <option value="pm">pm</option>
-                    </select>
+                  <div class="input-field col s2">
+                    <label>hs</label>
                   </div>
                 </div>
 

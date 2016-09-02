@@ -13,7 +13,6 @@ include_once("../Model/Citas.class.php");
 	$fecha=$_POST["Fecha"];	
 	$hora=$_POST["Hora"];
 	$minutos = $_POST["Min"];
-	$formato = $_POST["Formato"];
 	$servicio=$_POST["Servicio"];
 	$barbero=$_POST["Barbero"];
 	$id_usuario=$_POST["Id_usuario"];
@@ -22,7 +21,7 @@ include_once("../Model/Citas.class.php");
 
 	try{
 
-		Gestionar_citas::Create($fecha,$hora,$servicio,$barbero,$formato,$minutos,$id_usuario,$cod_barberia);
+		Gestionar_citas::Create($fecha,$hora,$servicio,$barbero,$minutos,$id_usuario,$cod_barberia);
 		$mensaje="Su cita fue reservada con exito";
 		$tipomensaje = "success";
 		header("Location: ../View/Reservar_Citas.php?m=".$mensaje."&tm=".$tipomensaje);
@@ -41,14 +40,13 @@ include_once("../Model/Citas.class.php");
 	$fecha=$_POST["Fecha"];	
 	$hora=$_POST["Hora"];
 	$minutos = $_POST["Min"];
-	$formato = $_POST["Formato"];
 	$servicio=$_POST["Servicio"];
 	$barbero=$_POST["Barbero"];
 	$id_usuario=$_POST["Id_usuario"];
 	$cod_barberia=$_POST["Cod_barberia"];
 
 	try{
-		Gestionar_citas::Update($Cod_cita,$fecha,$hora,$minutos,$formato,$servicio,$barbero,$id_usuario,$cod_barberia);
+		Gestionar_citas::Update($Cod_cita,$fecha,$hora,$minutos,$servicio,$barbero,$id_usuario,$cod_barberia);
 		$mensaje="la cita se modifico correctamente";
 		$tipomensaje="success";
 		if ($_SESSION["Perfil"] =="Administrador" ) {
