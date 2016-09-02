@@ -50,15 +50,18 @@ session_start();
     <!-- inicializacion del calendario y los selects -->
 
     <script>
-  $(document).ready(function() {
+  $(document).ready(function()
+  {
      <?php
 
-      if(isset($_GET["msn"])){
+      if(isset($_GET["msn"]))
+      {
         echo "swal( '".$_GET["msn"]."','', 'success');";
       }
     ?>
     $('select').material_select();
-    $('#fecha_cita').datepicker({
+    $('#fecha_cita').datepicker(
+    {
 
       showOn: "button",
       buttonImage:"calendario/images/calen.png",
@@ -67,27 +70,43 @@ session_start();
       minDate: "-0D"
 
 
-});
+    });
 
-  $("#emple").change(function(){
-          var hora        = $("#hora").val();
+  function validaCita(hora)
+  {
+          var hora        = hora;
           var fecha_cita  = $("#fecha_cita").val();
           var empleado    = $("#emple").val();
-          var formato     = $("#formato").val();
+          // var formato     = $("#formato").val();
           var min         = $("#min").val();
           var accion      = "valida_citas";
 
-          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita, formato: formato, min:min}, function(result){
-
-
-                 if(result.ue == true){
+          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita, min:min}, function(result)
+          {
+                 if(result.ue == true)
+                 {
                     swal(result.msn);
                     $("#btnreg").prop("disabled",true);
-                 }else{
+                 }else
+                  {
                     $("#btnreg").prop("disabled",false);
-                }
+                  }
           },"json");
-      });
+    }
+        $("#hora").change(function()
+        {
+            //se asigna el valor de #hora a la variable #horafinal.
+            $("#horafinal").val($("#hora").val());
+            validaCita($("#horafinal").val());
+        });
+        $("#emple").change(function()
+        {
+            validaCita($("#horafinal").val());
+        });
+        $("#min").change(function()
+        {
+            validaCita($("#horafinal").val());
+        });
   })
   </script>
 
@@ -152,6 +171,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                       <option value="11">11</option>
                     </select>
                 </div>
+                <input type="hidden" name="horafinal" id="horafinal">
                   <div class="input-field col s4">
                     <select name="Min" id="min">
                       <option required value="" disabled selected>Minutos</option>

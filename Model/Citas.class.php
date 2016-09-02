@@ -107,7 +107,7 @@ class Gestionar_citas{
 		return $resultado;		
 	}
 
-	function ValidoCita($fecha, $hora, $barbero, $formato, $minutos){
+	function ValidoCita($fecha, $hora, $barbero, $minutos){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = BarberGarage_BD::Connect();
@@ -116,10 +116,10 @@ class Gestionar_citas{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND Barbero =? AND Formato =? AND Minutos =? ";
+		$consulta = "SELECT * FROM citas WHERE Fecha =? AND Hora = ? AND Barbero =?  AND Minutos =? ";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($fecha, $hora, $barbero, $formato, $minutos ));
+		$query->execute(array($fecha, $hora, $barbero, $minutos ));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso

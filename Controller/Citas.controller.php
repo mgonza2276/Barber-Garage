@@ -117,11 +117,11 @@ include_once("../Model/Citas.class.php");
 	  	$fecha = $_POST["fecha_cita"]; 
 	  	$hora = $_POST["hora"]; 
 	  	$barbero = $_POST["emple"];
-	  	$formato = $_POST["formato"];
+	  	// $formato = $_POST["formato"];
 	  	$minutos = $_POST["min"];
 	 
 	  	try{
-	  		$cita = Gestionar_Citas::ValidoCita($fecha, $hora, $barbero, $formato, $minutos);
+	  		$cita = Gestionar_Citas::ValidoCita($fecha, $hora, $barbero, $minutos);
 
 	  		if($cita[0] != ""){
 	  			$existe = true;	
