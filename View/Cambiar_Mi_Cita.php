@@ -150,7 +150,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                         
                             $num_inicio=(int)$str;
                             $num_fin=(int)$fin[0].(int)$fin[1];
-                            $hora_sistema=date("G-i");
+                            
                              
 
                              for ($i=$num_inicio; $i <=$num_fin ; $i++) { 
@@ -175,9 +175,18 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                 <div class="input-field col s3">
                     <label id="label_minutos">Minutos :</label>
                     <select name="Min" id="min">
-                      <option value="<?php echo $citas[3]; ?>"><?php echo $citas[3]; ?></option>
-                      <option value="00">00</option>
-                      <option value="30">30</option>
+                      <?php 
+
+                          if ($citas[3]=="00") {
+                            echo"<option value='00' selected>00 hs</option>";
+                            echo"<option value='30'>30 hs</option>";
+                          }else {
+                            echo"<option value='30'selected>30 hs</option>";
+                            echo"<option value='00' >00 hs</option>";
+                          }
+                       ?>
+                      
+                      
                     </select>
                 </div>
 

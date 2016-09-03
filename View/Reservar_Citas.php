@@ -188,19 +188,11 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                   <div class="input-field col s4">
                     <select name="Min" id="min">
                       <option required value="" disabled selected>Minutos</option>
-                      <option value="00">00</option>
-                      <option value="30">30</option>
+                      <option value="00">00 hs</option>
+                      <option value="30">30 hs</option>
                     </select>
                     </div>
-                  <!--<div class="input-field col s4">
-                    <input name="formato" type="radio" id="test1" value="am" checked required />
-                  <label for="test1">am</label>
-                  <input name="Formato" type="radio" id="test2" value="pm" />
-                  <label for="test2">pm</label>
-                  </div>-->
-                  <div class="input-field col s2">
-                    <label>hs</label>
-                  </div>
+                  
                 </div>
 
 
