@@ -5,6 +5,7 @@ session_start();
   require_once("../Model/conexion.php");
   require_once("../Model/servicio.class.php");
   require_once("../Model/empleados.class.php");
+  require_once("../Model/barberias.class.php");
 
     if(!isset($_SESSION["Id_usuario"])){
     $msn = base64_encode("Debe iniciar sesion primero!");
@@ -157,18 +158,30 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                   <div class="input-field col s5">
                     <select name="Hora" id="hora" required>
                       <option value="" disabled selected>Seleccione la hora </option>
-                      <option value="12">12</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
+                     <?php 
+                          $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
+                           $fin=$horario["Hora_fin"];
+                            $inicio=$horario["Hora_inicio"];
+                            $str="";
+                            $num1=(int)$inicio[0];
+                            $num2=(int)$inicio[1];
+
+                            if ($num1<=0 &&$num2>0) {
+                              $str=$str.$num2;
+                            }elseif ($num1>0 &&$num2>=0) {
+                              $str=$str.$num1.$num2;
+                            }
+                        
+                            $num_inicio=(int)$str;
+                            $num_fin=(int)$fin[0].(int)$fin[1];
+                        
+                             echo $num_fin;
+
+                             for ($i=$num_inicio; $i <=$num_fin ; $i++) { 
+                               echo "<option >".$i."</option>";
+                             }
+
+                    ?>
                     </select>
                 </div>
                 <input type="hidden" name="horafinal" id="horafinal">
