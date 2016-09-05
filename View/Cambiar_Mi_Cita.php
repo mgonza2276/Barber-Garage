@@ -13,7 +13,7 @@
     header("Location: ../View/index.php?m=".$msn."&tm=".$tipo_msn);
   }
 
- $citas =Gestionar_citas::ReadbyID(base64_decode($_REQUEST["ui"]));
+ $citas =Gestionar_citas::ReadbyID(base64_decode($_REQUEST["ct"]));
 ?>
 
     <!DOCTYPE html>
@@ -134,7 +134,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                   <label id="label_hora">Hora: </label>
     						  <select name="Hora" id="hora">
       						  <?php  $citas[2]; ?>
-      						    <?php 
+      						    <?php
                           $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
                            $fin=$horario["Hora_fin"];
                             $inicio=$horario["Hora_inicio"];
@@ -147,14 +147,14 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                             }elseif ($num1>0 &&$num2>=0) {
                               $str=$str.$num1.$num2;
                             }
-                        
+
                             $num_inicio=(int)$str;
                             $num_fin=(int)$fin[0].(int)$fin[1];
-                            
-                             
 
-                             for ($i=$num_inicio; $i <=$num_fin ; $i++) { 
-                               
+
+
+                             for ($i=$num_inicio; $i <=$num_fin ; $i++) {
+
                                if ($i==$citas[2]) {
                                  echo "<option selected>".$i."</option>";
                                }else{
@@ -175,7 +175,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                 <div class="input-field col s3">
                     <label id="label_minutos">Minutos :</label>
                     <select name="Min" id="min">
-                      <?php 
+                      <?php
 
                           if ($citas[3]=="00") {
                             echo"<option value='00' selected>00 hs</option>";
@@ -185,15 +185,15 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                             echo"<option value='00' >00 hs</option>";
                           }
                        ?>
-                      
-                      
+
+
                     </select>
                 </div>
 
                 <!-- formato -->
 
 
-         
+
 
               </div>
 
@@ -261,7 +261,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
         </div>
     </div>
 
-    
+
 <?php include_once("../Components/footer.php") ?>
 </body>
 </html>

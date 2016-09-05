@@ -36,7 +36,7 @@
       <a href="#!" class="brand-logo">B-G</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a class="inicio" href="sesion_iniciada.php">Inicio</a></li>
+        
         <li><a class="acerca" href="#">Acerca de <br> Barber Garage</a></li>
         <li><a class="contacto" href="#">Contacto</a></li>
         <li><a class="dropdown-button" href="#!" data-activates="dropdown_user_desktop"><?php echo $_SESSION["Nombre"]; ?><i class="material-icons right">arrow_drop_down</i></a></li>
@@ -54,6 +54,3 @@
       </ul>
     </div>
   </nav>
-
-
- 

@@ -32,28 +32,28 @@
        <script src="sweetalert-master/dist/sweetalert.min.js"></script>
       <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
 
-  <?php
+      <?php
 
-if(isset($_GET["m"]) and isset($_GET["tm"])){
-         if($_GET["m"] != ""){
-           echo "<script>
-                   $(document).ready(function(){
-                      sweetAlert({
-                           title: '...',
-                           text: '".$_GET["m"]."',
-                           type: '".$_GET["tm"]."',
-                           showCancelButton: false,
-                           confirmButtonColor: '#4db6ac',
-                           confirmButtonText: 'Aceptar',
-                          cancelButtonText: 'No, cancel plx!',
-                           closeOnConfirm: false,
-                           closeOnCancel: false
+    if(isset($_GET["m"]) and isset($_GET["tm"])){
+             if($_GET["m"] != ""){
+               echo "<script>
+                       $(document).ready(function(){
+                          sweetAlert({
+                               title: '...',
+                               text: '".$_GET["m"]."',
+                               type: '".$_GET["tm"]."',
+                               showCancelButton: false,
+                               confirmButtonColor: '#4db6ac',
+                               confirmButtonText: 'Aceptar',
+                              cancelButtonText: 'No, cancel plx!',
+                               closeOnConfirm: false,
+                               closeOnCancel: false
+                           });
                        });
-                   });
-                </script>";
-           }
-         }
-?>
+                    </script>";
+               }
+             }
+    ?>
 
 
 <script type="text/javascript" charset="utf8" src="DataTable/jquery.dataTables.js"></script>
