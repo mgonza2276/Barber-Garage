@@ -52,7 +52,7 @@
 				Gestion_barberias::Update($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida);
 				$mensaje = "Se actualizo correctamente";
 				$tipomensaje = "success";
-				header("Location: ../View/gestion_barberias.php?m= ".$mensaje."&tm=".$tipomensaje);
+				header("Location: ../View/gestion_barberias.php?m= ".$mensaje."&tm=".$tipomensaje."&cb=".$Cod_barberia);
 			}catch(Exception $e){
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();	
 				$tipomensaje = "error";

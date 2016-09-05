@@ -16,6 +16,8 @@ session_start();
 
  ?>
 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -165,6 +167,11 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                             $str="";
                             $num1=(int)$inicio[0];
                             $num2=(int)$inicio[1];
+                            date_default_timezone_set("America/Bogota" ) ; 
+                            $hora = date('G:i a',time() - 3600*date('I')); 
+                            $h=(int)$hora[0].(int)$hora[1];
+
+                            $variable="";
 
                             if ($num1<=0 &&$num2>0) {
                               $str=$str.$num2;
@@ -178,7 +185,14 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                              echo $num_fin;
 
                              for ($i=$num_inicio; $i <=$num_fin ; $i++) { 
-                               echo "<option >".$i."</option>";
+                               // echo "<option >".$i."</option>";
+                              if ($i<$h) {
+                                 $variable="disabled";
+                              }else{
+                                $variable="";
+                              }
+                                echo "<option ".$variable.">".$i."</option>";
+                                
                              }
 
                     ?>
