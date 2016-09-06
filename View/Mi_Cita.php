@@ -78,6 +78,7 @@
     <table id="datatable" class="display highlight centered responsive-table bordered">
     <thead>
       <tr>
+        <th>BARBERIA</th>
         <th>CODIGO CITA</th>
         <th>FECHA</th>
         <th>HORA</th>
@@ -93,6 +94,7 @@
 
 
     echo "<tr>
+                    <td>".$row["Nombre"]."</td>
                     <td>".$row["Cod_cita"]."</td>
                     <td>".$row["Fecha"]."</td>
                     <td>".$row["Hora"].":".$row["Minutos"]." hs"."</td>

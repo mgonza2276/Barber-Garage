@@ -62,7 +62,7 @@ class Gestionar_citas{
 		$conexion=BarberGarage_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-		$consulta="SELECT * FROM citas WHERE Id_usuario=?";
+		$consulta="SELECT citas.*,barberia.* FROM citas INNER JOIN barberia on citas.Cod_barberia=barberia.Cod_barberia WHERE Id_usuario=?";
 		$query=$conexion->prepare($consulta);
 		$query->execute(array($id_usuario));
 
