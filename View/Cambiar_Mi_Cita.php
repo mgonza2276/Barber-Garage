@@ -135,7 +135,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
     						  <select name="Hora" id="hora">
       						  <?php  $citas[2]; ?>
       						    <?php
-                          $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
+                          $horario=Gestion_barberias::ValidaBarberia($citas[7]);
                            $fin=$horario["Hora_fin"];
                             $inicio=$horario["Hora_inicio"];
                             $str="";
@@ -220,7 +220,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
                             <div class="input-field col s12">
                             <label id="label_barbero">Barbero :</label>
-                            <?php $barberos=Gestion_empleados::ReadAll()
+                            <?php $barberos=Gestion_empleados::ReadByBarberia($citas[7])
 
                             ?>
 
