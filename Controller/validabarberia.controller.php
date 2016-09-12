@@ -16,7 +16,8 @@
     // Encriptacion a traves de base64_encode, base64_decode
 
        $msn = "la barberia no existe!";
-       $tipo_msn = base64_encode("advertencia");       
+       $tipo_msn = base64_encode("advertencia");
+
        header("Location:../View/sesion_iniciada.php?m=".$msn."&tm=".$tipo_msn);
     }else{
       // Creamos variables de SESSION

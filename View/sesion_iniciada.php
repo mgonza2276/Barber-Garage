@@ -41,7 +41,7 @@ include_once("../Model/barberias.class.php");
 
     <div class="row">
         <div class="col s12 m6">
-          <div class="cardb blue-grey lighten-4">
+          <div class="cardb blue-grey lighten-4" id="BarberG">
             <div class="card-content black-text">
               <p>Barber Garage es la <br> aplicacion ideal para <br> reservar tus citas en tu <br> barberia favorita</p>
             </div>
@@ -50,38 +50,37 @@ include_once("../Model/barberias.class.php");
 
 
     <div class="col s12 m6 l6">
-          <div class="cardb blue-grey lighten-4">
-            <div class="card-content black-text">
-              <h1>Encuentra tu <br>Barberia Favorita</h1>
-
+          <div class="cardb blue-grey lighten-4" id="BarberG">
+            <div class="card-content black-text col s12 m12 l12">
+              <h1>Encuentra tu Barberia Favorita</h1>
 
               <form action="../Controller/validabarberia.controller.php" method="post">
 
               <div class="input-field col l8 offset-l2 s12">
+                  <?php
+                      $barberias= Gestion_barberias::ReadAll();
+                     ?>
+                  <div class="col l12 s12 m12">
+                    <label style="color:black;">Seleccione una barberia :</label>
+                    <br>
+                  </div>
+                  <div class="col l12 s12 m12">
+                    <select name="nit" required>
+                      <!-- <option disabled selected>Seleccione una barberia</option> -->
+                      <?php
+                        foreach ($barberias as $barberia) {
+                      ?>
+                      <option name="barberia"  value="<?php echo $barberia[0]; ?>" required="true">
+                              <?php echo $barberia[1]; ?>
+                      </option>
+                     <?php }  ?>
+                    </select>
+                  </div>
 
-              <?php
-                  $barberias= Gestion_barberias::ReadAll();
-                 ?>
-                 <br><br>
-              <select name="nit" required>
-
-
-
-                <option disabled selected>Seleccione una barberia</option>
-
-                <?php
-                  foreach ($barberias as $barberia) {
-                   ?>
-
-
-                <option name="barberia" required value="<?php echo $barberia[0]; ?>"><?php echo $barberia[1]; ?></option>
-
-               <?php }  ?>
-              </select>
-            </div>
-
-
-              <button type="submit" class="waves-effect waves-light btn  light-blue darken-2 btn_entrar_bar">Entrar a la Barberia</button>
+              </div>
+              <div class="input-field col l8  s10 m8">
+                <button type="submit" id="boton" class="waves-effect waves-light btn  light-blue darken-2 btn_entrar_bar">Entrar a la Barberia</button>
+              </div>
               </form>
               </div>
 
