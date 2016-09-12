@@ -19,6 +19,7 @@
 }
 .cardb{
   height: 350px;
+  opacity: 0.7;/*valores entre 0.0 y 1.0 */
 }
 
 #formulario{

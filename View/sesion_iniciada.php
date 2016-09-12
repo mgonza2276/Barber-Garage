@@ -41,7 +41,7 @@ include_once("../Model/barberias.class.php");
 
     <div class="row">
         <div class="col s12 m6">
-          <div class="cardb blue-grey lighten-4" id="BarberG">
+          <div class="cardb blue-grey lighten-4 cardcolor" id="BarberG">
             <div class="card-content black-text">
               <p>Barber Garage es la <br> aplicacion ideal para <br> reservar tus citas en tu <br> barberia favorita</p>
             </div>
@@ -50,7 +50,7 @@ include_once("../Model/barberias.class.php");
 
 
     <div class="col s12 m6 l6">
-          <div class="cardb blue-grey lighten-4" id="BarberG">
+          <div class="cardb blue-grey lighten-4 cardcolor" id="BarberG" style="opacity:30%;">
             <div class="card-content black-text col s12 m12 l12">
               <h1>Encuentra tu Barberia Favorita</h1>
 
