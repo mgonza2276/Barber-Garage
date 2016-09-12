@@ -28,7 +28,7 @@ include_once("../Model/Citas.class.php");
 	}catch(Exception $e){
 		$mensaje="ha ocurrido un error, el error fue:".$e->getMessage()."en el archivo:".$e->getFile()."en la linea:".$e->getLine();
 		$tipomensaje="error";
-		header("Location: ../View/Reservar_Citas.php?m=".$mensaje."&tm=".$tipomensaje);
+		header("Location: ../View/Dashboard_Cliente.php?m=".$mensaje."&tm=".$tipomensaje);
 
 	}
 
