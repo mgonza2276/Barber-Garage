@@ -1,5 +1,12 @@
 .fondo{
        background: #d50000 url("imagenes/FondoLogin.png")no-repeat fixed center ;
+       -webkit-background-size: cover;
+       -moz-background-size: cover;
+       -o-background-size: cover;
+       background-size: cover;
+       display: flex;
+       min-height: 100vh;
+       flex-direction: column;
 }
 #fondomapa{
 	background: #d50000 url("imagenes/fondo_mapa.jpg")no-repeat fixed center ;
@@ -31,11 +38,11 @@
 /*cristian*/
 
 #centro{
-	/*margin-top: 50px;*/
+	margin-top: 50px;
 	border-radius: 15px;
 	background-color:#eceff1;
 	padding-bottom: 20px;
-	margin-bottom: 30px;
+	/*margin-bottom: 30px;*/
 }
 #btnreg{
 	margin-bottom: 15px;
@@ -275,4 +282,7 @@
 
 	margin-top: 395px;
 
+}
+#BarberG{
+    margin-top: 50px;
 }

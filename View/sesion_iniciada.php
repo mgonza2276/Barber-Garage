@@ -63,7 +63,7 @@ include_once("../Model/barberias.class.php");
                   $barberias= Gestion_barberias::ReadAll();
                  ?>
                  <br><br>
-              <select name="nit" >
+              <select name="nit" required>
 
 
 
@@ -74,7 +74,7 @@ include_once("../Model/barberias.class.php");
                    ?>
 
 
-                <option name="barberia" value="<?php echo $barberia[0]; ?>"><?php echo $barberia[1]; ?></option>
+                <option name="barberia" required value="<?php echo $barberia[0]; ?>"><?php echo $barberia[1]; ?></option>
 
                <?php }  ?>
               </select>

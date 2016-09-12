@@ -21,7 +21,8 @@
 
 		//Metodo ReadAll()
 		//El metodo trae todos los datos de la tabla barberia
-		function ReadAll(){
+		function ReadAll()
+		{
 			//Instanciamos y nos conectamos a la BD
 			$conexion=BarberGarage_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
@@ -46,7 +47,7 @@
 		$Conexion = BarberGarage_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 		//Crear el query que vamos a realizar
 		$consulta = "SELECT * FROM barberia WHERE Cod_barberia=?";
@@ -59,12 +60,12 @@
 		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
 
 		$resultado = $query->fetch(PDO::FETCH_BOTH);
-		
+
 		BarberGarage_BD::Disconect();
 		return $resultado;
 
-        
-        }	
+
+        }
 
 
         function Update($Cod_barberia,$Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida){
@@ -72,13 +73,13 @@
 		$Conexion = BarberGarage_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 		//Crear el query que vamos a realizar
 		$consulta = "UPDATE barberia SET Nombre=?,Direccion=?,Telefono=?,Ciudad=?, GeoX=?, GeoY=?,Hora_inicio=?, Hora_fin=? WHERE Cod_barberia = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida,$Cod_barberia));		
+		$query->execute(array($Nombre,$Direccion,$Telefono,$Ciudad,$GeoX,$GeoY,$entrada,$salida,$Cod_barberia));
 
 		BarberGarage_BD::Disconect();
 		}
