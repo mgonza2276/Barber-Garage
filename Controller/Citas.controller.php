@@ -55,12 +55,12 @@ include_once("../Model/Citas.class.php");
 		}
 		elseif ($_SESSION["Perfil"] =="Usuario") {
 
-			header("Location: ../View/Mi_Cita.php?ja=".$_SESSION["Id_usuario"]."&m= ".$mensaje);
+			header("Location: ../View/Mi_Cita.php?ja=".$_SESSION["Id_usuario"]."&m= ".$mensaje."&tm=".$tipomensaje);
 			// header("Location: ../View/Mi_Cita.php?m=".$mensaje."&tm=".$tipomensaje);
 		}
 		elseif($_SESSION["Perfil"]=="Empleado"){
 
-			header("Location: ../View/Mis_Citas_Asignadas.php?mca=".$_SESSION["Nombre"]."&m= ".$mensaje);
+			header("Location: ../View/Mis_Citas_Asignadas.php?mca=".$_SESSION["Nombre"]."&m= ".$mensaje."&tm=".$tipomensaje);
 			// header("Location: ../View/Mis_Citas_Asignadas.php?m=".$mensaje."&tm=".$tipomensaje);
 		}
 
@@ -94,11 +94,11 @@ include_once("../Model/Citas.class.php");
 		elseif ($_SESSION["Perfil"] =="Usuario") {
 
 			//aqui estamos enviando la variable ja nuevamente para que vuelva a mostrar los datos de la citas segunn el id del usuario.
-			header("Location: ../View/Mi_Cita.php?&ja=".$_SESSION["Id_usuario"]."&m=".$mensaje);
+			header("Location: ../View/Mi_Cita.php?ja=".$_SESSION["Id_usuario"]."&m=".$mensaje."&tm=".$tipomensaje);
 		}
 
 		elseif($_SESSION["Perfil"]=="Empleado"){
-		header("Location: ../View/Mis_Citas_Asignadas.php?.mca=".$_SESSION["Nombre"]."&m=".$mensaje);
+		header("Location: ../View/Mis_Citas_Asignadas.php?.mca=".$_SESSION["Nombre"]."&m=".$mensaje."&tm=".$tipomensaje);
 
 		}
 

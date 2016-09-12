@@ -161,6 +161,11 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                     <select name="Hora" id="hora" required>
                       <option value="" disabled selected>Seleccione la hora </option>
                      <?php 
+
+                          
+                          
+
+
                           $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
                            $fin=$horario["Hora_fin"];
                             $inicio=$horario["Hora_inicio"];
@@ -169,7 +174,13 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                             $num2=(int)$inicio[1];
                             date_default_timezone_set("America/Bogota" ) ; 
                             $hora = date('G:i a',time() - 3600*date('I')); 
-                            $h=(int)$hora[0].(int)$hora[1];
+                            
+                            if ($h1<10 && $h2==":") {
+                              $h=(int)$hora[0];
+                            }else{
+                              $hora_sis=$hora[0].$hora[1];
+                              $h=(int)$hora_sis;
+                            }
 
                             $variable="";
 
@@ -182,13 +193,14 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
                             $num_inicio=(int)$str;
                             $num_fin=(int)$fin[0].(int)$fin[1];
                         
-                             echo $num_fin;
+                             
 
                              for ($i=$num_inicio; $i <=$num_fin ; $i++) { 
                                // echo "<option >".$i."</option>";
                               if ($i<$h) {
                                  $variable="disabled";
-                              }else{
+                              }else {                  
+
                                 $variable="";
                               }
                                 echo "<option ".$variable.">".$i."</option>";
@@ -265,5 +277,6 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
     <?php include_once("../Components/footer.php") ?>
 
+    
 </body>
 </html>
