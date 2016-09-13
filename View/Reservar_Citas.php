@@ -81,7 +81,10 @@ session_start();
         //   alert(result);
         // });
  
-    }
+
+      }
+
+
         
     // $("#hora").keyup(function()
     //     {
@@ -91,7 +94,11 @@ session_start();
     //     });
          $("#btnreg").click(function() {
           //aqui el de los campos
+           if($("input").val() == "" || $("select").val() == ""){
+            swal("Los campos no deben ir vacios!");
+           }else{
              validaCita($("#hora").val());
+            }
          });
 
          $("#hora").change(function(){
