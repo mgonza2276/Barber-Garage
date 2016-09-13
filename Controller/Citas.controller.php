@@ -12,7 +12,7 @@ include_once("../Model/Citas.class.php");
 
 	$fecha=$_POST["Fecha"];
 	$hora=$_POST["Hora"];
-	$minutos = $_POST["Min"];
+	// $minutos = $_POST["Min"];
 	$servicio=$_POST["Servicio"];
 	$barbero=$_POST["Barbero"];
 	$id_usuario=$_POST["Id_usuario"];
@@ -21,7 +21,7 @@ include_once("../Model/Citas.class.php");
 
 	try{
 
-		Gestionar_citas::Create($fecha,$hora,$servicio,$barbero,$minutos,$id_usuario,$cod_barberia);
+		Gestionar_citas::Create($fecha,$hora,$servicio,$barbero,$id_usuario,$cod_barberia);
 		$mensaje="Su cita fue reservada con exito";
 		$tipomensaje = "success";
 		header("Location: ../View/Reservar_Citas.php?m=".$mensaje."&tm=".$tipomensaje);
@@ -117,12 +117,12 @@ include_once("../Model/Citas.class.php");
 	case 'valida_citas':
 	  	$fecha = $_POST["fecha_cita"];
 	  	$hora = $_POST["hora"];
-	  	$barbero = $_POST["emple"];
-	  	// $formato = $_POST["formato"];
-	  	$minutos = $_POST["min"];
+	  	$Id_Usuario  = $_POST["usuario"];
+	  	$barbero = $_POST["barbero"]; 
+	  	$barberia = $_POST["barberia"];
 
 	  	try{
-	  		$cita = Gestionar_Citas::ValidoCita($fecha, $hora, $barbero, $minutos);
+	  		$cita = Gestionar_Citas::ValidoCita($fecha, $hora, $Id_Usuario, $barbero, $barberia);
 
 	  		if($cita[0] != ""){
 	  			$existe = true;
@@ -136,8 +136,8 @@ include_once("../Model/Citas.class.php");
 	  	}
 
 
-	  	echo json_encode(array('ue' => $existe, 'msn' => $message));
-
+	    echo json_encode(array('ue' => $existe, 'msn' => $message));
+	  
 	  break;
 
 }

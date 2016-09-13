@@ -53,35 +53,45 @@ session_start();
 
   function validaCita(hora)
   {
-          var hora        = hora;
           var fecha_cita  = $("#fecha_cita").val();
-          var empleado    = $("#emple").val();
-          // var formato     = $("#formato").val();
-          var min         = $("#min").val();
-          var accion      = "valida_citas";
+          var hora        = hora; 
+          var barbero     = $("#emple").val(); 
+          var usuario     = $("#Id_usuario").val();
+          var barberia    = $("#Cod_barberia").val();    
 
-          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, emple: empleado, fecha_cita: fecha_cita, min:min}, function(result)
-          {
-                 if(result.ue == true)
-                 {
+          var accion      = "valida_citas"; 
+
+
+
+          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, fecha_cita: fecha_cita, barbero: barbero, usuario:usuario, barberia:barberia}, function(result)
+          { 
+
+              if(result.ue == true)
+                 {                    
+                    $("#btnreg").val("disabled",true);
                     swal(result.msn);
-                    $("#btnreg").prop("disabled",true);
-                 }else
-                  {
-                    $("#btnreg").prop("disabled",false);
-                  }
+                 }else{
+
+                    document.getElementById("frm").submit();
+                 }
           },"json");
+
+        //   alert(result);
+        // });
+ 
     }
-        $("#hora").change(function()
-        {
-            //se asigna el valor de #hora a la variable #horafinal.
-            $("#horafinal").val($("#hora").val());
-            validaCita($("#horafinal").val());
-        });
-            $("#min").change(function()
-        {
-            validaCita($("#horafinal").val());
-        });
+        
+    // $("#hora").keyup(function()
+    //     {
+    //         //se asigna el valor de #hora a la variable #horafinal.
+    //         $("#horafinal").val($("#hora").val());
+    //         validaCita($("#horafinal").val());
+    //     });
+         $("#btnreg").click(function() {
+             validaCita($("#hora").val());
+         });
+
+
   })
   </script>
   <!-- para las alertas -->
@@ -112,7 +122,7 @@ session_start();
 <div class="container">
   <div class="row">
     <div id="centro" class="col l6 offset-l3">
-      <form action="../Controller/Citas.controller.php" method="POST">
+      <form action="../Controller/Citas.controller.php" method="POST" id="frm">
         <center>
           <h4>Citas</h4>
                 <!-- provisional de la fecha con calendario -->
@@ -137,7 +147,7 @@ session_start();
                     <?php
                       $barberos=Gestion_empleados::ReadAll()
                     ?>
-                <select name="Barbero" id="emple">
+                <select name="Barbero" id="emple" >
                 <option value="" disabled selected>Seleccione un Barbero</option>
                   <?php
                     foreach ($barberos as $row) {
@@ -147,59 +157,24 @@ session_start();
                       }
                     ?>
                 </select>
-                <div class="input-field col l12 s12">
-                  <div class="input-field col l6 s12">
-                    <select name="Hora" id="hora" required>
-                      <option value="" disabled selected>Seleccione la hora </option>
-                      <?php
+
+                <?php
                           $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
                            $fin=$horario["Hora_fin"];
                             $inicio=$horario["Hora_inicio"];
-                            $str="";
-                            $num1=(int)$inicio[0];
-                            $num2=(int)$inicio[1];
-                            date_default_timezone_set("America/Bogota" ) ;
-                            $hora = date('G:i a',time() - 3600*date('I'));
-                            if ($h1<10 && $h2==":") {
-                              $h=(int)$hora[0];
-                            }else{
-                              $hora_sis=$hora[0].$hora[1];
-                              $h=(int)$hora_sis;
-                            }
-                            $variable="";
-                            if ($num1<=0 &&$num2>0) {
-                              $str=$str.$num2;
-                            }elseif ($num1>0 &&$num2>=0) {
-                              $str=$str.$num1.$num2;
-                            }
-                            $num_inicio=(int)$str;
-                            $num_fin=(int)$fin[0].(int)$fin[1];
-                             for ($i=$num_inicio; $i <=$num_fin ; $i++) {
-                               // echo "<option >".$i."</option>";
-                              if ($i<$h) {
-                                 $variable="disabled";
-                              }else {
-                                $variable="";
-                              }
-                                echo "<option ".$variable.">".$i."</option>";
-                             }
+                            $hora_inicio=$inicio[0].$inicio[1].$inicio[2].$inicio[3].$inicio[4];
+                            $hora_fin=$fin[0].$fin[1].$fin[2].$fin[3].$fin[4];
                     ?>
-                    </select>
-                </div>
-                <input type="hidden" name="horafinal" id="horafinal">
-                  <div class="input-field col s12 l6">
-                    <select name="Min" id="min">
-                      <option required value="" disabled selected>Minutos</option>
-                      <option value="00">00 hs</option>
-                      <option value="30">30 hs</option>
-                    </select>
-                    </div>
-                </div>
+                      <input type="time" name="Hora" id="hora"  min="<?php echo $inicio?>" max="<?php echo $fin?>"oninvalid="setCustomValidity('El horario de servicio es de <?php echo $hora_inicio." hasta las ".$hora_fin;?>')" 
+                   oninput="setCustomValidity('')"></input>
+                   <span type="hidden" id="horafinal"></span>
+                
               </div>
-                <input type="hidden" name="Id_usuario" value="<?php echo $_SESSION["Id_usuario"]; ?>"/>
-                <input type="hidden" name="Cod_barberia" value="<?php echo $_SESSION["nit"]; ?>"/>
+                <input type="hidden" id="Id_usuario" name="Id_usuario" value="<?php echo $_SESSION["Id_usuario"]; ?>"/>
+                <input type="hidden" id="Cod_barberia" name="Cod_barberia" value="<?php echo $_SESSION["nit"]; ?>"/>
+                <input type="hidden" name="acc" value="R">
                 <span id="resultadobusqueda" class="red-text accent-3 left" style="margin-left: 50px;"> </span>
-                <button id="btnreg" type="submit"  class="waves-effect  btn-large green" onclick="return validarCita()" style="width:100%" name="acc" value="R" >
+                <button id="btnreg" type="button"  class="waves-effect  btn-large green" style="width:100%" >
                   Reservar cita
                 </button>
                 <button class="waves-effect  btn-large red" style="width:100%">Cancelar</button>
@@ -211,5 +186,7 @@ session_start();
     <?php
       include_once("../Components/footer.php")
     ?>
+
+    <?php echo $inicio; ?>
 </body>
 </html>
