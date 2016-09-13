@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-09-2016 a las 22:07:14
+-- Tiempo de generación: 13-09-2016 a las 19:02:00
 -- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.6.15
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -45,7 +45,7 @@ CREATE TABLE `barberia` (
 --
 
 INSERT INTO `barberia` (`Cod_barberia`, `Nombre`, `Direccion`, `Telefono`, `Ciudad`, `GeoX`, `GeoY`, `Hora_inicio`, `Hora_fin`) VALUES
-('1234', 'Sprinfield', 'Cra 44#45-52', '4444444', 'Itagui', '', '', '10:00:00', '20:00:00'),
+('1234', 'Sprinfield', 'Cra 44#45-52', '4444444', 'Itagui', '', '', '10:30:00', '20:00:00'),
 ('4589', 'victor', 'calle 63 a ', '126658', 'itagui', '6.2412769883680035', '-75.57147234678268', '12:00:00', '20:00:00'),
 ('5899', 'Babilonia', 'calle 88', '45454545', 'caldas', '-75.57147234678268', '6.2412769883680035', '10:00:00', '20:00:00');
 
@@ -70,7 +70,6 @@ CREATE TABLE `citas` (
   `Cod_cita` int(11) NOT NULL,
   `Fecha` varchar(50) NOT NULL,
   `Hora` varchar(30) NOT NULL,
-  `Minutos` varchar(2) NOT NULL,
   `Servicio` varchar(50) NOT NULL,
   `Barbero` varchar(50) NOT NULL,
   `Id_Usuario` varchar(50) NOT NULL,
@@ -81,13 +80,10 @@ CREATE TABLE `citas` (
 -- Volcado de datos para la tabla `citas`
 --
 
-INSERT INTO `citas` (`Cod_cita`, `Fecha`, `Hora`, `Minutos`, `Servicio`, `Barbero`, `Id_Usuario`, `Cod_barberia`) VALUES
-(25, 'Lunes, 1 Agosto, 2016', '2', '00', 'corte', 'jorge lopez', 'pepe', '5899'),
-(32, 'Viernes, 2 Septiembre, 2016', '12', '30', 'barba', 'Armando Calles', 'caliche', '4589'),
-(33, 'Viernes, 2 Septiembre, 2016', '12', '00', 'depilada', 'Orlando Marin', 'caliche', '4589'),
-(35, 'Viernes, 2 Septiembre, 2016', '12', '00', 'barba', 'Armando Calles', 'caliche', '4589'),
-(36, 'Viernes, 2 Septiembre, 2016', '12', '00', 'depilada', 'Elvis Ajoso', 'caliche', '1234'),
-(37, 'Viernes, 2 Septiembre, 2016', '12', '00', 'depilada', 'Elvis Ajoso', 'caliche', '1234');
+INSERT INTO `citas` (`Cod_cita`, `Fecha`, `Hora`, `Servicio`, `Barbero`, `Id_Usuario`, `Cod_barberia`) VALUES
+(57, 'Martes, 13 Septiembre, 2016', '10:00', 'depilada', 'Armando Calles', 'caliche', '1234'),
+(58, 'Martes, 13 Septiembre, 2016', '10:01', 'depilada', 'Elvis Ajoso', 'caliche', '1234'),
+(59, 'Martes, 13 Septiembre, 2016', '18:24', 'depilada', 'Armando Calles', 'caliche', '1234');
 
 -- --------------------------------------------------------
 
@@ -122,7 +118,7 @@ INSERT INTO `empleados` (`Cod_empleado`, `Cod_barberia`, `Nombre`) VALUES
 (1, '4589', 'Orlando Marin'),
 (2, '5899', 'Armando Vargas'),
 (3, '5899', 'Alfonso Marin'),
-(4, '4589', 'Armando Calles'),
+(4, '1234', 'Armando Calles'),
 (5, '1234', 'Elvis Ajoso');
 
 -- --------------------------------------------------------
@@ -245,7 +241,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `citas`
 --
 ALTER TABLE `citas`
-  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `Cod_cita` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 --
 -- AUTO_INCREMENT de la tabla `empleados`
 --
