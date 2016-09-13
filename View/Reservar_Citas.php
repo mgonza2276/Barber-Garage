@@ -9,6 +9,7 @@ session_start();
     $tipo_msn = base64_encode("advertencia");
     header("Location: index.php?m=".$msn."&tm=".$tipo_msn);
   }
+  date_default_timezone_set("America/Bogota" ) ; 
  ?>
 <!DOCTYPE html>
 <html>
@@ -51,6 +52,7 @@ session_start();
       minDate: "-0D"
     });
 
+
   function validaCita(hora)
   {
           var fecha_cita  = $("#fecha_cita").val();
@@ -88,9 +90,19 @@ session_start();
     //         validaCita($("#horafinal").val());
     //     });
          $("#btnreg").click(function() {
+          //aqui el de los campos
              validaCita($("#hora").val());
          });
 
+         $("#hora").change(function(){
+        var horaactual = "<?php echo date("H:i");?>";
+        var horadesde  = $("#hora").val();
+        if(horadesde < horaactual){
+          swal("debe elegir una hora superior a la hora actual.");
+           $("#hora").val(horaactual);
+        }
+        
+      })
 
   })
   </script>
@@ -159,14 +171,16 @@ session_start();
                 </select>
 
                 <?php
+                          
                           $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
+                          //Capturamos la hora de atencion en la barberia
                            $fin=$horario["Hora_fin"];
                             $inicio=$horario["Hora_inicio"];
-                            $hora_inicio=$inicio[0].$inicio[1].$inicio[2].$inicio[3].$inicio[4];
-                            $hora_fin=$fin[0].$fin[1].$fin[2].$fin[3].$fin[4];
+
+                            $hora_inicio=$inicio[0].$inicio[1].$inicio[2].$inicio[3].$inicio[4]."hs";
+                            $hora_fin=$fin[0].$fin[1].$fin[2].$fin[3].$fin[4]."hs";
                     ?>
-                      <input type="time" name="Hora" id="hora"  min="<?php echo $inicio?>" max="<?php echo $fin?>"oninvalid="setCustomValidity('El horario de servicio es de <?php echo $hora_inicio." hasta las ".$hora_fin;?>')" 
-                   oninput="setCustomValidity('')"></input>
+                      <input type="time" max="<?php echo $fin ?>" min="<?php echo $inicio ?>" name="Hora" id="hora" value="<?php $time=time();echo date("H:i",$time)?>"  ></input>
                    <span type="hidden" id="horafinal"></span>
                 
               </div>
@@ -187,6 +201,6 @@ session_start();
       include_once("../Components/footer.php")
     ?>
 
-    <?php echo $inicio; ?>
+    <?php echo $hora ?>
 </body>
 </html>

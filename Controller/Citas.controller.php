@@ -39,14 +39,13 @@ include_once("../Model/Citas.class.php");
 	$Cod_cita=$_POST["Cod_cita"];
 	$fecha=$_POST["Fecha"];
 	$hora=$_POST["Hora"];
-	$minutos = $_POST["Min"];
 	$servicio=$_POST["Servicio"];
 	$barbero=$_POST["Barbero"];
 	$id_usuario=$_POST["Id_usuario"];
 	$cod_barberia=$_POST["Cod_barberia"];
 
 	try{
-		Gestionar_citas::Update($Cod_cita,$fecha,$hora,$minutos,$servicio,$barbero,$id_usuario,$cod_barberia);
+		Gestionar_citas::Update($Cod_cita,$fecha,$hora,$servicio,$barbero,$id_usuario,$cod_barberia);
 		$mensaje="la cita se modifico correctamente";
 		$tipomensaje="success";
 		if ($_SESSION["Perfil"] =="Administrador" ) {

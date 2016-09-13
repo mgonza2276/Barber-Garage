@@ -97,7 +97,7 @@
                     <td>".$row["Nombre"]."</td>
                     <td>".$row["Cod_cita"]."</td>
                     <td>".$row["Fecha"]."</td>
-                    <td>".$row["Hora"].":".$row["Minutos"]." hs"."</td>
+                    <td>".$row["Hora"]." hs"."</td>
                     <td>".$row["Servicio"]."</td>
                     <td>".$row["Barbero"]."</td>
                     <td>

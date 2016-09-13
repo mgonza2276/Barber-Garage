@@ -131,66 +131,17 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
 
                 <div class="input-field col s5">
-                  <label id="label_hora">Hora: </label>
-    						  <select name="Hora" id="hora">
-      						  <?php  $citas[2]; ?>
-      						    <?php
-                          $horario=Gestion_barberias::ValidaBarberia($citas[7]);
+                  <?php 
+                      $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
+                          //Capturamos la hora de atencion en la barberia
                            $fin=$horario["Hora_fin"];
                             $inicio=$horario["Hora_inicio"];
-                            $str="";
-                            $num1=(int)$inicio[0];
-                            $num2=(int)$inicio[1];
-
-                            if ($num1<=0 &&$num2>0) {
-                              $str=$str.$num2;
-                            }elseif ($num1>0 &&$num2>=0) {
-                              $str=$str.$num1.$num2;
-                            }
-
-                            $num_inicio=(int)$str;
-                            $num_fin=(int)$fin[0].(int)$fin[1];
-
-
-
-                             for ($i=$num_inicio; $i <=$num_fin ; $i++) {
-
-                               if ($i==$citas[2]) {
-                                 echo "<option selected>".$i."</option>";
-                               }else{
-                                  echo "<option >".$i."</option>";
-                               }
-
-
-                             }
-
-
-                    ?>
-
-    						  </select>
+                   ?>
+                  <label id="label_hora">Hora: </label>
+    						  <input type="time" name="Hora" max="<?php echo $fin ?>" min="<?php echo $inicio ?>" value="<?php echo $citas[2]?>"></input>
   							</div>
 
-                  <!-- minutos -->
 
-                <div class="input-field col s3">
-                    <label id="label_minutos">Minutos :</label>
-                    <select name="Min" id="min">
-                      <?php
-
-                          if ($citas[3]=="00") {
-                            echo"<option value='00' selected>00 hs</option>";
-                            echo"<option value='30'>30 hs</option>";
-                          }else {
-                            echo"<option value='30'selected>30 hs</option>";
-                            echo"<option value='00' >00 hs</option>";
-                          }
-                       ?>
-
-
-                    </select>
-                </div>
-
-                <!-- formato -->
 
 
 
@@ -207,7 +158,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
  							?>
 
                 <select name="Servicio">
-    						<option value="<?php echo $citas[4]; ?>"><?php echo $citas[4] ?></option><?php
+    						<option value="<?php echo $citas[4]; ?>"><?php echo $citas[3] ?></option><?php
 							foreach ($services as $row) {
  							?>
 
@@ -220,7 +171,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
                             <div class="input-field col s12">
                             <label id="label_barbero">Barbero :</label>
-                            <?php $barberos=Gestion_empleados::ReadByBarberia($citas[7])
+                            <?php $barberos=Gestion_empleados::ReadByBarberia($citas[6])
 
                             ?>
 
@@ -263,5 +214,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
 
 <?php include_once("../Components/footer.php") ?>
+
+
 </body>
 </html>
