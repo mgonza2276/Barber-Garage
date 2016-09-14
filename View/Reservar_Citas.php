@@ -9,7 +9,7 @@ session_start();
     $tipo_msn = base64_encode("advertencia");
     header("Location: index.php?m=".$msn."&tm=".$tipo_msn);
   }
-  date_default_timezone_set("America/Bogota" ) ; 
+  date_default_timezone_set("America/Bogota" ) ;
  ?>
 <!DOCTYPE html>
 <html>
@@ -31,11 +31,15 @@ session_start();
     <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
     <!-- calendario de citas -->
     <link rel="stylesheet" href="calendario\calendario.css">
-    <script type="text/javascript" src="calendario\calendario.js"></script>
+    <!-- <script type="text/javascript" src="calendario\calendario.js"></script> -->
     <!-- inicializacion del calendario y los selects -->
     <script>
     $(document).ready(function()
     {
+      var horaactual = "<?php echo date("H:i");?>";
+      var fechaval = "<?php echo date('Y-m-d'); ?>";
+      var fec = $("#fechaval").val();
+      var horadesde  = $("#hora").val();
      <?php
       if(isset($_GET["msn"]))
       {
@@ -43,33 +47,49 @@ session_start();
       }
     ?>
     $('select').material_select();
-    $('#fecha_cita').datepicker(
-    {
-      showOn: "button",
-      buttonImage:"calendario/images/calen.png",
-      buttonImageOnly:true,
-      showButtonPanel:true,
-      minDate: "-0D"
-    });
+    // $('#fecha_cita').datepicker(
+    // {
+    //   showOn: "button",
+    //   buttonImage:"calendario/images/calen.png",
+    //   buttonImageOnly:true,
+    //   showButtonPanel:true,
+    //   minDate: "-0D"
+    // });
+    function validafecha(){
+  //  var horaactual = "<!-- <?php echo date("H:i");?>-->";
+   // var fechaval = "<?php echo date('Y-m-d'); ?>";
+   // var fec = $("#fechaval").val();
+   // var horadesde  = $("#hora").val();
+    if (fec==fechaval){
+     if(horadesde < horaactual){
+       swal("debe elegir una hora superior a la hora actual.");
+        $("#hora").val(horaactual);
 
+     }else {
+       document.write("hola");
+     }
+   }
+   }
 
   function validaCita(hora)
   {
           var fecha_cita  = $("#fecha_cita").val();
-          var hora        = hora; 
-          var barbero     = $("#emple").val(); 
+          var hora        = hora;
+          var barbero     = $("#emple").val();
           var usuario     = $("#Id_usuario").val();
-          var barberia    = $("#Cod_barberia").val();    
-
-          var accion      = "valida_citas"; 
+          var barberia    = $("#Cod_barberia").val();
 
 
 
-          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, fecha_cita: fecha_cita, barbero: barbero, usuario:usuario, barberia:barberia}, function(result)
-          { 
+          var accion      = "valida_citas";
+
+
+
+          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, fecha_cita: fecha_cita, barbero: barbero, usuario:usuario, barberia:barberia, horaactual:horaactual, fechaval:fechaval, fec:fec, horadesde:horadesde}, function(result)
+          {
 
               if(result.ue == true)
-                 {                    
+                 {
                     $("#btnreg").val("disabled",true);
                     swal(result.msn);
                  }else{
@@ -77,15 +97,9 @@ session_start();
                     document.getElementById("frm").submit();
                  }
           },"json");
-
         //   alert(result);
-        // });
- 
-
+        //});
       }
-
-
-        
     // $("#hora").keyup(function()
     //     {
     //         //se asigna el valor de #hora a la variable #horafinal.
@@ -94,22 +108,16 @@ session_start();
     //     });
          $("#btnreg").click(function() {
           //aqui el de los campos
+
            if($("input").val() == "" || $("select").val() == ""){
             swal("Los campos no deben ir vacios!");
            }else{
              validaCita($("#hora").val());
+             validafecha($("#fechaval").val());
             }
          });
 
-         $("#hora").change(function(){
-        var horaactual = "<?php echo date("H:i");?>";
-        var horadesde  = $("#hora").val();
-        if(horadesde < horaactual){
-          swal("debe elegir una hora superior a la hora actual.");
-           $("#hora").val(horaactual);
-        }
-        
-      })
+
 
   })
   </script>
@@ -144,8 +152,9 @@ session_start();
       <form action="../Controller/Citas.controller.php" method="POST" id="frm">
         <center>
           <h4>Citas</h4>
+
                 <!-- provisional de la fecha con calendario -->
-                <input type="text" name="Fecha" placeholder="clic en el calendario" required id="fecha_cita" readonly />
+                <input type="date" name="Fecha" min="<?php echo date('Y-m-d');?>"  required id="fecha_cita"/>
                           <!-- textbox provisional del horario -->
                               <!-- combobox de servicios -->
               <div class="input-field col l12">
@@ -178,7 +187,7 @@ session_start();
                 </select>
 
                 <?php
-                          
+
                           $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
                           //Capturamos la hora de atencion en la barberia
                            $fin=$horario["Hora_fin"];
@@ -189,7 +198,8 @@ session_start();
                     ?>
                       <input type="time" max="<?php echo $fin ?>" min="<?php echo $inicio ?>" name="Hora" id="hora" value="<?php $time=time();echo date("H:i",$time)?>"  ></input>
                    <span type="hidden" id="horafinal"></span>
-                
+                   <span type="hidden" id="fechaval" value="<?php echo date('Y-m-d');?>"></span>
+
               </div>
                 <input type="hidden" id="Id_usuario" name="Id_usuario" value="<?php echo $_SESSION["Id_usuario"]; ?>"/>
                 <input type="hidden" id="Cod_barberia" name="Cod_barberia" value="<?php echo $_SESSION["nit"]; ?>"/>
@@ -207,7 +217,6 @@ session_start();
     <?php
       include_once("../Components/footer.php")
     ?>
-
-    <?php echo $hora ?>
+    
 </body>
 </html>
