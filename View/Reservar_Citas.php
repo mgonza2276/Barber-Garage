@@ -145,72 +145,82 @@ session_start();
          }
 ?>
 </head>
-<body>
+<body background="imagenes/reloj.jpeg">
   <?php include_once("../Components/menu_barberias.php") ?>
 <div class="container">
   <div class="row">
-    <div id="centro" class="col l6 offset-l3">
+    <div id="centro" class="col l6 s12 m8 offset- m4">
       <form action="../Controller/Citas.controller.php" method="POST" id="frm">
         <center>
           <h4>Citas</h4>
-
-                <!-- provisional de la fecha con calendario -->
-                <input type="date" name="Fecha" min="<?php echo date('Y-m-d');?>"  required id="fecha_cita"/>
-                          <!-- textbox provisional del horario -->
-                              <!-- combobox de servicios -->
-              <div class="input-field col l12">
-                  <?php
+              <div class="input-field col l12 s12 m12">
+              <!-- provisional de la fecha con calendario -->
+              <input type="date" name="Fecha" min="<?php echo date('Y-m-d');?>"  required id="fecha_cita"/>
+              <!-- textbox provisional del horario -->
+              <!-- combobox de servicios -->
+              </div>
+              <div class="input-field col l12 s10 m10 offset-s1 l1 m2">
+                <?php
                     $services=Gestionar_servicio::ReadAll();
-                  ?>
+                ?>
               <select name="Servicio">
                 <option disabled selected>Seleccione un servicio</option>
                 <?php
-                  foreach ($services as $row) {
+                  foreach ($services as $row)
+                  {
                 ?>
-                  <option value="<?php echo $row["Nombre"] ?>" ><?php echo $row["Nombre"] ?></option>
-                    <?php } ?>
-                </select>
+                <option value="<?php echo $row["Nombre"] ?>" ><?php echo $row["Nombre"] ?></option>
+                <?php
+                  }
+                ?>
+              </select>
               </div>
               <!-- combobox de los barberos -->
-              <div class="input-field col s12">
-                    <?php
-                      $barberos=Gestion_empleados::ReadAll()
-                    ?>
-                <select name="Barbero" id="emple" >
+              <div class="input-field col l12 s10 m10 offset-s1 l1 m2">
+                <?php
+                    $barberos=Gestion_empleados::ReadAll()
+                ?>
+              <select name="Barbero" id="emple" >
                 <option value="" disabled selected>Seleccione un Barbero</option>
                   <?php
-                    foreach ($barberos as $row) {
+                    foreach ($barberos as $row)
+                    {
                   ?>
                 <option value="<?php echo $row["Nombre"] ?>"><?php echo $row["Nombre"] ?></option>
                     <?php
                       }
                     ?>
                 </select>
-
                 <?php
+                    $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
+                    //Capturamos la hora de atencion en la barberia
+                    $fin=$horario["Hora_fin"];
+                    $inicio=$horario["Hora_inicio"];
 
-                          $horario=Gestion_barberias::ValidaBarberia($_SESSION["nit"]);
-                          //Capturamos la hora de atencion en la barberia
-                           $fin=$horario["Hora_fin"];
-                            $inicio=$horario["Hora_inicio"];
-
-                            $hora_inicio=$inicio[0].$inicio[1].$inicio[2].$inicio[3].$inicio[4]."hs";
-                            $hora_fin=$fin[0].$fin[1].$fin[2].$fin[3].$fin[4]."hs";
-                    ?>
-                      <input type="time" max="<?php echo $fin ?>" min="<?php echo $inicio ?>" name="Hora" id="hora" value="<?php $time=time();echo date("H:i",$time)?>"  ></input>
-                   <span type="hidden" id="horafinal"></span>
-                   <!-- captura de fecha actual -->
-                   <span type="hidden" id="fechaval" value="<?php echo date('Y-m-d');?>"></span>
-
-              </div>
+                    $hora_inicio=$inicio[0].$inicio[1].$inicio[2].$inicio[3].$inicio[4]."hs";
+                    $hora_fin=$fin[0].$fin[1].$fin[2].$fin[3].$fin[4]."hs";
+                ?>
+                    <input type="time" max="<?php echo $fin ?>" min="<?php echo $inicio ?>" name="Hora" id="hora" value="<?php $time=time();echo date("H:i",$time)?>"  ></input>
+                    <span type="hidden" id="horafinal"></span>
+                    <!-- captura de fecha actual -->
+                    <span type="hidden" id="fechaval" value="<?php echo date('Y-m-d');?>"></span>
+                </div>
                 <input type="hidden" id="Id_usuario" name="Id_usuario" value="<?php echo $_SESSION["Id_usuario"]; ?>"/>
                 <input type="hidden" id="Cod_barberia" name="Cod_barberia" value="<?php echo $_SESSION["nit"]; ?>"/>
                 <input type="hidden" name="acc" value="R">
                 <span id="resultadobusqueda" class="red-text accent-3 left" style="margin-left: 50px;"> </span>
-                <button id="btnreg" type="button"  class="waves-effect  btn-large green" style="width:100%" >
-                  Reservar cita
-                </button>
-                <button class="waves-effect  btn-large red" style="width:100%">Cancelar</button>
+                <div class="col l12 s12 m12">
+
+
+                <div class="col l6 s12 m6">
+                  <button id="btnreg" type="button"  class="waves-effect  btn-large green" style="width:100%">
+                    Reservar cita
+                  </button>
+                </div>
+                <div class="col l6 s12 m6">
+                  <button class="waves-effect  btn-large red" href="Dashboard_Cliente.php" style="width:100%"><a href="Dashboard_Cliente.php" style="color:white; font-size:14px;">Cancelar</a></button>
+                </div>
+                </div>
                 </center>
                 </form>
             </div>
