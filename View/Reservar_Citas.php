@@ -37,8 +37,7 @@ session_start();
     $(document).ready(function()
     {
       var horaactual = "<?php echo date("H:i");?>";
-      var fechaval = "<?php echo date('Y-m-d'); ?>";
-      var fec = $("#fechaval").val();
+      var fechaval = $("fechaval").val();
       var horadesde  = $("#hora").val();
      <?php
       if(isset($_GET["msn"]))
@@ -55,22 +54,25 @@ session_start();
     //   showButtonPanel:true,
     //   minDate: "-0D"
     // });
-    function validafecha(){
-  //  var horaactual = "<!-- <?php echo date("H:i");?>-->";
-   // var fechaval = "<?php echo date('Y-m-d'); ?>";
-   // var fec = $("#fechaval").val();
-   // var horadesde  = $("#hora").val();
-    if (fec==fechaval){
+  function validafecha(){
+   var horaactual = "<?php echo date("H:i");?>";
+   var fechaval = "<?php echo date('Y-m-d'); ?>";
+   var fecha_cita = $("#fecha_cita").val();
+  //  var fec = $("#fechaval").val();
+   var horadesde  = $("#hora").val();
+    if (fecha_cita==fechaval){
      if(horadesde < horaactual){
        swal("debe elegir una hora superior a la hora actual.");
         $("#hora").val(horaactual);
 
-     }else {
-       document.write("hola");
+     }else{
+       validaCita($("#hora").val());
      }
-   }
+   }else{
+      validaCita($("#hora").val());
    }
 
+}
   function validaCita(hora)
   {
           var fecha_cita  = $("#fecha_cita").val();
@@ -85,7 +87,7 @@ session_start();
 
 
 
-          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, fecha_cita: fecha_cita, barbero: barbero, usuario:usuario, barberia:barberia, horaactual:horaactual, fechaval:fechaval, fec:fec, horadesde:horadesde}, function(result)
+          $.post("../Controller/Citas.controller.php", {hora: hora, acc: accion, fecha_cita: fecha_cita, barbero: barbero, usuario:usuario, barberia:barberia, horaactual:horaactual, fechaval:fechaval, horadesde:horadesde}, function(result)
           {
 
               if(result.ue == true)
@@ -112,7 +114,6 @@ session_start();
            if($("input").val() == "" || $("select").val() == ""){
             swal("Los campos no deben ir vacios!");
            }else{
-             validaCita($("#hora").val());
              validafecha($("#fechaval").val());
             }
          });
@@ -198,6 +199,7 @@ session_start();
                     ?>
                       <input type="time" max="<?php echo $fin ?>" min="<?php echo $inicio ?>" name="Hora" id="hora" value="<?php $time=time();echo date("H:i",$time)?>"  ></input>
                    <span type="hidden" id="horafinal"></span>
+                   <!-- captura de fecha actual -->
                    <span type="hidden" id="fechaval" value="<?php echo date('Y-m-d');?>"></span>
 
               </div>
@@ -217,6 +219,6 @@ session_start();
     <?php
       include_once("../Components/footer.php")
     ?>
-    
+
 </body>
 </html>
