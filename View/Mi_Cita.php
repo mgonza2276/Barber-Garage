@@ -37,6 +37,7 @@
        <script src="sweetalert-master/dist/sweetalert.min.js"></script>
       <link rel="stylesheet" type="text/css" href="sweetalert-master/dist/sweetalert.css">
 
+      <script src="funcion_eliminar.js"></script>
       <?php
 
     if(isset($_GET["m"]) and isset($_GET["tm"])){
@@ -92,22 +93,29 @@
       $citas=Gestionar_citas::Mi_Cita($_REQUEST["ja"]);
       foreach ($citas as $row) {
 
+        ?>
 
-    echo "<tr>
-                    <td>".$row["Nombre"]."</td>
-                    <td>".$row["Cod_cita"]."</td>
-                    <td>".$row["Fecha"]."</td>
-                    <td>".$row["Hora"]." hs"."</td>
-                    <td>".$row["Servicio"]."</td>
-                    <td>".$row["Barbero"]."</td>
+   <tr>
+                    <td><?php echo $row["Nombre"] ?></td>
+                    <td><?php echo $row["Cod_cita"] ?></td>
+                    <td><?php echo $row["Fecha"] ?></td>
+                    <td><?php echo $row["Hora"] ?> hs</td>
+                    <td><?php echo $row["Servicio"] ?></td>
+                    <td><?php echo $row["Barbero"] ?></td>
                     <td>
-                    <a href='Cambiar_Mi_Cita.php?ct=".base64_encode($row["Cod_cita"])."'><i class='fa fa-pencil'></i></a>
+                    <a href="Cambiar_Mi_Cita.php?ct=<?php echo base64_encode($row["Cod_cita"]) ?>"><i class="fa fa-pencil"></i></a>
 
-                      <a href='../Controller/Citas.controller.php?ct=".base64_encode($row["Cod_cita"])."&acc=D'><i class='fa fa-trash'></i></a>
+                      <a href="javascript:void(0);" onclick="eliminar('../Controller/Citas.controller.php?ct= <?php echo base64_encode($row["Cod_cita"])."&acc=D" ?>')"><i class="fa fa-trash"></i></a>
 
+
+                      
 
                     </td>
-                    </tr>";
+      
+
+                    </tr>
+
+       <?php             
       }
       ?>
 

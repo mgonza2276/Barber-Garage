@@ -129,6 +129,28 @@
 	background:  url("imagenes/fondo_bberia.png")no-repeat center ;
 }
 
+@font-face{
+	font-family:titulo_barberia;
+	font-style: normal;
+	font-weight: normal;
+	src: url(Antlers_Demo.ttf);
+}
+
+.titulo_barberia{
+	position: absolute;
+	z-index: 100;
+	margin-top: 180px;
+	margin-left: 30px;
+	color:#FFC107;
+	font-family:titulo_barberia;
+	font-size: 150px;
+}
+
+
+
+
+
+
 .iconos {
 	height: 330px;
 }

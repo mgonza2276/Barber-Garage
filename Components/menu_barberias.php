@@ -44,7 +44,7 @@
 <!-- desktop -->
 <nav id="menu">
     <div class="nav-wrapper red accent-4">
-      <a href="#!" class="brand-logo">B-G</a>
+      <a href="#!" class="brand-logo"><?php echo $_SESSION["nombre"] ?></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a class="inicio_barberias" href="../View/comp_menu.php">Inicio</a></li>

@@ -26,12 +26,15 @@
 </head>
 <body>
 
+<h3 class="titulo_barberia"><?php echo $_SESSION["nombre"] ?></h3>
 
 	<?php include_once("../Components/menu_barberias.php"); ?>
 
 
 	<div class="row ">
+
       <div class="col  s12 m12 l12  header" ></div>
+
     </div>
 
 
