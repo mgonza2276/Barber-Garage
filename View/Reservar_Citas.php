@@ -62,8 +62,8 @@ session_start();
    var horadesde  = $("#hora").val();
     if (fecha_cita==fechaval){
      if(horadesde < horaactual){
-       swal("debe elegir una hora superior a la hora actual.");
-        $("#hora").val(horaactual);
+       swal("debe elegir una hora superior a la hora actual "+horaactual+" hs");
+        
 
      }else{
        validaCita($("#hora").val());
@@ -178,7 +178,7 @@ session_start();
               <!-- combobox de los barberos -->
               <div class="input-field col l12 s10 m10 offset-s1 l1 m2">
                 <?php
-                    $barberos=Gestion_empleados::ReadAll()
+                    $barberos=Gestion_empleados::ReadByBarberia($_SESSION["nit"])
                 ?>
               <select name="Barbero" id="emple" >
                 <option value="" disabled selected>Seleccione un Barbero</option>
@@ -197,10 +197,8 @@ session_start();
                     $fin=$horario["Hora_fin"];
                     $inicio=$horario["Hora_inicio"];
 
-                    $hora_inicio=$inicio[0].$inicio[1].$inicio[2].$inicio[3].$inicio[4]."hs";
-                    $hora_fin=$fin[0].$fin[1].$fin[2].$fin[3].$fin[4]."hs";
                 ?>
-                    <input type="time" max="<?php echo $fin ?>" min="<?php echo $inicio ?>" name="Hora" id="hora" value="<?php $time=time();echo date("H:i",$time)?>"  ></input>
+                    <input type="time" max="<?php echo $fin ?>" min="<?php echo $inicio ?>" name="Hora" id="hora"  step="1800" ></input>
                     <span type="hidden" id="horafinal"></span>
                     <!-- captura de fecha actual -->
                     <span type="hidden" id="fechaval" value="<?php echo date('Y-m-d');?>"></span>

@@ -158,12 +158,17 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
  							?>
 
                 <select name="Servicio">
-    						<option value="<?php echo $citas[4]; ?>"><?php echo $citas[3] ?></option><?php
-							foreach ($services as $row) {
- 							?>
+    						<?php foreach ($services as $row) {
+                  echo '<option  value = "'.$row[1].'"';
+                  if ($row["Nombre"]==$citas[4]) {
+                      echo "selected";
+                    }
 
-     							<option value="<?php echo $row["Nombre"] ?>" ><?php echo $row["Nombre"] ?></option>
-      							<?php } ?>
+
+                  echo '>'.$row["Nombre"].'</option>';
+                  ?>
+
+                <?php } ?>
     						</select>
   							</div>
 
@@ -171,7 +176,7 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
                             <div class="input-field col s12">
                             <label id="label_barbero">Barbero :</label>
-                            <?php $barberos=Gestion_empleados::ReadByBarberia($citas[6])
+                            <?php $barberos=Gestion_empleados::ReadByBarberia($citas[7])
 
                             ?>
 
@@ -215,6 +220,6 @@ if(isset($_GET["m"]) and isset($_GET["tm"])){
 
 <?php include_once("../Components/footer.php") ?>
 
-
+<?php echo $citas[4]; ?>
 </body>
 </html>
